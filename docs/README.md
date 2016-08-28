@@ -1,8 +1,8 @@
 # SpoonHelper
 
-[Heroku link][heroku] **Recipe:** This should be a link to your production site
+[Heroku link][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://www.spoonhelper.us
 
 ## Minimum Viable Product
 

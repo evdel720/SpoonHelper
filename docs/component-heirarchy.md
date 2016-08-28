@@ -1,39 +1,39 @@
 ## Component Heirarchy
 
 **SignUpFormContainer**
- - SignUpForm
+- SignUpForm
 
 **SignInFormContainer**
- - SignInForm
+- SignInForm
 
 **HomeContainer**
- - Home
- - NavBar
- - CategoryIndexContainer
- + CategoryIndex
- + CategoryDetailContainer
- - CategoryDetail
+- Home
+- NavBar
+- CategoryIndexContainer
+  - CategoryIndex
+  - CategoryDetailContainer
+    - CategoryDetail
 
 **UserInfoContainer**
- - UserInfo
+- UserInfo
 
 **RecipeIndexContainer**
- - RecipeIndex
- + RecipeIndexItem
+- RecipeIndex
+  - RecipeIndexItem
 
 **RecipeDetailContainer**
- - RecipeDetail
- - StepIndexContainer
- + StepIndex
- - StepIndexItem
- - CommentIndexContainer
- + CommentIndex
- - CommentIndexItem
- - CommentFormContainer
- + CommentForm
+- RecipeDetail
+- StepIndexContainer
+  - StepIndex
+    - StepIndexItem
+- CommentIndexContainer
+  - CommentIndex
+    - CommentIndexItem
+- CommentFormContainer
+  - CommentForm
 
- **RecipeFormContainer**
- - RecipeForm
+**RecipeFormContainer**
+- RecipeForm
 
 **SearchFormContainer**
 
