@@ -1,6 +1,6 @@
 # SpoonHelper
 
-[Heroku link][heroku]
+[http://www.spoonhelper.us][heroku]
 
 [heroku]: http://www.spoonhelper.us
 
@@ -10,10 +10,10 @@ SpoonHelper is a web application inspired by Instructables built using Ruby on R
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Projects
-- [ ] Commenting on projects
-- [ ] Adding photos and videos to projects
-- [ ] Searching projects by keyword
+- [ ] Recipes
+- [ ] Commenting on Recipes
+- [ ] Adding photos and videos to Recipes
+- [ ] Searching Recipes by keyword
 - [ ] Production README
 
 ## Design Docs
@@ -24,20 +24,20 @@ SpoonHelper is a web application inspired by Instructables built using Ruby on R
 * [Redux Structure][redux-structure]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-heirarchy.md
-[redux-structure]: docs/redux-structure.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: ./wireframes
+[components]: ./component-heirarchy.md
+[redux-structure]: ./redux-structure.md
+[sample-state]: ./sample-state.md
+[api-endpoints]: ./api-endpoints.md
+[schema]: ./schema.md
 
 ## Implementation Timeline
 
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
 
-**Objective:** Functioning rails project with front-end Authentication
+**Objective:** Functioning rails Recipe with front-end Authentication
 
-- [ ] New Rails project
+- [ ] New Rails Recipe
 - [ ] `User` model/migration
 - [ ] Back end authentication (session/password)
 - [ ] `StaticPages` controller and root view

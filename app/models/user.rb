@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates :email, :session_token, :password_digest, :bio, presence: true
+  validates :email, :session_token, uniqueness: true
   validates :bio, length: { minimum: 10 }
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
