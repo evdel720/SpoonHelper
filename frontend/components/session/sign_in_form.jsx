@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import errorKeySelector from '../../util/error_selector.js';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -14,6 +15,16 @@ class SignInForm extends React.Component {
   componentWillReceiveProps(props) {
     if (props.signedIn) {
       props.router.push("/#/");
+    } else if (props.errors) {
+      errorKeySelector(props.errors).forEach((key) => {
+        const targetNode = document.getElementsByName(key)[0];
+        props.errors[key].forEach((error) => {
+          let errorNode = document.createElement("p");
+          errorNode.className = "error";
+          errorNode.textContent = error;
+          targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
+        });
+      });
     }
   }
 
@@ -34,7 +45,7 @@ class SignInForm extends React.Component {
           <input type='text'
             name="email"
             onChange={this.handleInput}
-            value={this.state.username}
+            value={this.state.email}
             placeholder="Email"/>
           <input type='password'
             name="password"

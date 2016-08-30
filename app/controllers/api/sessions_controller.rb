@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render '/api/users/show'
     else
-      @errors = { username: ['Invalid username or password.'] }
+      @errors = { email: ['Invalid email or password.'] }
       render '/api/errors', status: 400
     end
   end

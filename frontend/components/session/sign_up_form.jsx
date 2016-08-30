@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import errorKeySelector from '../../util/error_selector.js';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -7,7 +8,6 @@ class SignUpForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      password_confirmation: "",
       bio: ""
     };
     this.handleInput = this.handleInput.bind(this);
@@ -16,7 +16,34 @@ class SignUpForm extends React.Component {
   componentWillReceiveProps(props) {
     if (props.signedIn) {
       props.router.push("/#/");
+    } else if (props.errors) {
+      errorKeySelector(props.errors).forEach((key) => {
+        const targetNode = document.getElementsByName(key)[0];
+        props.errors[key].forEach((error) => {
+          let errorNode = document.createElement("p");
+          errorNode.className = "error";
+          errorNode.textContent = error;
+          targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
+        });
+      });
     }
+  }
+
+  handleConfirmation(e) {
+    document.getElementsByClassName("confirmation")[0].remove();
+    const targetNode = document.getElementsByName("password_confirmation")[0];
+    const submitButton = document.getElementsByClassName("btn-submit")[0];
+    let errorNode = document.createElement("p");
+    errorNode.className = "confirmation";
+
+    if (this.state.password !== e.target.value) {
+      submitButton.disabled = true;
+      errorNode.textContent = "The password confirmation doesn't match with password.";
+    } else {
+      submitButton.disabled = false;
+      errorNode.textContent = "Password confirmation matches.";
+    }
+    targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
   }
 
   handleInput(e) {
@@ -36,7 +63,7 @@ class SignUpForm extends React.Component {
           <input type='text'
             name="email"
             onChange={this.handleInput}
-            value={this.state.username}
+            value={this.state.email}
             placeholder="Email"/>
 
           <input type='password'
@@ -47,9 +74,9 @@ class SignUpForm extends React.Component {
 
           <input type='password'
             name="password_confirmation"
-            onChange={this.handleInput}
-            value={this.state.password_confirmation}
+            onChange={this.handleConfirmation.bind(this)}
             placeholder="Password Confirmation"/>
+          <p className="confirmation"></p>
 
           <textarea name="bio"
             defaultValue={this.state.bio}
@@ -57,7 +84,7 @@ class SignUpForm extends React.Component {
             onChange={this.handleInput}>
           </textarea>
 
-          <button>Sign Up</button>
+          <button className="btn-submit">Sign Up</button>
         </form>
       </div>
     );

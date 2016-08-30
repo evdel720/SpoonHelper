@@ -10,7 +10,10 @@
     loggedIn: true
   },
 
-  errors: {},
+  errors: {
+    email: ["Email is too short", "Password can't be blank"],
+    password: ["Password can't be blank"]
+  },
 
   loading: false,
 

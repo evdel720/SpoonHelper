@@ -1,9 +1,11 @@
-import { SessionConstants, receiveCurrentUser, receiveErrors } from '../actions/session_actions.js';
+import { SessionConstants, receiveCurrentUser } from '../actions/session_actions.js';
+import { receiveErrors, clearErrors } from '../actions/error_actions.js';
 import * as Util from '../util/session_api_util.js';
 
 const SessionMiddleware = (store) => (next) => (action) => {
   const signUpandInSuccess = (userOb) => {
     window.currentUser = userOb;
+    store.dispatch(clearErrors());
     store.dispatch(receiveCurrentUser(userOb.user));
   };
   const errorCallback = (errors) => {
@@ -18,7 +20,10 @@ const SessionMiddleware = (store) => (next) => (action) => {
       break;
     case SessionConstants.SIGN_OUT:
       window.currentUser = undefined;
-      Util.signOut(() => next(action));
+      Util.signOut(() => {
+        store.dispatch(clearErrors());
+        next(action);
+      });
       break;
     default:
       return next(action);
