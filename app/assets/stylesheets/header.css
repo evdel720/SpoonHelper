@@ -1,0 +1,38 @@
+body {
+  font-family: sans-serif;
+  background-color: #f9fafb;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  float: left;
+}
+
+.home {
+  height: 100px;
+}
+
+.user-side-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.side-link {
+  font-size: 15px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.side-link:first-child {
+  border-right: 2px solid black;
+}
+
+.side-link:hover {
+  font-weight: bold;
+  cursor: pointer;
+}

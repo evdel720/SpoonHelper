@@ -11,10 +11,10 @@ const UserSideBar = ({ signedIn, signOut, currentUser }) => {
     );
   } else {
     return (
-      <div className="user-side-bar">
-        <Link to="signin">Sign In</Link>
-        <Link to="signup">Sign Up</Link>
-      </div>
+      <ul className="user-side-bar">
+        <Link to="signin" className="side-link">Sign In</Link>
+        <Link to="signup" className="side-link">Sign Up</Link>
+      </ul>
     );
   }
 };

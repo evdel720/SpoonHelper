@@ -1,0 +1,34 @@
+.session-form {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.session-form h1 {
+  font-size: 25px;
+  text-align: center;
+  padding: 20px;
+}
+
+.session-form input, textarea {
+  width: 200px;
+  margin: 0 auto;
+  font-size: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.session-form textarea {
+  height: 100px;
+}
+
+.session-form button {
+  margin-top: 10px;
+  float: right;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.session-form p {
+  font-size: 13px;
+}

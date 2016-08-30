@@ -58,9 +58,9 @@ class SignUpForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="session-form">
         <h1>Sign Up</h1>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form className="session-form" onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
             name="email"
             onChange={this.handleInput}

@@ -17,15 +17,11 @@ class SignInForm extends React.Component {
       props.router.push("/");
     } else if (props.errors) {
       errorClearHelper();
-      errorKeySelector(props.errors).forEach((key) => {
-        const targetNode = document.getElementsByName(key)[0];
-        props.errors[key].forEach((error) => {
-          let errorNode = document.createElement("p");
-          errorNode.className = "error";
-          errorNode.textContent = error;
-          targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
-        });
-      });
+      const targetNode = document.getElementsByName('password')[0];
+      let errorNode = document.createElement("p");
+      errorNode.className = "error";
+      errorNode.textContent = "Invalid email or password";
+      targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
     }
   }
 
@@ -40,7 +36,7 @@ class SignInForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="session-form">
         <h1>Sign In</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'

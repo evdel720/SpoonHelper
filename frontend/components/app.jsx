@@ -4,8 +4,10 @@ import UserSideBarContainer from '../components/user_side_bar/user_side_bar_cont
 
 const App = ({children}) => (
   <div>
-    <h1>Spoon helper</h1>
-    <UserSideBarContainer />
+    <div className="home">
+      <div className="logo"></div>
+      <UserSideBarContainer />
+    </div>
     {children}
   </div>
 );
