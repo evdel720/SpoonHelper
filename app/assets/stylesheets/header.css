@@ -6,6 +6,9 @@ body {
   width: 200px;
   height: 100px;
   float: left;
+  background-color: #35c33f;
+  color: white;
+  cursor: pointer;
 }
 
 .home {

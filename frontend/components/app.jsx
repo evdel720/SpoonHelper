@@ -1,15 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import UserSideBarContainer from '../components/user_side_bar/user_side_bar_container.js';
 
-const App = ({children}) => (
-  <div>
-    <div className="home">
-      <div className="logo"></div>
-      <UserSideBarContainer />
-    </div>
-    {children}
-  </div>
-);
+const App = ({children, router}) => {
+  const homeLink = () => {
+    router.push('/');
+  };
 
-export default App;
+  return (
+    <div>
+      <div className="home">
+        <div className="logo" onClick={homeLink}>LOGO</div>
+        <UserSideBarContainer />
+      </div>
+      {children}
+    </div>
+  );
+};
+
+export default withRouter(App);
