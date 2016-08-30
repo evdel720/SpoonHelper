@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import errorKeySelector from '../../util/error_selector.js';
+import { errorKeySelector, errorClearHelper } from '../../util/error_helper.js';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -15,8 +15,9 @@ class SignUpForm extends React.Component {
 
   componentWillReceiveProps(props) {
     if (props.signedIn) {
-      props.router.push("/#/");
+      props.router.push("/");
     } else if (props.errors) {
+      errorClearHelper();
       errorKeySelector(props.errors).forEach((key) => {
         const targetNode = document.getElementsByName(key)[0];
         props.errors[key].forEach((error) => {

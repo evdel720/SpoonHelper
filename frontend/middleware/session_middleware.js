@@ -5,7 +5,6 @@ import * as Util from '../util/session_api_util.js';
 const SessionMiddleware = (store) => (next) => (action) => {
   const signUpandInSuccess = (userOb) => {
     window.currentUser = userOb;
-    store.dispatch(clearErrors());
     store.dispatch(receiveCurrentUser(userOb.user));
   };
   const errorCallback = (errors) => {
