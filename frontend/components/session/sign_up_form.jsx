@@ -13,6 +13,10 @@ class SignUpForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentDidMount() {
+    errorClearHelper();
+  }
+
   componentWillReceiveProps(props) {
     if (props.signedIn) {
       props.router.push("/");

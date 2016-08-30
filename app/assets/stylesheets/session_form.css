@@ -7,6 +7,7 @@
   font-size: 25px;
   text-align: center;
   padding: 20px;
+  color: #35c33f;
 }
 
 .session-form input, textarea {
@@ -19,14 +20,23 @@
 
 .session-form textarea {
   height: 100px;
+  border: inset 2px #eee;
 }
 
 .session-form button {
+  color: white;
   margin-top: 10px;
   float: right;
   font-size: 15px;
   border-radius: 5px;
+  background-color: #35c33f;
   cursor: pointer;
+}
+
+.session-form button:hover {
+  color: #eee;
+  background-color: #2c9833;
+  border: 1px solid #ccc;
 }
 
 .session-form p {

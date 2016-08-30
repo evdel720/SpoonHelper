@@ -4,10 +4,10 @@ import { Link } from 'react-router';
 const UserSideBar = ({ signedIn, signOut, currentUser }) => {
   if (signedIn) {
     return (
-      <div className="user-side-bar">
-        <h4>Welcome, {currentUser.email}</h4>
-        <button onClick={signOut}>Sign Out</button>
-      </div>
+      <ul className="user-side-bar">
+        <Link to="/" className="side-link">{currentUser.email}</Link>
+        <p className="side-link" onClick={signOut}>Sign Out</p>
+      </ul>
     );
   } else {
     return (
