@@ -6,8 +6,8 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render '/api/users/show'
     else
-      @errors = ['Invalid email or password']
-      render '/api/errors'
+      @errors = { username: ['Invalid username or password.'] }
+      render '/api/errors', status: 400
     end
   end
 
@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
       logout
       render json: {}
     else
-      render status: 404
+      render json: {errors: "No user is logged in."}, status: 404
     end
   end
 end

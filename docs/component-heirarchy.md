@@ -23,9 +23,6 @@
 
 **RecipeDetailContainer**
 - RecipeDetail
-- StepIndexContainer
-  - StepIndex
-    - StepIndexItem
 - CommentIndexContainer
   - CommentIndex
     - CommentIndexItem

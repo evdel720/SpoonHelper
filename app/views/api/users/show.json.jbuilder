@@ -1,2 +1,1 @@
-json.user @user, :email, :bio
-# :likes, :collections
+json.partial! 'api/users/user', user: @user

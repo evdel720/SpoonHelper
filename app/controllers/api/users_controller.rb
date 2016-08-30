@@ -5,8 +5,8 @@ class Api::UsersController < ApplicationController
       login(@user)
       render :show
     else
-      @errors = @user.errors.full_messages
-      render '/api/errors'
+      @errors = @user.errors
+      render '/api/errors', status: 400
     end
   end
 
@@ -15,8 +15,8 @@ class Api::UsersController < ApplicationController
     if current_user == @user && @user.update(user_params)
       render :show
     else
-      @errors = @user.errors.full_messages
-      render '/api/errors'
+      @errors = @user.errors
+      render '/api/errors', status: 404
     end
   end
 end

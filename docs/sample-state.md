@@ -10,7 +10,7 @@
     loggedIn: true
   },
 
-  errors: [],
+  errors: {},
 
   loading: false,
 
@@ -18,12 +18,10 @@
     items: {
       1: {
         title: "Mexican",
-        image: "Mexican.jpg",
         suggestion: recipeObject1
       },
       2: {
         title: "Italian",
-        image: "Italian.jpg",
         suggestion: recipeObject2
       }
     }
@@ -35,14 +33,14 @@
     items {
       1: {
         title: "Recipe Index1",
-        user: userObject,
-        rep_image: "image.jpg",
+        user: userId,
+        rep_image_url: "image_url",
         likes: 12
       },
       2: {
         title: "Recipe Index2",
-        user: userObject,
-        rep_image: "image.jpg",
+        user: userId,
+        rep_image_url: "image_url",
         likes: 31
       }
     }
@@ -52,21 +50,22 @@
     title: "Recipe Index1",
     description: "Delicious sandwich",
     ingredients: ["bread", "lettuce", "turkey", "tomato", "edamame"],
+    instruction: "detailed instruction...",
     user: userObject,
-    steps: [stepOb1, stepOb2],
     comments: [commentOb1, commentOb2],
-    rep_image: "image.jpg",
+    rep_image_url: "image.jpg",
+    video_url: "video_url",
     likes: 12
   },
 
   search: {
     1: {
       title: "Found Recipe 1",
-      image: "image.jpg"
+      rep_image_url: "image.jpg"
     },
     2: {
       title: "Found Recipe 2",
-      image: "image.jpg"
+      rep_image_url: "image.jpg"
     }
   }
 }

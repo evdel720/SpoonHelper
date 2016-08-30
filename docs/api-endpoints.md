@@ -34,7 +34,6 @@
 - accepts `title` query param to searched list recipes
 - `GET /api/recipes/:id`
 - `POST /api/recipes`
-- Steps would be attached on recipes so that won't contact directly with frontend.
 - `PATCH /api/recipes/:id`
 - `DELETE /api/recipes/:id`
 
