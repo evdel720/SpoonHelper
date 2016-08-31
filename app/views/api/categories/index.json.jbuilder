@@ -1,6 +1,7 @@
 
 @categories.each do |category|
-  json.set! category.id, category, :title, :image_url
+  formatted = { title: category.title, url: category.image.url }
+  json.set! category.id, formatted
 end
 
 

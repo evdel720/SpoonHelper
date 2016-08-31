@@ -15,7 +15,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-image_url   | string    | not null
+has_one image
 
 ## recipes
 column name  | data type | details
@@ -24,20 +24,43 @@ id           | integer   | not null, primary key
 title        | string    | not null
 description  | string    | not null
 ingredients  | string    | not null
-instruction  | text      | not null
-rep_image_url| string    | not null
-video_url    | string    |
 user_id      | integer   | not null, foreign key (references users), indexed
 category_id  | integer   | not null, foreign key (references categories), indexed
+has_many steps, images, comments, videos
+
+
+## steps
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+body        | text      | not null
+order       | integer   | not null
+recipe_id   | integer   | not null, foreign key (references recipes)
+
+## imageable
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+url         | string    | not null
+order       | integer   | not null
+imageable_id| integer   | not null, foreign key (references polymorphic association)
+
+## videos
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+url         | string    | not null
+order       | integer   | not null
+recipe_id   | integer   | not null, foreign key (references recipes)
 
 ## comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 content     | string    | not null
-image_url   | string    |
 user_id     | integer   | not null, foreign key (references users), indexed
 recipe_id   | integer   | not null, foreign key (references recipes), indexed
+has_one image
 
 ## collections
 column name | data type | details

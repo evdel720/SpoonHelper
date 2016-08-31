@@ -1,0 +1,25 @@
+
+.category-dropdown {
+  color: black;
+  position: absolute;
+  z-index: 100;
+  top: 80px;
+  left: 250px;
+  width: 400px;
+}
+
+.categories {
+  display:inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
