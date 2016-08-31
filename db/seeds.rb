@@ -8,3 +8,7 @@
 
 User.delete_all
 User.create!(email: "test", password: "password", bio: "test user's bio")
+
+Category.delete_all
+# Category.create!(title: "", image_url: )
+# Category.create!(title: "", image_url: )
