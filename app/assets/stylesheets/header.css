@@ -2,54 +2,45 @@ body {
   font-family: sans-serif;
 }
 
-.logo {
-  width: 200px;
-  height: 100px;
-  float: left;
-  background-color: #35c33f;
-  color: white;
-  cursor: pointer;
-}
-
 .home {
-  height: 100px;
-}
-
-.user-side-bar {
+  color: #35c33f;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: row wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.user-side-bar > * {
+.logo {
+  display: inline-block;
+  width: 250px;
+  height: 120px;
+  cursor: pointer;
+
+}
+
+.home-side-bar, .user-side-bar {
+  display: inline-flex;
+  align-items: center;
+}
+
+a.side-link {
+  color: #35c33f;
+  display: inline-block;
   font-size: 15px;
-  margin-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
   text-decoration: none;
-  color: #35c33f;
-}
-
-.user-side-bar button {
-  color: white;
-  background-color: #35c33f;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 13px;
-  margin-left: 10px;
 }
 
-.user-side-bar button:hover {
-  color: #eee;
-  background-color: #2c9833;
-  border: 1px solid #ccc;
+.link-separation {
+  height: 20px;
+  width: 2px;
+  background-color: #35c33f;
+  display: inline-block;
 }
 
-.side-link:first-child {
-  border-right: 2px solid #35c33f;
-}
-
-.side-link:hover {
+a.side-link:hover {
   color: #2c9833;
   cursor: pointer;
 }

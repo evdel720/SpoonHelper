@@ -18,15 +18,13 @@
   loading: false,
 
   categories: {
-    items: {
-      1: {
-        title: "Mexican",
-        suggestion: recipeObject1
-      },
-      2: {
-        title: "Italian",
-        suggestion: recipeObject2
-      }
+    1: {
+      title: "Mexican",
+      suggestion: recipeObject1
+    },
+    2: {
+      title: "Italian",
+      suggestion: recipeObject2
     }
   },
 

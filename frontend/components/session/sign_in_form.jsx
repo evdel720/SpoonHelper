@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { errorKeySelector, errorClearHelper } from '../../util/error_helper.js';
+import { errorGenerator } from '../../util/error_helper.js';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -16,16 +16,7 @@ class SignInForm extends React.Component {
     if (props.signedIn) {
       props.router.push("/");
     } else if (props.errors) {
-      errorClearHelper();
-      errorKeySelector(props.errors).forEach((key) => {
-        const targetNode = document.getElementsByName(key)[0];
-        props.errors[key].forEach((error) => {
-          let errorNode = document.createElement("p");
-          errorNode.className = "error";
-          errorNode.textContent = error;
-          targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
-        });
-      });
+      errorGenerator(props.errors);
     }
   }
 
@@ -38,11 +29,19 @@ class SignInForm extends React.Component {
     this.props.signIn({user: this.state});
   }
 
+  toSignUpPage() {
+    this.props.router.push('/signup');
+  }
+
+  guestSignIn() {
+    console.log("Not implemented yet");
+  }
+
   render() {
     return (
       <div className="session-form">
         <h1>Sign In</h1>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form className="clearfix" onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
             name="email"
             onChange={this.handleInput}
@@ -55,6 +54,12 @@ class SignInForm extends React.Component {
             placeholder="Password"/>
           <button>Sign In</button>
         </form>
+
+        <p>Don't have an account?</p>
+        <div className="btns">
+          <button className="signin-btn" onClick={ this.toSignUpPage.bind(this) }>Sign Up</button>
+          <button className="signin-btn" onClick={ this.guestSignIn.bind(this) }>Guest Sign In</button>
+        </div>
       </div>
     );
   }

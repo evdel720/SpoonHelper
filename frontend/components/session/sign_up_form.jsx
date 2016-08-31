@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { errorKeySelector, errorClearHelper } from '../../util/error_helper.js';
+import { errorGenerator } from '../../util/error_helper.js';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -13,24 +13,11 @@ class SignUpForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
-  componentDidMount() {
-    errorClearHelper();
-  }
-
   componentWillReceiveProps(props) {
     if (props.signedIn) {
       props.router.push("/");
     } else if (props.errors) {
-      errorClearHelper();
-      errorKeySelector(props.errors).forEach((key) => {
-        const targetNode = document.getElementsByName(key)[0];
-        props.errors[key].forEach((error) => {
-          let errorNode = document.createElement("p");
-          errorNode.className = "error";
-          errorNode.textContent = error;
-          targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
-        });
-      });
+      errorGenerator(props.errors);
     }
   }
 
@@ -64,7 +51,7 @@ class SignUpForm extends React.Component {
     return (
       <div className="session-form">
         <h1>Sign Up</h1>
-        <form className="session-form" onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
             name="email"
             onChange={this.handleInput}
