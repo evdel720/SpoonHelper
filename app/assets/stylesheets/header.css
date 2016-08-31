@@ -31,6 +31,7 @@ a.side-link {
   padding-right: 10px;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .link-separation {
@@ -41,6 +42,7 @@ a.side-link {
 }
 
 a.side-link:hover {
-  color: #2c9833;
+  background-color: #35c33f;
+  color: white;
   cursor: pointer;
 }

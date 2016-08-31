@@ -16,7 +16,9 @@ class AppRouter extends React.Component{
   }
 
   _fetchCategories(){
-    this.context.store.dispatch(requestCategories());
+    if (this.context.store.getState().categories['1'] === undefined) {
+      this.context.store.dispatch(requestCategories());
+    }
   }
 
   _ensureLoggedIn(nextState, replace){

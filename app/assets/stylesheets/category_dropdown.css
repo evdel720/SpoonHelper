@@ -18,8 +18,19 @@
 }
 
 .category-item {
+  color: #35c33f;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px auto;
+  cursor: pointer;
+  border: 2px white solid;
+}
+
+.category-item:hover {
+  color: white;
+  background-color: #35c33f;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-color: #35c33f;
 }

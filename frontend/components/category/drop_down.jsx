@@ -1,11 +1,17 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class CategoryDropdown extends React.Component {
+  clickHandler(cId) {
+    this.props.router.push('/');
+  }
+
   categoryList() {
     let categoryIds = Object.keys(this.props.categories);
     return categoryIds.map((cId) => {
       return (
-        <li className="category-item" key={cId}>
+        <li onClick={ this.clickHandler.bind(this, cId) }
+          className="category-item" key={cId}>
           <p>{this.props.categories[cId].title}</p>
           <img className="category-img" src={this.props.categories[cId].url}
             alt={this.props.categories[cId].title}
@@ -26,4 +32,4 @@ class CategoryDropdown extends React.Component {
   }
 }
 
-export default CategoryDropdown;
+export default withRouter(CategoryDropdown);
