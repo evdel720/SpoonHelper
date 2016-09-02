@@ -1,4 +1,4 @@
-const fetchAllRecipes = (success) => {
+export const fetchAllRecipes = (success) => {
   $.ajax({
     url: '/api/recipes',
     type: "GET",
@@ -7,7 +7,7 @@ const fetchAllRecipes = (success) => {
   });
 };
 
-const fetchCategoryRecipes = (cId, success) => {
+export const fetchCategoryRecipes = (cId, success) => {
   $.ajax({
     url: '/api/recipes.json',
     type: "GET",
@@ -17,13 +17,39 @@ const fetchCategoryRecipes = (cId, success) => {
   });
 };
 
-const fetchSingleRecipe = (rId, success) => {
+export const fetchSingleRecipe = (rId, success) => {
   $.ajax({
-    url: `/api/recipes${rId}.json`,
+    url: `/api/recipes/${rId}.json`,
     type: "GET",
     success,
     error: (resp) => {console.log(resp);}
   });
 };
 
-const 
+export const createRecipe = (recipe, success, error) => {
+  $.ajax({
+    url: `/api/recipes.json`,
+    type: "POST",
+    data: recipe,
+    success,
+    error
+  });
+};
+
+export const updateRecipe = (data, success, error) => {
+  $.ajax({
+    url: `/api/recipes/${data.recipe.id}.json`,
+    type: "PATCH",
+    data: data,
+    success,
+    error
+  });
+};
+
+export const deleteRecipe = (rId, success) => {
+  $.ajax({
+    url: `/api/recipes/${rId}.json`,
+    type: "DELETE",
+    success
+  });
+};

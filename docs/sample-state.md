@@ -2,6 +2,7 @@
 {
   session: {
     currentUser: {
+      id: 1,
       email: "spoon_helper@current.com",
       bio: "My cool cooking story",
       likes: [recipeId1, recipeId2],
@@ -29,35 +30,38 @@
   },
 
   recipes: {
-    category: categoryTitle, / "search result" if it is search result
-    sortingBy: ["created_at", "asc"],
-    items {
-      1: {
+    index: {
+      category: categoryTitle, / "search result" if it is search result
+      sortedBy: ["created_at", "asc"],
+      items {
+        1: {
+          title: "Recipe Index1",
+          user: userId,
+          rep_image_url: "image_url",
+          likes: 12
+        },
+        2: {
+          title: "Recipe Index2",
+          user: userId,
+          rep_image_url: "image_url",
+          likes: 31
+        }
+      },
+    detail: {
+        id: 1,
         title: "Recipe Index1",
-        user: userId,
-        rep_image_url: "image_url",
+        description: "Delicious sandwich",
+        ingredients: ["bread", "lettuce", "turkey", "tomato", "edamame"],
+        instruction: "detailed instruction...",
+        user: userObject,
+        comments: [commentOb1, commentOb2],
+        rep_image_url: "image.jpg",
+        video_url: "video_url",
         likes: 12
       },
-      2: {
-        title: "Recipe Index2",
-        user: userId,
-        rep_image_url: "image_url",
-        likes: 31
-      }
     }
   },
 
-  recipe: {
-    title: "Recipe Index1",
-    description: "Delicious sandwich",
-    ingredients: ["bread", "lettuce", "turkey", "tomato", "edamame"],
-    instruction: "detailed instruction...",
-    user: userObject,
-    comments: [commentOb1, commentOb2],
-    rep_image_url: "image.jpg",
-    video_url: "video_url",
-    likes: 12
-  },
 
   search: {
     1: {
