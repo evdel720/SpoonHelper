@@ -36,11 +36,11 @@ export const createRecipe = (recipe, success, error) => {
   });
 };
 
-export const updateRecipe = (data, success, error) => {
+export const updateRecipe = (rId, data, success, error) => {
   $.ajax({
-    url: `/api/recipes/${data.recipe.id}.json`,
+    url: `/api/recipes/${rId}.json`,
     type: "PATCH",
-    data: data,
+    data: {recipe: data},
     success,
     error
   });
@@ -51,5 +51,12 @@ export const deleteRecipe = (rId, success) => {
     url: `/api/recipes/${rId}.json`,
     type: "DELETE",
     success
+  });
+};
+
+export const deleteStep = (sId) => {
+  $.ajax({
+    url: `/api/steps/${sId}.json`,
+    type: "DELETE"
   });
 };

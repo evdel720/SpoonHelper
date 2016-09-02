@@ -8,13 +8,14 @@ class RecipeForm extends React.Component {
     this.state = {
       title: this.props.recipe.title,
       ingredients: this.props.recipe.ingredients,
-      description: this.props.description,
-      category_id: this.props.category_id,
-      instructions: this.props.instructions ? this.props.instructions : []
+      description: this.props.recipe.description,
+      category_id: this.props.recipe.category_id,
+      steps: this.props.recipe.steps || [],
+      stepsToBeDeleted: []
     };
     this.handleInput = this.handleInput.bind(this);
-    this.instructionSetHandler = this.instructionSetHandler.bind(this);
-    this.instructionDeleteHandler = this.instructionDeleteHandler.bind(this);
+    this.stepSetHandler = this.stepSetHandler.bind(this);
+    this.stepDeleteHandler = this.stepDeleteHandler.bind(this);
   }
 
   handleInput(e) {
@@ -23,19 +24,44 @@ class RecipeForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let recipeData = merge({}, this.state);
-    delete recipeData['instructions'];
+    let steps = this.state.steps.map((s, idx) => {
+      s.order = idx;
+      return s;
+    });
+    this.setState({steps: steps});
     if (this.props.recipe.id) {
-      this.props.updateRecipe({
-        recipe: merge({}, recipeData, {id: this.props.recipe.id}),
-        instructions: this.state.instructions});
+      let updateStep = merge({}, this.state);
+      updateStep.steps = updateStep.steps.concat(updateStep.stepsToBeDeleted);
+      delete updateStep['stepsToBeDeleted'];
+
+      this.props.updateRecipe(
+        this.props.recipe.id,
+        updateStep);
     } else {
       this.props.createRecipe({
-        recipe: recipeData,
-        instructions: this.state.instructions});
+        recipe: this.state
+      });
     }
   }
 
+  stepDeleteHandler(e) {
+    let targetStep = e.target.previousSibling;
+    let targetStepIndex = parseInt(targetStep.name);
+    let marked = this.state.steps[targetStepIndex].id;
+    if (marked) {
+      this.setState({
+        'stepsToBeDeleted': this.state.stepsToBeDeleted.concat({id: marked, _destroy: '1'})
+      });
+    }
+    targetStep.remove();
+    e.target.remove();
+
+    let removedState = this.state['steps'];
+    removedState.splice(parseInt(targetStep.name), 1);
+    this.setState({
+      'steps': removedState
+    });
+  }
   options() {
     const idTitles = categoryIdTitleSelector(this.props.categories);
     return idTitles.map((idTitle)=> {
@@ -43,63 +69,57 @@ class RecipeForm extends React.Component {
     });
   }
 
-  instructionSetHandler(e) {
-    let addedState = this.state['instructions'];
+  stepSetHandler(e) {
+    let addedState = this.state['steps'];
     let newValue = addedState[e.target.name];
     newValue.body = e.target.value;
     addedState[e.target.name] = newValue;
-    this.setState({'instructions': addedState});
+    this.setState({'steps': addedState});
   }
 
-  instructionDeleteHandler(e) {
-    let targetStep = e.target.previousSibling;
-    e.target.previousSibling.remove();
-    e.target.remove();
-    let removedState = this.state['instructions'];
-    removedState.splice(parseInt(targetStep.name), 1);
-    this.setState({
-      'instructions': removedState
-      });
-  }
 
   addSteps() {
-    let newStep = {id: null, body: "", type: 'step'};
-    this.setState({'instructions': this.state['instructions'].concat(newStep)});
+    let newStep = { id: null, body: "" };
+    this.setState({'steps': this.state['steps'].concat(newStep)});
+    this.putStepOnPage(newStep);
+  }
 
-    const targetNode = document.getElementById('instructions');
+  putStepOnPage(step, idx) {
+    const targetNode = document.getElementById('steps');
     let newForm = document.createElement('textarea');
     newForm.placeholder = 'Step text';
-    newForm.name = this.state.instructions.length;
+    newForm.name = idx;
+    newForm.value = step.body;
 
-    newForm.addEventListener('input', this.instructionSetHandler);
+    newForm.addEventListener('input', this.stepSetHandler);
 
     let deleteButton = document.createElement('button');
     deleteButton.innerHTML = "X";
 
-    deleteButton.addEventListener('click', this.instructionDeleteHandler);
+    deleteButton.addEventListener('click', this.stepDeleteHandler);
 
     targetNode.appendChild(newForm);
     targetNode.appendChild(deleteButton);
   }
 
   componentWillUpdate() {
-    let parent = document.getElementById('instructions');
-    let instructions = Array.from(parent.children).filter((node) => node.nodeName !== 'BUTTON');
-    instructions.forEach((item, idx) => {
+    let parent = document.getElementById('steps');
+    let steps = Array.from(parent.children).filter((node) => node.nodeName !== 'BUTTON');
+    steps.forEach((item, idx) => {
       item.name = idx;
     });
   }
 
-  addFile(file, type) {
-    let newFile = {id: null, url: file.url, type: type};
-    this.setState({'instructions': this.state['instructions'].concat(newFile)});
-    const targetNode = document.getElementById('instructions');
+  addFile(file) {
+    let newFile = {id: null, body: file.url };
+    this.setState({'steps': this.state['steps'].concat(newFile)});
+    const targetNode = document.getElementById('steps');
     let imageTag = document.createElement('img');
     imageTag.src = file.thumbnail_url;
 
     let deleteButton = document.createElement('button');
     deleteButton.innerHTML = "X";
-    deleteButton.addEventListener('click', this.instructionDeleteHandler);
+    deleteButton.addEventListener('click', this.stepDeleteHandler);
 
     targetNode.appendChild(imageTag);
     targetNode.appendChild(deleteButton);
@@ -109,18 +129,8 @@ class RecipeForm extends React.Component {
     if (error === null) {
       let files = Array.from(result);
       files.forEach((file) => {
-        if (file.resource_type === 'image') {
-          this.addFile(file, 'image');
-        } else if (file.resource_type === 'video') {
-          this.addFile(file, 'video');
-        } else {
-          this.props.receiveErrors({
-            instruction: ["Invalid file type."]});
-        }
+        this.addFile(file);
       });
-    } else {
-      this.props.receiveErrors({
-        instruction: ["Uploading went wrong. Please try again."]});
     }
   }
 
@@ -130,29 +140,39 @@ class RecipeForm extends React.Component {
     );
   }
 
+  componentDidMount() {
+    this.props.recipe.steps.forEach((s, idx) => {
+      let oldStep = { id: s.id, body: s.body };
+      this.putStepOnPage(oldStep, idx);
+    });
+  }
+
+
   render() {
     return (
       <div className='recipe-form-container'>
         <form className='recipe-form' onSubmit={this.handleSubmit.bind(this)}>
           <input placeholder='Title'
             type='text' name='title'
+            value={this.state.title}
             onChange={ this.handleInput }/>
 
           <textarea placeholder='Ingredients'
             name='ingredients'
+            value={this.state.ingredients}
             onChange={ this.handleInput }></textarea>
 
           <textarea placeholder='Description'
             name='description'
+            value={this.state.description}
             onChange={ this.handleInput }></textarea>
 
-          <select name='category_id' onChange={ this.handleInput }>
+          <select name='category_id' onChange={ this.handleInput } value={this.state.category_id}>
             <option selected disabled>Select Category</option>
             { this.options() }
           </select>
 
-          <div id='instructions'>
-
+          <div id='steps'>
           </div>
           <button>{this.props.recipe.id ? "Update Recipe": "New Recipe"}</button>
         </form>

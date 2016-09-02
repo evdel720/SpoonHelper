@@ -9,7 +9,7 @@ const defaultState = {
     ingredients: undefined,
     description: undefined,
     category_id: undefined,
-    instructions: [],
+    steps: [],
     user: undefined
   }
 };

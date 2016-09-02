@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   receiveErrors: (errors) => dispatch(receiveErrors(errors)),
   createRecipe: (data) => dispatch(createRecipe(data)),
-  updateRecipe: (data) => dispatch(updateRecipe(data))
+  updateRecipe: (rId, recipe) => dispatch(updateRecipe(rId, recipe))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeForm);

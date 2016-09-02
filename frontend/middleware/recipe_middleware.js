@@ -1,4 +1,4 @@
-import { RecipeConstants, receiveCategoryRecipes, receiveSingleRecipe, clearSingleRecipe } from '../actions/recipe_actions.js';
+import { RecipeConstants, requestSingleRecipe, receiveCategoryRecipes, receiveSingleRecipe, clearSingleRecipe } from '../actions/recipe_actions.js';
 import { receiveErrors, clearErrors } from '../actions/error_actions.js';
 import * as RecipeUtil from '../util/recipe_api_util.js';
 import { hashHistory } from 'react-router';
@@ -35,9 +35,12 @@ const RecipeMiddleware = (store) => (next) => (action) => {
       RecipeUtil.createRecipe(action.recipe, fetchSingleSuccess, errorCallback);
       break;
     case RecipeConstants.UPDATE_RECIPE:
-      console.log("update fired");
-      console.log(action.recipe);
-      RecipeUtil.updateRecipe(action.recipe, fetchSingleSuccess, errorCallback);
+      RecipeUtil.updateRecipe(
+        action.rId,
+        action.recipe,
+        fetchSingleSuccess,
+        errorCallback
+      );
       break;
     default:
       return next(action);

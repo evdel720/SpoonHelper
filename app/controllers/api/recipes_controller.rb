@@ -14,39 +14,14 @@ class Api::RecipesController < ApplicationController
   end
 
   def show
-    @instructions = @recipe.images
-    @instructions += @recipe.videos
-    @instructions += @recipe.steps
-
     render :show
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-    instruction = params[:instructions] || []
+    @recipe = Recipe.new(steps_added_params)
     @recipe.user_id = current_user.id
-    @instructions = []
-    instruction.each do |k, v|
-      case v['type']
-      when 'step'
-        @instructions << Step.new(body: v['body'], order: k) if v['body'].length > 0
-      when 'image'
-        @instructions << Image.new(url: v['url'], order: k)
-      when 'video'
-        @instructions << Video.new(url: v['url'], order: k)
-      end
-    end
-
 
     if @recipe.save
-      @instructions.each do |ins|
-        if ins.class == Image
-          ins.imageable = @recipe
-        else
-          ins.recipe = @recipe
-        end
-        ins.save
-      end
       render :show
     else
       @errors = @recipe.errors
@@ -55,8 +30,7 @@ class Api::RecipesController < ApplicationController
   end
 
   def update
-    instructions = params[:instructions] || []
-    if @recipe.update(recipe_params)
+    if @recipe.update(steps_added_params)
       render :show
     else
       render '/api/errors', status: 400
@@ -75,7 +49,28 @@ class Api::RecipesController < ApplicationController
     render json: 'Invalid recipe id', status: 404 unless @recipe
   end
 
+  def steps_added_params
+    temp = recipe_params
+    temp['steps_attributes'] = temp['steps'].values
+    temp.delete('steps')
+    temp
+  end
+
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :ingredients, :category_id)
+    params.require(:recipe).permit(:title, :description, :ingredients, :category_id, steps: [:id, :body, :order, :_destroy])
   end
 end
+
+#
+# params = {recipe: {
+#   title: "handleSubmit",
+#   description: "handleSubmithandleSubmit",
+#   ingredients: "handleSubmithandleSubmit",
+#   user_id: 1,
+#   category_id: 2,
+#   steps_attributes: [{
+#     id: 163, body: "new first step", order: 0 },
+#   { id: 164, _destroy: '1'},
+#   { id: 165, body: "new second step", order: 2 },
+#   { id: 166, body: "new third step", order: 3 }]
+# }}

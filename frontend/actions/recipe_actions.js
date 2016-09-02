@@ -23,8 +23,9 @@ export const receiveRecipes = (recipes) => ({
   recipes
 });
 
-export const requestSingleRecipe = () => ({
-  type: RecipeConstants.RECEIVE_SINGLE_RECIPE
+export const requestSingleRecipe = (rId) => ({
+  type: RecipeConstants.RECEIVE_SINGLE_RECIPE,
+  rId
 });
 
 export const receiveSingleRecipe = (recipe) => ({
@@ -37,8 +38,9 @@ export const createRecipe = (recipe) => ({
   recipe
 });
 
-export const updateRecipe = (recipe) => ({
+export const updateRecipe = (rId, recipe) => ({
   type: RecipeConstants.UPDATE_RECIPE,
+  rId,
   recipe
 });
 
