@@ -1,6 +1,5 @@
 import React from 'react';
 import { categoryIdTitleSelector } from '../../util/category_helper.js';
-import merge from 'lodash/merge';
 import * as RecipeHelper from '../../util/recipe_helper.js';
 
 class RecipeForm extends React.Component {
@@ -81,46 +80,18 @@ class RecipeForm extends React.Component {
   addSteps() {
     let newStep = { id: null, body: "0" };
     this.setState({'steps': this.state['steps'].concat(newStep)});
-    // this.putStepOnPage(newStep);
     RecipeHelper.putStepOnPage(newStep, this.stepDeleteHandler, this.stepSetHandler);
   }
 
-  // putStepOnPage(step, idx) {
-  //   const targetNode = document.getElementById('steps');
-  //   let newForm = document.createElement('textarea');
-  //   newForm.placeholder = 'Step text';
-  //   newForm.name = idx;
-  //   newForm.value = step.body.slice(1);
-  //
-  //   newForm.addEventListener('input', this.stepSetHandler);
-  //
-  //   let deleteButton = document.createElement('button');
-  //   deleteButton.innerHTML = "X";
-  //
-  //   deleteButton.addEventListener('click', this.stepDeleteHandler);
-  //
-  //   targetNode.appendChild(newForm);
-  //   targetNode.appendChild(deleteButton);
-  // }
-
   componentWillUpdate() {
     RecipeHelper.reorderSteps();
+    this.allowSubmit();
   }
 
   addFile(file) {
     let newFile = {id: null, body: "1" + file.url };
     this.setState({'steps': this.state['steps'].concat(newFile)});
     RecipeHelper.putStepOnPage(newFile, this.stepDeleteHandler, null, this.state.steps.length - 1);
-    // const targetNode = document.getElementById('steps');
-    // let imageTag = document.createElement('img');
-    // imageTag.src = file.thumbnail_url;
-    //
-    // let deleteButton = document.createElement('button');
-    // deleteButton.innerHTML = "X";
-    // deleteButton.addEventListener('click', this.stepDeleteHandler);
-    //
-    // targetNode.appendChild(imageTag);
-    // targetNode.appendChild(deleteButton);
   }
 
   handleFiles(error, result) {
@@ -145,6 +116,15 @@ class RecipeForm extends React.Component {
     });
   }
 
+  allowSubmit() {
+    let submitButton = document.getElementById('submit-btn');
+    if (this.props.currentUser && this.state.steps.length > 0) {
+      submitButton.disabled = false;
+    } else {
+      submitButton.disabled = true;
+    }
+  }
+
   render() {
     return (
       <div className='recipe-form-container'>
@@ -164,7 +144,7 @@ class RecipeForm extends React.Component {
             onChange={ this.handleInput }/>
 
           <input placeholder="Cook Time" type='number'
-            value={this.state.prep_time} name='cook_time'
+            value={this.state.cook_time} name='cook_time'
             onChange={ this.handleInput }/>
 
           <textarea placeholder='Ingredients'
@@ -179,7 +159,9 @@ class RecipeForm extends React.Component {
 
           <div id='steps'>
           </div>
-          <button>{this.props.recipe.id ? "Update Recipe": "New Recipe"}</button>
+          <button id='submit-btn' disabled="true">
+            {this.props.recipe.id ? "Update Recipe": "New Recipe"}
+          </button>
         </form>
 
         <button
@@ -194,3 +176,33 @@ class RecipeForm extends React.Component {
 }
 
 export default RecipeForm;
+
+// const targetNode = document.getElementById('steps');
+// let imageTag = document.createElement('img');
+// imageTag.src = file.thumbnail_url;
+//
+// let deleteButton = document.createElement('button');
+// deleteButton.innerHTML = "X";
+// deleteButton.addEventListener('click', this.stepDeleteHandler);
+//
+// targetNode.appendChild(imageTag);
+// targetNode.appendChild(deleteButton);
+
+
+  // putStepOnPage(step, idx) {
+  //   const targetNode = document.getElementById('steps');
+  //   let newForm = document.createElement('textarea');
+  //   newForm.placeholder = 'Step text';
+  //   newForm.name = idx;
+  //   newForm.value = step.body.slice(1);
+  //
+  //   newForm.addEventListener('input', this.stepSetHandler);
+  //
+  //   let deleteButton = document.createElement('button');
+  //   deleteButton.innerHTML = "X";
+  //
+  //   deleteButton.addEventListener('click', this.stepDeleteHandler);
+  //
+  //   targetNode.appendChild(newForm);
+  //   targetNode.appendChild(deleteButton);
+  // }

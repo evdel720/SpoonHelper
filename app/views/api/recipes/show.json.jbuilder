@@ -9,6 +9,6 @@ json.cook_time @recipe.cook_time
 
 steps = @recipe.steps
 
-steps.sort_by! { |s| s['order'] }
+steps = steps.sort_by { |s| s['order'] }
 
 json.steps steps, :id, :body, :order

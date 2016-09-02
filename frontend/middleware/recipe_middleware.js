@@ -10,6 +10,7 @@ const RecipeMiddleware = (store) => (next) => (action) => {
 
   const fetchSingleSuccess = (recipe) => {
     store.dispatch(receiveSingleRecipe(recipe));
+    hashHistory.push(`/${recipe.id}`);
   };
 
   const destroySuccess = () => {
