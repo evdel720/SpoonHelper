@@ -5,12 +5,15 @@ class RecipeIndex extends React.Component {
   componentReceiveProps() {
     this.render();
   }
+
   render() {
     const { categoryTitle, sortedBy, items } = this.props;
     let itemList = "";
     if (items) {
       itemList = Object.keys(items).map((i, k) => {
-        return <RecipeIndexItem key={k} item= { items[i] } />;
+        return <RecipeIndexItem key={k}
+          item= { items[i] }
+          requestSingleRecipe={ this.props.requestSingleRecipe } />;
         }
       );
     }

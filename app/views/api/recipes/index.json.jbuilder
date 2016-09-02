@@ -4,7 +4,8 @@ json.sorted_by @sorted_by
 items = {}
 
 @recipes.each do |recipe|
-  data = { title: recipe.title, user: recipe.user.email }
+  images = recipe.steps.select { |s| s['body'].start_with?('1') }
+  data = { id: recipe.id, title: recipe.title, user: recipe.user.email, rep_image: images.last['body'] }
   items[recipe.id] = data
 end
 
