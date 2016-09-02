@@ -6,6 +6,8 @@ class CreateRecipes < ActiveRecord::Migration
       t.text :ingredients, null: false
       t.integer :user_id, null: false, index: true
       t.integer :category_id, null: false, index: true
+      t.integer :prep_time, null: false
+      t.integer :cook_time, null: false
 
       t.timestamps null: false
     end

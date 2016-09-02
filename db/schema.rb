@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20160831163705) do
     t.text     "ingredients", null: false
     t.integer  "user_id",     null: false
     t.integer  "category_id", null: false
+    t.integer  "prep_time",   null: false
+    t.integer  "cook_time",   null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -67,15 +69,5 @@ ActiveRecord::Schema.define(version: 20160831163705) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
-
-  create_table "videos", force: :cascade do |t|
-    t.string   "url",        null: false
-    t.integer  "order"
-    t.integer  "recipe_id",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "videos", ["recipe_id"], name: "index_videos_on_recipe_id", using: :btree
 
 end

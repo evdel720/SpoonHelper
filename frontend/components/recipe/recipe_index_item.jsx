@@ -12,6 +12,7 @@ const RecipeIndexItem = ({ item, requestSingleRecipe, router }) => {
       <img src={ item.rep_image.slice(1) } style={{width: '400px', height: '300px'}}/>
       <h4>{item.title}</h4>
       <p>{ item.user }</p>
+      <p>{ item.total_cooking } mins</p>
     </li>
   );
 };

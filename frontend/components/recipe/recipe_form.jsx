@@ -6,12 +6,15 @@ import * as RecipeHelper from '../../util/recipe_helper.js';
 class RecipeForm extends React.Component {
   constructor(props) {
     super(props);
+    const {title, ingredients, description, prep_time, cook_time, category_id, steps } = this.props.recipe;
     this.state = {
-      title: this.props.recipe.title,
-      ingredients: this.props.recipe.ingredients,
-      description: this.props.recipe.description,
-      category_id: this.props.recipe.category_id,
-      steps: this.props.recipe.steps || [],
+      title: title,
+      ingredients: ingredients,
+      description: description,
+      prep_time: prep_time,
+      cook_time: cook_time,
+      category_id: category_id,
+      steps: steps || [],
       stepsToBeDeleted: []
     };
     this.handleInput = this.handleInput.bind(this);
@@ -151,14 +154,22 @@ class RecipeForm extends React.Component {
             value={this.state.title}
             onChange={ this.handleInput }/>
 
-          <textarea placeholder='Ingredients'
-            name='ingredients'
-            value={this.state.ingredients}
-            onChange={ this.handleInput }></textarea>
-
           <textarea placeholder='Description'
             name='description'
             value={this.state.description}
+            onChange={ this.handleInput }></textarea>
+
+          <input placeholder="Prep Time" type='number'
+            value={this.state.prep_time} name='prep_time'
+            onChange={ this.handleInput }/>
+
+          <input placeholder="Cook Time" type='number'
+            value={this.state.prep_time} name='cook_time'
+            onChange={ this.handleInput }/>
+
+          <textarea placeholder='Ingredients'
+            name='ingredients'
+            value={this.state.ingredients}
             onChange={ this.handleInput }></textarea>
 
           <select name='category_id' onChange={ this.handleInput } value={this.state.category_id}>

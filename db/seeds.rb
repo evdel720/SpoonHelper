@@ -74,6 +74,8 @@ Recipe.delete_all
 #   ingredients: ,
 #   user_id: ,
 #   category_id: ,
+#   prep_time: ,
+#   cook_time: ,
 #   steps_attributes: [{
 #     body: ,
 #     order:
@@ -95,6 +97,8 @@ Recipe.create!(
   ingredients: '1 cup packed brown sugar, 1/3 cup butter- melted, 2 tablespoons light corn syrup, 1/3 cup chopped pecans, 12 (3/4 inch thick) slices French bread, 1 teaspoon grated orange zest, 1 cup fresh orange juice, 1/2 cup 2% milk, 3 tablespoons white sugar, 1 teaspoon ground cinnamon, 1 teaspoon vanilla extract, 3 egg whites, 2 eggs, 1 tablespoon confectioners\' sugar for dusting',
   user_id: 1,
   category_id: 1,
+  prep_time: 20,
+  cook_time: 35,
   steps_attributes: [
     {
     body: '0In a small bowl, stir together the brown sugar, melted butter, and corn syrup. Pour into a greased 9x13 inch baking dish, and spread evenly. Sprinkle pecans over the sugar mixture. Arrange the bread slices in the bottom of the dish so they are in a snug single layer.',
@@ -113,7 +117,7 @@ Recipe.create!(
     order: 3
   },
   {
-    body: '1http://images.media-allrecipes.com/userphotos/600x600/19427.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1472849746/1_c4ohzr.jpg',
     order: 4
   }]
 )
@@ -125,13 +129,15 @@ Recipe.create!(
   ingredients: '1 (.25 ounce) package active dry yeast, 1/4 cup warm milk (110 degrees F/45 degrees C), 3 egg yolks, 2 3/4 cups warm milk (110 degrees F/45 degrees C), 3/4 cup butter, melted and cooled to lukewarm, 1/2 cup white sugar, 1 1/2 teaspoons salt, 2 teaspoons vanilla extract, 4 cups all-purpose flour, 3 egg whites',
   user_id: 2,
   category_id: 1,
+  prep_time: 15,
+  cook_time: 20,
   steps_attributes: [
     {
     body: '0In a small bowl, dissolve yeast in 1/4 cup warm milk. Let stand until creamy, about 10 minutes.',
     order: 0
   },
   {
-    body: '1http://images.media-allrecipes.com/userphotos/250x250/848278.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1472849864/4_aovzeu.jpg',
     order: 1
   },
   {
@@ -147,7 +153,7 @@ Recipe.create!(
     order: 4
   },
   {
-    body: '1http://images.media-allrecipes.com/userphotos/600x600/29609.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1472849746/2_qpd1yx.jpg',
     order: 5
   }]
 )
@@ -161,13 +167,15 @@ Recipe.create!(
   ingredients: '1 1/2 cups all-purpose flour, 3 1/2 teaspoons baking powder, 1 teaspoon salt, 1 tablespoon white sugar, 1 1/4 cups milk, 1 egg, 3 tablespoons butter, melted',
   user_id: 3,
   category_id: 1,
+  prep_time: 5,
+  cook_time: 15,
   steps_attributes: [
     {
     body: '0In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
     order: 0
   },
   {
-    body: '1http://images.media-allrecipes.com/userphotos/600x600/3766005.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1472849971/5_zhwpnx.jpg',
     order: 2
   },
   {
@@ -175,7 +183,7 @@ Recipe.create!(
     order: 1
   },
   {
-    body: '1http://images.media-allrecipes.com/userphotos/600x600/2249254.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1472849746/3_asx6om.jpg',
     order: 3
   }
   ]
