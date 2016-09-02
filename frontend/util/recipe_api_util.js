@@ -1,12 +1,3 @@
-export const fetchAllRecipes = (success) => {
-  $.ajax({
-    url: '/api/recipes',
-    type: "GET",
-    success,
-    error: (resp) => {console.log(resp);}
-  });
-};
-
 export const fetchCategoryRecipes = (cId, success) => {
   $.ajax({
     url: '/api/recipes.json',

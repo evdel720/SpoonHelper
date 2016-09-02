@@ -1,5 +1,5 @@
 export const RecipeConstants = {
-  REQUEST_RECIPES: "REQUEST_RECIPES",
+  REQUEST_CATEGORY_RECIPES: "REQUEST_CATEGORY_RECIPES",
   RECEIVE_RECIPES: "RECEIVE_RECIPES",
   REQUEST_SINGLIE_RECIPE: "REQUEST_SINGLIE_RECIPE",
   RECEIVE_SINGLE_RECIPE: "RECEIVE_SINGLE_RECIPE",
@@ -13,9 +13,9 @@ export const clearSingleRecipe = () => ({
   type: RecipeConstants.CLEAR_SINGLE_RECIPE
 });
 
-export const requestCategoryRecipes = (categoryId) => ({
-  type: RecipeConstants.REQUEST_RECIPES,
-  categoryId
+export const requestCategoryRecipes = (cId) => ({
+  type: RecipeConstants.REQUEST_CATEGORY_RECIPES,
+  cId
 });
 
 export const receiveRecipes = (recipes) => ({

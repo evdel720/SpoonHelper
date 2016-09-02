@@ -1,5 +1,5 @@
 json.category @category
-json.sorted_by = @sorted_by
+json.sorted_by @sorted_by
 
 items = {}
 

@@ -6,6 +6,7 @@ import SignInFormContainer from './session/sign_in_form_container.js';
 import { clearErrors } from '../actions/error_actions.js';
 import { requestCategories } from '../actions/category_actions.js';
 import RecipeFormContainer from '../components/recipe/recipe_form_container.js';
+import RecipeIndexContainer from '../components/recipe/recipe_index_container.js';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -52,6 +53,7 @@ class AppRouter extends React.Component{
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />
           <Route path="new_recipe" component={ RecipeFormContainer }/>
+          <Route path=":categoryTitle" component={ RecipeIndexContainer }/>
         </Route>
       </Router>
     );
