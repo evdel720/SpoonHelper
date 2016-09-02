@@ -17,6 +17,7 @@ class RecipeIndex extends React.Component {
         }
       );
     }
+    
     return (
       <div className="recipe_index">
         <div>{categoryTitle}</div>
