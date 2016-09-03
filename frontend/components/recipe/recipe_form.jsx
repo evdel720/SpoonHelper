@@ -1,6 +1,7 @@
 import React from 'react';
 import { categoryIdTitleSelector } from '../../util/category_helper.js';
 import * as RecipeHelper from '../../util/recipe_helper.js';
+import { withRouter } from 'react-router';
 
 class RecipeForm extends React.Component {
   constructor(props) {
@@ -174,7 +175,7 @@ class RecipeForm extends React.Component {
   }
 }
 
-export default RecipeForm;
+export default withRouter(RecipeForm);
 
 // const targetNode = document.getElementById('steps');
 // let imageTag = document.createElement('img');
