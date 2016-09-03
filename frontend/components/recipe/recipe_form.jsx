@@ -36,7 +36,7 @@ class RecipeForm extends React.Component {
     if (this.props.recipe.id) {
       this.props.updateRecipe(
         this.props.recipe.id,
-        RecipeHelper.updateState);
+        RecipeHelper.updateState(this.state));
     } else {
       this.props.createRecipe({
         recipe: this.state

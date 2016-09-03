@@ -14,7 +14,7 @@ class SignInForm extends React.Component {
 
   componentWillReceiveProps(props) {
     if (props.signedIn) {
-      props.router.push("/");
+      this.props.router.push('/');
     } else if (props.errors) {
       errorGenerator(props.errors);
     }

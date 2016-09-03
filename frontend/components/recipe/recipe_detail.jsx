@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 
 class RecipeDetail extends React.Component{
   editHandler() {
-
+    this.props.router.push(`/edit_recipe`);
   }
 
   deleteHandler() {
@@ -19,7 +19,7 @@ class RecipeDetail extends React.Component{
     if (currentUser && user && currentUser.id === user.id) {
       return (
         <div className='author-buttons'>
-          <button>Edit</button>
+          <button onClick={this.editHandler.bind(this)}>Edit</button>
           <button onClick={this.deleteHandler.bind(this)}>Delete</button>
         </div>
       );

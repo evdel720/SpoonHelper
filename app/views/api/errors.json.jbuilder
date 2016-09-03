@@ -1,4 +1,4 @@
 @errors.keys.each do |key|
-  errors = @errors[key].map { |m| [key.capitalize, m].join(' ') }
+  errors = @errors[key].map { |m| [key.to_s.gsub('_', ' ').capitalize, m].join(' ') }
   json.set! key, errors
 end

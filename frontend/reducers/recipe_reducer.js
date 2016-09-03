@@ -18,7 +18,8 @@ const RecipeReducer = (state=defaultState, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RecipeConstants.RECEIVE_RECIPES:
-      return merge({}, state, {index: action.recipes});
+      newState.index = action.recipes;
+      return newState;
     case RecipeConstants.RECEIVE_SINGLE_RECIPE:
       newState.detail = action.recipe;
       return newState;

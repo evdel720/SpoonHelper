@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  validates :title, :description, :ingredients, :user_id, :category_id, presence: true
+  validates :title, :prep_time, :cook_time, :description, :ingredients, :user_id, :category, presence: true
   validates :ingredients, :description, length: { minimum: 10 }
   has_many :images, as: :imageable, dependent: :destroy
   has_many :steps, dependent: :destroy
