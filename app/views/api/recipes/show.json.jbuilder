@@ -2,8 +2,8 @@ json.id @recipe.id
 json.title @recipe.title
 json.description @recipe.description
 json.ingredients @recipe.ingredients
-json.user @recipe.user
-json.category_id @recipe.category.id
+json.user @recipe.user, :id, :email, :bio
+json.category @recipe.category, :id, :title
 json.prep_time @recipe.prep_time
 json.cook_time @recipe.cook_time
 

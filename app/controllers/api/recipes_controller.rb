@@ -39,7 +39,7 @@ class Api::RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    render {}
+    render json: {}
   end
 
   private

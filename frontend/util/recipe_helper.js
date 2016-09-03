@@ -17,7 +17,7 @@ export const reorderSteps = () => {
 };
 
 
-export const putStepOnPage = (step, deleteHandler, setHandler, idx) => {
+export const putStepOnForm = (step, deleteHandler, setHandler, idx) => {
   const targetNode = document.getElementById('steps');
   let newForm;
   if (step.body[0] === '0') {

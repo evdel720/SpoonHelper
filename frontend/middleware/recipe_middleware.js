@@ -10,12 +10,10 @@ const RecipeMiddleware = (store) => (next) => (action) => {
 
   const fetchSingleSuccess = (recipe) => {
     store.dispatch(receiveSingleRecipe(recipe));
-    hashHistory.push(`/${recipe.id}`);
   };
 
   const destroySuccess = () => {
     store.dispatch(clearSingleRecipe());
-    hashHistory.push('/');
   };
 
   const errorCallback = (errors) => {
@@ -24,7 +22,7 @@ const RecipeMiddleware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case RecipeConstants.DESTROY_RECIPE:
-      RecipeUtil.deleteRecipe(destroySuccess);
+      RecipeUtil.deleteRecipe(action.rId, destroySuccess);
       break;
     case RecipeConstants.REQUEST_CATEGORY_RECIPES:
       RecipeUtil.fetchCategoryRecipes(action.cId, fetchCategorySuccess);

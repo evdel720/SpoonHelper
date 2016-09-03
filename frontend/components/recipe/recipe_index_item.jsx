@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 
 const RecipeIndexItem = ({ item, requestSingleRecipe, router }) => {
   const goToDetail = () => {
-    requestSingleRecipe(item.id);
     router.push(`/recipes/${item.id}`);
   };
 

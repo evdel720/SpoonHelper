@@ -5,14 +5,14 @@ import * as RecipeHelper from '../../util/recipe_helper.js';
 class RecipeForm extends React.Component {
   constructor(props) {
     super(props);
-    const {title, ingredients, description, prep_time, cook_time, category_id, steps } = this.props.recipe;
+    const { title, ingredients, description, prep_time, cook_time, category, steps } = this.props.recipe;
     this.state = {
-      title: title,
-      ingredients: ingredients,
-      description: description,
-      prep_time: prep_time,
-      cook_time: cook_time,
-      category_id: category_id,
+      title: title || "",
+      ingredients: ingredients || "",
+      description: description || "",
+      prep_time: prep_time || "",
+      cook_time: cook_time || "",
+      category_id: category ? category.id : undefined,
       steps: steps || [],
       stepsToBeDeleted: []
     };
@@ -80,18 +80,17 @@ class RecipeForm extends React.Component {
   addSteps() {
     let newStep = { id: null, body: "0" };
     this.setState({'steps': this.state['steps'].concat(newStep)});
-    RecipeHelper.putStepOnPage(newStep, this.stepDeleteHandler, this.stepSetHandler);
+    RecipeHelper.putStepOnForm(newStep, this.stepDeleteHandler, this.stepSetHandler);
   }
 
   componentWillUpdate() {
     RecipeHelper.reorderSteps();
-    this.allowSubmit();
   }
 
   addFile(file) {
     let newFile = {id: null, body: "1" + file.url };
     this.setState({'steps': this.state['steps'].concat(newFile)});
-    RecipeHelper.putStepOnPage(newFile, this.stepDeleteHandler, null, this.state.steps.length - 1);
+    RecipeHelper.putStepOnForm(newFile, this.stepDeleteHandler, null, this.state.steps.length - 1);
   }
 
   handleFiles(error, result) {
@@ -112,13 +111,13 @@ class RecipeForm extends React.Component {
   componentDidMount() {
     this.props.recipe.steps.forEach((s, idx) => {
       let oldStep = { id: s.id, body: s.body };
-      RecipeHelper.putStepOnPage(oldStep, this.stepDeleteHandler, null, idx);
+      RecipeHelper.putStepOnForm(oldStep, this.stepDeleteHandler, null, idx);
     });
   }
 
-  allowSubmit() {
+  componentDidUpdate() {
     let submitButton = document.getElementById('submit-btn');
-    if (this.props.currentUser && this.state.steps.length > 0) {
+    if (this.state.steps.length > 0) {
       submitButton.disabled = false;
     } else {
       submitButton.disabled = true;
@@ -189,7 +188,7 @@ export default RecipeForm;
 // targetNode.appendChild(deleteButton);
 
 
-  // putStepOnPage(step, idx) {
+  // putStepOnForm(step, idx) {
   //   const targetNode = document.getElementById('steps');
   //   let newForm = document.createElement('textarea');
   //   newForm.placeholder = 'Step text';

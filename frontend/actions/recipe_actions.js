@@ -6,8 +6,13 @@ export const RecipeConstants = {
   CREATE_RECIPE: "CREATE_RECIPE",
   UPDATE_RECIPE: "UPDATE_RECIPE",
   DESTROY_RECIPE: "DESTROY_RECIPE",
-  CLEAR_SINGLE_RECIPE: "CLEAR_SINGLE_RECIPE"
+  CLEAR_SINGLE_RECIPE: "CLEAR_SINGLE_RECIPE",
+  CLEAR_RECIPE_INDEX: "CLEAR_RECIPE_INDEX"
 };
+
+export const clearRecipeIndex = () => ({
+  type: RecipeConstants.CLEAR_RECIPE_INDEX
+});
 
 export const clearSingleRecipe = () => ({
   type: RecipeConstants.CLEAR_SINGLE_RECIPE
@@ -24,7 +29,7 @@ export const receiveRecipes = (recipes) => ({
 });
 
 export const requestSingleRecipe = (rId) => ({
-  type: RecipeConstants.RECEIVE_SINGLE_RECIPE,
+  type: RecipeConstants.REQUEST_SINGLIE_RECIPE,
   rId
 });
 
@@ -44,7 +49,7 @@ export const updateRecipe = (rId, recipe) => ({
   recipe
 });
 
-export const destroyRecipe = (recipeId) => ({
+export const destroyRecipe = (rId) => ({
   type: RecipeConstants.DESTROY_RECIPE,
-  recipeId
+  rId
 });
