@@ -19,8 +19,8 @@ class RecipeDetail extends React.Component{
     if (currentUser && user && currentUser.id === user.id) {
       return (
         <div className='author-buttons'>
-          <button onClick={this.editHandler.bind(this)}>Edit</button>
-          <button onClick={this.deleteHandler.bind(this)}>Delete</button>
+          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937348/edit_qdlixp.png" onClick={this.editHandler.bind(this)}/>
+          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937356/delete_pmccwp.png" onClick={this.deleteHandler.bind(this)}/>
         </div>
       );
     }
@@ -29,9 +29,9 @@ class RecipeDetail extends React.Component{
 
   putEachStepOnPage(step) {
     if (step.body[0] === '0') {
-      return <li key={step.id} className='step-item'>{ step.body.slice(1) }</li>;
+      return <li key={step.id} className='step-text'>{ step.body.slice(1) }</li>;
     } else if (step.body[0] === '1') {
-      return <img key={step.id} className='step-item' src={ step.body.slice(1) } style={{width: '300px', height: '200px'}}/>;
+      return <img key={step.id} className='step-img' src={ step.body.slice(1) }/>;
     }
   }
 
@@ -41,23 +41,46 @@ class RecipeDetail extends React.Component{
     }
   }
 
+  ingredientsHelper(ingredients) {
+    return ingredients.split(", ").map((i, idx) => {
+      return <li key={idx} className='ingredient'>{ i }</li>;
+    });
+  }
+
   render() {
     const { title, user, description, ingredients,
       category, prep_time, cook_time, steps } = this.props.recipe;
 
     return (
       <div className="recipe-detail">
-        <h1>{title}</h1>
-        <h3>Uploaded by {user ? user.email : ""}</h3>
-        { this.forAuthor() }
-        <h3>Description : {description}</h3>
-        <h3>Ingredients : {ingredients}</h3>
-        <h3>Category : {category ? category.title : ""}</h3>
-        <h3>Prep Time : {prep_time} mins</h3>
-        <h3>Cook Time : {cook_time} mins</h3>
-        <ol id='steps'>
-          { this.putSteps(steps) }
-        </ol>
+        <h1 className="detail-title">{title}</h1>
+        <h4 className="detail-user">Uploaded by {user ? user.email : ""}
+          { this.forAuthor() }
+        </h4>
+        <div className='time'>
+          <h5>Prep {prep_time} mins</h5>
+          <h5>Cook {cook_time} mins</h5>
+        </div>
+
+        <label>Category
+          <p>{category ? category.title : ""}</p>
+        </label>
+
+        <label>Description
+          <p>{description}</p>
+        </label>
+
+        <label>Ingredients
+          <ul className="ingredient-list">
+            {ingredients ? this.ingredientsHelper(ingredients) : ""}
+          </ul>
+        </label>
+
+        <label>Steps
+          <ol id='steps-list'>
+            { this.putSteps(steps) }
+          </ol>
+        </label>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .home {
@@ -26,7 +26,7 @@ body {
 a.side-link {
   color: #35c33f;
   display: inline-block;
-  font-size: 15px;
+  font-size: 18px;
   padding-left: 10px;
   padding-right: 10px;
   text-decoration: none;

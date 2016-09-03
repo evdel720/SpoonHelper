@@ -94,7 +94,7 @@ Recipe.delete_all
 Recipe.create!(
   title: 'Orange Pecan French Toast',
   description: 'My husband and I were vacationing recently and had this lovely French toast at a bed and breakfast. When we came back home, I kept missing it so I called them up and requested it. They actually gave me the recipe over the phone! I generally halve the recipe for my husband and I, and bake it in an 8 inch square pan. Reheats well in the toaster oven. I served it to my in-laws recently and they loved it. Serve with a little sweetened whipped cream and berries!',
-  ingredients: '1 cup packed brown sugar, 1/3 cup butter- melted, 2 tablespoons light corn syrup, 1/3 cup chopped pecans, 12 (3/4 inch thick) slices French bread, 1 teaspoon grated orange zest, 1 cup fresh orange juice, 1/2 cup 2% milk, 3 tablespoons white sugar, 1 teaspoon ground cinnamon, 1 teaspoon vanilla extract, 3 egg whites, 2 eggs, 1 tablespoon confectioners\' sugar for dusting',
+  ingredients: '1 cup packed brown sugar, 1/3 cup butter- melted, 2 tablespoons corn syrup, 1/3 cup chopped pecans, 12 (3/4 inch thick) slices French bread, 1 teaspoon grated orange zest, 1 cup fresh orange juice, 1/2 cup 2% milk, 3 tablespoons white sugar, 1 teaspoon ground cinnamon, 1 teaspoon vanilla extract, 3 egg whites, 2 eggs, 1 tablespoon confectioners\' sugar for dusting',
   user_id: 1,
   category_id: 1,
   prep_time: 20,
@@ -164,7 +164,7 @@ Recipe.create!(
 Recipe.create!(
   title: 'Good Old Fashioned Pancakes',
   description: 'This is a great recipe that I found in my Grandma\'s recipe book. Judging from the weathered look of this recipe card, this was a family favorite.',
-  ingredients: '1 1/2 cups all-purpose flour, 3 1/2 teaspoons baking powder, 1 teaspoon salt, 1 tablespoon white sugar, 1 1/4 cups milk, 1 egg, 3 tablespoons butter, melted',
+  ingredients: '1 1/2 cups all-purpose flour, 3 1/2 teaspoons baking powder, 1 teaspoon salt, 1 tablespoon white sugar, 1 1/4 cups milk, 1 egg, 3 tablespoons melted butter',
   user_id: 3,
   category_id: 1,
   prep_time: 5,
