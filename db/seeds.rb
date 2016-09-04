@@ -9,7 +9,6 @@ User.delete_all
 end
 
 User.create!(username: 'Guest', password: 'guestpassword')
-
 Category.delete_all
 
 breakfast = Category.create!(title: 'Breakfast')
@@ -19,27 +18,27 @@ vegetarian = Category.create!(title: 'Vegetarian Dish')
 meat = Category.create!(title: 'Meat Dish')
 seafood = Category.create!(title: 'Seafood Dish')
 
-seafood_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472947427/seafood_n15nbl.jpg', order: 0)
+seafood_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472947427/seafood_n15nbl.jpg')
 seafood_img.imageable = seafood
 seafood_img.save!
 
-appetizer_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/Appetizers_rw1fgb.jpg', order: 0)
+appetizer_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/Appetizers_rw1fgb.jpg')
 appetizer_img.imageable = appetizers
 appetizer_img.save!
 
-breakfast_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/breakfast_v5z2ti.jpg', order: 0)
+breakfast_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/breakfast_v5z2ti.jpg')
 breakfast_img.imageable = breakfast
 breakfast_img.save!
 
-vegetarian_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664912/Salads_nchpcg.jpg', order: 0)
+vegetarian_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664912/Salads_nchpcg.jpg')
 vegetarian_img.imageable = vegetarian
 vegetarian_img.save!
 
-meat_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664912/Maindish_pkxhrw.jpg', order: 0)
+meat_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664912/Maindish_pkxhrw.jpg')
 meat_img.imageable = meat
 meat_img.save!
 
-desserts_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/Desserts_r0fabf.jpg', order: 0)
+desserts_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/Desserts_r0fabf.jpg')
 desserts_img.imageable = desserts
 desserts_img.save!
 

@@ -7,8 +7,20 @@ export const RecipeConstants = {
   UPDATE_RECIPE: "UPDATE_RECIPE",
   DESTROY_RECIPE: "DESTROY_RECIPE",
   CLEAR_SINGLE_RECIPE: "CLEAR_SINGLE_RECIPE",
-  CLEAR_RECIPE_INDEX: "CLEAR_RECIPE_INDEX"
+  CLEAR_RECIPE_INDEX: "CLEAR_RECIPE_INDEX",
+  ADD_COMMENT: "ADD_COMMENT",
+  DELETE_COMMENT: "DELETE_COMMENT"
 };
+
+export const addComment = (comment) => ({
+  type: RecipeConstants.ADD_COMMENT,
+  comment
+});
+
+export const deleteComment = (comment) => ({
+  type: RecipeConstants.DELETE_COMMENT,
+  comment
+});
 
 export const clearRecipeIndex = () => ({
   type: RecipeConstants.CLEAR_RECIPE_INDEX

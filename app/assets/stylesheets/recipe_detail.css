@@ -1,3 +1,8 @@
+.detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .recipe-detail {
   display: flex;
   flex-direction: row;
@@ -26,7 +31,11 @@
   display: inline;
 }
 
-.author-buttons img {
+.del-icon {
+  display: inline;
+}
+
+.author-buttons img, .del-icon {
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -37,7 +46,7 @@
   margin-right: 5px;
 }
 
-.recipe-detail label {
+.detail-container label {
   margin: 15px 0;
   font-size: 20px;
   color: #35c33f;
@@ -85,10 +94,10 @@
 }
 
 .step-img {
-  max-width: 80%
-  height: auto;
+  width: 70%;
   margin: 30px auto;
   display: block;
+  align-self: center;
 }
 
 .step-text {
@@ -98,4 +107,20 @@
 
 .recipe-detail .ingredient-part p {
   margin-bottom: 40px;
+}
+
+.comment-part {
+  margin-bottom: 50px;
+}
+
+li.comment {
+  margin-left: 15px;
+  color: #000;
+  font-size: 15px;
+}
+
+p.commentor {
+  color: grey;
+  font-size: 13px;
+  display: inline;
 }

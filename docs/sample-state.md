@@ -7,7 +7,7 @@
       likes: [recipeId1, recipeId2],
       collections: [recipeId1, recipeId2],
     },
-    loggedIn: true
+    signedIn: true
   },
 
   errors: {

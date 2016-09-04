@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import CommentForm from '../comment/comment_form.jsx';
+import Comment from '../comment/comment.jsx';
 
 class RecipeDetail extends React.Component{
   editHandler() {
@@ -47,41 +49,66 @@ class RecipeDetail extends React.Component{
     });
   }
 
+  commentList() {
+    let comments = this.props.recipe.comments;
+    if (comments.length) {
+      return comments.map((c) => <Comment
+        key={c.id}
+        comment={c}
+        currentUser={this.props.currentUser}
+        destroyComment={this.props.destroyComment}/>);
+    }
+  }
+
   render() {
     const { title, user, description, ingredients,
-      category, prep_time, cook_time, steps } = this.props.recipe;
+      category, prep_time, cook_time, steps, id } = this.props.recipe;
 
     return (
-      <div className="recipe-detail">
-        <div className="ingredient-part">
-          <label>Category
-            <p>{category ? category.title : ""}</p>
-          </label>
+      <div className='detail-container'>
+        <div className="recipe-detail">
+          <div className="ingredient-part">
+            <label>Category
+              <p>{category ? category.title : ""}</p>
+            </label>
 
-          <label>Ingredients
-            <ul className="ingredient-list">
-              {ingredients ? this.ingredientsHelper(ingredients) : ""}
-            </ul>
-          </label>
-        </div>
-        <div className="recipe-all-part">
-          <h1 className="detail-title">{title}</h1>
-          <h4 className="detail-user">Uploaded by {user ? user.username : ""}
-            { this.forAuthor() }
-          </h4>
-          <div className='time'>
-            <h5>Prep {prep_time} mins</h5>
-            <h5>Cook {cook_time} mins</h5>
+            <label>Ingredients
+              <ul className="ingredient-list">
+                {ingredients ? this.ingredientsHelper(ingredients) : ""}
+              </ul>
+            </label>
           </div>
+          <div className="recipe-all-part">
+            <h1 className="detail-title">{title}</h1>
+            <h4 className="detail-user">Uploaded by {user ? user.username : ""}
+              { this.forAuthor() }
+            </h4>
+            <div className='time'>
+              <h5>Prep {prep_time} mins</h5>
+              <h5>Cook {cook_time} mins</h5>
+            </div>
 
-          <label>Description
-            <p>{description}</p>
-          </label>
+            <label>Description
+              <p>{description}</p>
+            </label>
 
-          <label>Steps
-            <ol id='steps-list'>
-              { this.putSteps(steps) }
-            </ol>
+            <label>Steps
+              <ol id='steps-list'>
+                { this.putSteps(steps) }
+              </ol>
+            </label>
+          </div>
+        </div>
+
+        <div className='comment-part'>
+          <CommentForm
+            createComment={ this.props.createComment }
+            rId={id}
+            signedIn={ this.props.signedIn } />
+          <label>Comments
+            <ul className='comments-list'>
+              { this.commentList() }
+            </ul>
           </label>
         </div>
       </div>

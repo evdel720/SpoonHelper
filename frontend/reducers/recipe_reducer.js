@@ -10,6 +10,7 @@ const defaultState = {
     description: undefined,
     category: undefined,
     steps: [],
+    comments: [],
     user: undefined
   }
 };
@@ -17,6 +18,14 @@ const defaultState = {
 const RecipeReducer = (state=defaultState, action) => {
   let newState = merge({}, state);
   switch (action.type) {
+    case RecipeConstants.ADD_COMMENT:
+      newState.detail.comments = newState.detail.comments.concat(action.comment.comment);
+      return newState;
+    case RecipeConstants.DELETE_COMMENT:
+      let comments = newState.detail.comments;
+      comments.splice(comments.indexOf(action.comment), 1);
+      newState.detail.comments = comments;
+      return newState;
     case RecipeConstants.RECEIVE_RECIPES:
       newState.index = action.recipes;
       return newState;

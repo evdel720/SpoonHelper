@@ -12,3 +12,4 @@ steps = @recipe.steps
 steps = steps.sort_by { |s| s['order'] }
 
 json.steps steps, :id, :body, :order
+json.comments @recipe.comments, :id, :user, :content

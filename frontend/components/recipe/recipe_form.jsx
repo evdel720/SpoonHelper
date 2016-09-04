@@ -44,7 +44,7 @@ class RecipeForm extends React.Component {
       errorMessage.innerHTML = "";
       submitButton.disabled = false;
     } else {
-      errorMessage.innerHTML = "Step needs to be at least one";
+      errorMessage.innerHTML = "Every recipe needs at least one step";
       submitButton.disabled = true;
     }
   }
@@ -223,7 +223,7 @@ class RecipeForm extends React.Component {
               <option selected disabled>Select Category</option>
               { this.options() }
             </select>
-            { this.errorGenerator(errors.category) }
+            { this.errorGenerator(errors.category_id) }
           </label>
 
           <label>Click button to add steps</label>

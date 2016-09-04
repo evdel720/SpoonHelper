@@ -122,7 +122,7 @@
   padding: 0;
 }
 
-.ingredient:hover::after {
+.recipe-form .ingredient:hover::after {
   content: "  X";
   color: #35c33f;
   cursor: pointer;

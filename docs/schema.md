@@ -4,7 +4,7 @@
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-username           | string    | not null, indexed, unique
+username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
@@ -25,7 +25,7 @@ description  | string    | not null
 ingredients  | string    | not null
 user_id      | integer   | not null, foreign key (references users), indexed
 category_id  | integer   | not null, foreign key (references categories), indexed
-has_many steps, images, comments, videos
+has_many steps, comments
 
 
 ## steps
@@ -41,16 +41,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 url         | string    | not null
-order       | integer   | not null
 imageable_id| integer   | not null, foreign key (references polymorphic association)
-
-## videos
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-url         | string    | not null
-order       | integer   | not null
-recipe_id   | integer   | not null, foreign key (references recipes)
 
 ## comments
 column name | data type | details
