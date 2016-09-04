@@ -1,4 +1,9 @@
 .recipe-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-all-part {
   margin: 0 40px;
   display: flex;
   flex-direction: column;
@@ -8,6 +13,7 @@
 .detail-title {
   color: #35c33f;
   font-size: 30px;
+  margin-top: 20px;
 }
 
 .detail-user {
@@ -38,6 +44,7 @@
 }
 
 .recipe-detail p {
+  margin: 15px 0;
   color: black;
   padding-left: 10px;
   font-size: 18px;
@@ -53,19 +60,22 @@
   margin-right: 10px;
 }
 
+.ingredient-part {
+  margin-top: 20px;
+}
+
 .ingredient-list {
+  width: 250px;
   display: flex;
   flex-direction: column;
-  height: 138px;
-  flex-wrap: wrap;
-  margin-left: -10px;
+  margin: 10px 0;
 }
 
 .ingredient {
+  padding: 10px 0;
   color: #000;
-  font-size: 18px;
+  font-size: 17px;
   display: inline;
-  margin: 0 20px;
 }
 
 .steps-list {
@@ -84,4 +94,8 @@
 .step-text {
   color: #000;
   margin: 30px 10px;
+}
+
+.recipe-detail .ingredient-part p {
+  margin-bottom: 40px;
 }

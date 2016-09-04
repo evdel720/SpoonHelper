@@ -53,34 +53,37 @@ class RecipeDetail extends React.Component{
 
     return (
       <div className="recipe-detail">
-        <h1 className="detail-title">{title}</h1>
-        <h4 className="detail-user">Uploaded by {user ? user.username : ""}
-          { this.forAuthor() }
-        </h4>
-        <div className='time'>
-          <h5>Prep {prep_time} mins</h5>
-          <h5>Cook {cook_time} mins</h5>
+        <div className="ingredient-part">
+          <label>Category
+            <p>{category ? category.title : ""}</p>
+          </label>
+
+          <label>Ingredients
+            <ul className="ingredient-list">
+              {ingredients ? this.ingredientsHelper(ingredients) : ""}
+            </ul>
+          </label>
         </div>
+        <div className="recipe-all-part">
+          <h1 className="detail-title">{title}</h1>
+          <h4 className="detail-user">Uploaded by {user ? user.username : ""}
+            { this.forAuthor() }
+          </h4>
+          <div className='time'>
+            <h5>Prep {prep_time} mins</h5>
+            <h5>Cook {cook_time} mins</h5>
+          </div>
 
-        <label>Category
-          <p>{category ? category.title : ""}</p>
-        </label>
+          <label>Description
+            <p>{description}</p>
+          </label>
 
-        <label>Description
-          <p>{description}</p>
-        </label>
-
-        <label>Ingredients
-          <ul className="ingredient-list">
-            {ingredients ? this.ingredientsHelper(ingredients) : ""}
-          </ul>
-        </label>
-
-        <label>Steps
-          <ol id='steps-list'>
-            { this.putSteps(steps) }
-          </ol>
-        </label>
+          <label>Steps
+            <ol id='steps-list'>
+              { this.putSteps(steps) }
+            </ol>
+          </label>
+        </div>
       </div>
     );
   }
