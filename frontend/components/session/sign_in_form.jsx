@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { errorGenerator } from '../../util/error_helper.js';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -12,12 +11,17 @@ class SignInForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  errorGenerator(errors) {
+    if (errors) {
+      return errors.map((e, idx) => (<p key={e.length + idx} className='error'>{e}</p>));
+    }
+  }
+
   componentWillReceiveProps(props) {
     if (props.signedIn) {
       this.props.router.push('/');
-    } else if (props.errors) {
-      errorGenerator(props.errors);
     }
+    this.render();
   }
 
   handleInput(e) {
@@ -38,6 +42,7 @@ class SignInForm extends React.Component {
   }
 
   render() {
+    const { errors } = this.props;
     return (
       <div className="session-form">
         <h1>Sign In</h1>
@@ -52,6 +57,7 @@ class SignInForm extends React.Component {
             onChange={this.handleInput}
             value={this.state.password}
             placeholder="Password"/>
+          { this.errorGenerator(errors.username) }
           <button>Sign In</button>
         </form>
 

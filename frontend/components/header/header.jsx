@@ -44,6 +44,6 @@ class Header extends React.Component {
       </header>
     );
   }
-};
+}
 
 export default withRouter(Header);

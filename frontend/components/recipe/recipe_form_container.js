@@ -6,7 +6,8 @@ import { createRecipe, updateRecipe, requestSingleRecipe } from '../../actions/r
 const mapStateToProps = (state) => ({
   categories: state.categories,
   recipe: state.recipes.detail,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  errors: state.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({

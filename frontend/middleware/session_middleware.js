@@ -1,6 +1,7 @@
 import { SessionConstants, receiveCurrentUser } from '../actions/session_actions.js';
 import { receiveErrors, clearErrors } from '../actions/error_actions.js';
 import * as SessionUtil from '../util/session_api_util.js';
+import { hashHistory } from 'react-router';
 
 const SessionMiddleware = (store) => (next) => (action) => {
   const signUpandInSuccess = (userOb) => {
@@ -24,6 +25,7 @@ const SessionMiddleware = (store) => (next) => (action) => {
       window.currentUser = undefined;
       SessionUtil.signOut(() => {
         store.dispatch(clearErrors());
+        hashHistory.push('/');
         next(action);
       });
       break;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { errorGenerator } from '../../util/error_helper.js';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -12,29 +11,31 @@ class SignUpForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
-  componentWillReceiveProps(props) {
-    if (props.signedIn) {
-      this.props.router.push('/');
-    } else if (props.errors) {
-      errorGenerator(props.errors);
+  errorGenerator(errors) {
+    if (errors) {
+      return errors.map((e, idx) => (<p key={e.length + idx} className='error'>{e}</p>));
     }
   }
 
-  handleConfirmation(e) {
-    document.getElementsByClassName("confirmation")[0].remove();
-    const targetNode = document.getElementsByName("password_confirmation")[0];
-    const submitButton = document.getElementsByClassName("btn-submit")[0];
-    let errorNode = document.createElement("p");
-    errorNode.className = "confirmation";
+  componentWillReceiveProps(props) {
+    if (props.signedIn) {
+      this.props.router.push('/');
+    }
+    this.render();
+  }
 
+  handleConfirmation(e) {
+    let error = document.getElementById('confirmation');
+    const submitButton = document.getElementsByClassName("btn-submit")[0];
     if (this.state.password !== e.target.value) {
       submitButton.disabled = true;
-      errorNode.textContent = "The password confirmation doesn't match with password.";
+      error.innerHTML = "The password confirmation doesn't match with password.";
+      error.style = "color: red;";
     } else {
       submitButton.disabled = false;
-      errorNode.textContent = "Password confirmation matches.";
+      error.style = "color: green;";
+      error.innerHTML = "Password confirmation matches.";
     }
-    targetNode.parentNode.insertBefore(errorNode, targetNode.nextSibling);
   }
 
   handleInput(e) {
@@ -47,6 +48,7 @@ class SignUpForm extends React.Component {
   }
 
   render() {
+    const { errors } = this.props;
     return (
       <div className="session-form">
         <h1>Sign Up</h1>
@@ -56,18 +58,20 @@ class SignUpForm extends React.Component {
             onChange={this.handleInput}
             value={this.state.username}
             placeholder="Username"/>
+          { this.errorGenerator(errors.username) }
 
           <input type='password'
             name="password"
             onChange={this.handleInput}
             value={this.state.password}
             placeholder="Password"/>
+          { this.errorGenerator(errors.password) }
 
           <input type='password'
             name="password_confirmation"
             onChange={this.handleConfirmation.bind(this)}
             placeholder="Password Confirmation"/>
-          <p className="confirmation"></p>
+          <p id="confirmation" className='error'></p>
 
           <button className="btn-submit">Sign Up</button>
         </form>

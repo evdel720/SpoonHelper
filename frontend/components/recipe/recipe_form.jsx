@@ -22,6 +22,33 @@ class RecipeForm extends React.Component {
     this.stepDeleteHandler = this.stepDeleteHandler.bind(this);
   }
 
+  componentDidMount() {
+    this.props.recipe.steps.forEach((s, idx) => {
+      let oldStep = { id: s.id, body: s.body };
+      RecipeHelper.putStepOnForm(oldStep, this.stepDeleteHandler, null, idx);
+    });
+  }
+
+  componentWillReceiveProps(props) {
+    this.render();
+  }
+
+  componentWillUpdate() {
+    RecipeHelper.reorderSteps();
+  }
+
+  componentDidUpdate() {
+    let submitButton = document.getElementById('submit-btn');
+    let errorMessage = document.getElementById('step-length');
+    if (this.state.steps.length > 0) {
+      errorMessage.innerHTML = "";
+      submitButton.disabled = false;
+    } else {
+      errorMessage.innerHTML = "Step needs to be at least one";
+      submitButton.disabled = true;
+    }
+  }
+
   handleInput(e) {
     this.setState({[e.target.name]: e.target.value});
   }
@@ -44,6 +71,13 @@ class RecipeForm extends React.Component {
     }
   }
 
+  options() {
+    const idTitles = categoryIdTitleSelector(this.props.categories);
+    return idTitles.map((idTitle)=> {
+      return <option key={idTitle[0]} value={idTitle[0]}>{idTitle[1]}</option>;
+    });
+  }
+
   stepDeleteHandler(e) {
     e.preventDefault();
     let targetStep = e.target.previousSibling;
@@ -64,13 +98,6 @@ class RecipeForm extends React.Component {
     });
   }
 
-  options() {
-    const idTitles = categoryIdTitleSelector(this.props.categories);
-    return idTitles.map((idTitle)=> {
-      return <option key={idTitle[0]} value={idTitle[0]}>{idTitle[1]}</option>;
-    });
-  }
-
   stepSetHandler(e) {
     let addedState = this.state['steps'];
     let newValue = addedState[e.target.name];
@@ -84,10 +111,6 @@ class RecipeForm extends React.Component {
     let newStep = { id: null, body: "0" };
     this.setState({'steps': this.state['steps'].concat(newStep)});
     RecipeHelper.putStepOnForm(newStep, this.stepDeleteHandler, this.stepSetHandler);
-  }
-
-  componentWillUpdate() {
-    RecipeHelper.reorderSteps();
   }
 
   addFile(file) {
@@ -112,24 +135,15 @@ class RecipeForm extends React.Component {
     );
   }
 
-  componentDidMount() {
-    this.props.recipe.steps.forEach((s, idx) => {
-      let oldStep = { id: s.id, body: s.body };
-      RecipeHelper.putStepOnForm(oldStep, this.stepDeleteHandler, null, idx);
-    });
-  }
-
-  componentDidUpdate() {
-    let submitButton = document.getElementById('submit-btn');
-    if (this.state.steps.length > 0) {
-      submitButton.disabled = false;
-    } else {
-      submitButton.disabled = true;
+  errorGenerator(errors) {
+    if (errors) {
+      return errors.map((e, idx) => (<p key={e.length + idx} className='error'>{e}</p>));
     }
   }
 
   render() {
     const text = this.props.recipe.id ? "Update Recipe": "New Recipe";
+    const { errors } = this.props;
     return (
       <div className='recipe-form-container'>
         <h1 className='form-title'>{text}</h1>
@@ -139,6 +153,8 @@ class RecipeForm extends React.Component {
               type='text' name='title'
               value={this.state.title}
               onChange={ this.handleInput }/>
+              { this.errorGenerator(errors.title) }
+
           </label>
 
           <label>Description
@@ -147,6 +163,7 @@ class RecipeForm extends React.Component {
             placeholder="little bit about food"
             value={this.state.description}
             onChange={ this.handleInput }></textarea>
+          { this.errorGenerator(errors.description) }
           </label>
 
           <div className='time-form'>
@@ -155,6 +172,7 @@ class RecipeForm extends React.Component {
               placeholder="mins"
               value={this.state.prep_time} name='prep_time'
               onChange={ this.handleInput }/>
+            { this.errorGenerator(errors.prep_time) }
             </label>
 
             <label>Cooking time
@@ -162,6 +180,7 @@ class RecipeForm extends React.Component {
                 placeholder="mins"
                 value={this.state.cook_time} name='cook_time'
                 onChange={ this.handleInput }/>
+              { this.errorGenerator(errors.cook_time) }
             </label>
           </div>
           <label>Ingredients
@@ -169,16 +188,18 @@ class RecipeForm extends React.Component {
               name='ingredients'
               value={this.state.ingredients}
               onChange={ this.handleInput }></textarea>
+            { this.errorGenerator(errors.ingredients) }
           </label>
           <label>Category
             <select name='category_id' onChange={ this.handleInput } value={this.state.category_id}>
               <option selected disabled>Select Category</option>
               { this.options() }
             </select>
+            { this.errorGenerator(errors.category) }
           </label>
 
           <div className='recipe-form-btns'>
-            <label>Steps click to add</label>
+            <label>Click to add</label>
             <button
               onClick={this.addSteps.bind(this)}>
               Step</button>
@@ -186,7 +207,7 @@ class RecipeForm extends React.Component {
               onClick={this.uploader.bind(this)}>
               File</button>
             </div>
-
+            <p id='step-length' className='error'></p>
             <div id='steps'>
             </div>
 
