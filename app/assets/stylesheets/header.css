@@ -13,6 +13,7 @@ body {
   flex-direction: row wrap;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 25px;
 }
 
 .logo {

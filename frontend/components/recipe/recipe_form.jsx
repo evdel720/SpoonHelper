@@ -45,6 +45,7 @@ class RecipeForm extends React.Component {
   }
 
   stepDeleteHandler(e) {
+    e.preventDefault();
     let targetStep = e.target.previousSibling;
     let targetStepIndex = parseInt(targetStep.name);
     let marked = this.state.steps[targetStepIndex].id;
@@ -78,7 +79,8 @@ class RecipeForm extends React.Component {
     this.setState({'steps': addedState});
   }
 
-  addSteps() {
+  addSteps(e) {
+    e.preventDefault();
     let newStep = { id: null, body: "0" };
     this.setState({'steps': this.state['steps'].concat(newStep)});
     RecipeHelper.putStepOnForm(newStep, this.stepDeleteHandler, this.stepSetHandler);
@@ -103,7 +105,8 @@ class RecipeForm extends React.Component {
     }
   }
 
-  uploader() {
+  uploader(e) {
+    e.preventDefault();
     cloudinary.openUploadWidget(window.cloudinary_options,
       this.handleFiles.bind(this)
     );
@@ -126,83 +129,74 @@ class RecipeForm extends React.Component {
   }
 
   render() {
+    const text = this.props.recipe.id ? "Update Recipe": "New Recipe";
     return (
       <div className='recipe-form-container'>
+        <h1 className='form-title'>{text}</h1>
         <form className='recipe-form' onSubmit={this.handleSubmit.bind(this)}>
-          <input placeholder='Title'
-            type='text' name='title'
-            value={this.state.title}
-            onChange={ this.handleInput }/>
+          <label>Title
+            <input
+              type='text' name='title'
+              value={this.state.title}
+              onChange={ this.handleInput }/>
+          </label>
 
-          <textarea placeholder='Description'
+          <label>Description
+          <textarea
             name='description'
+            placeholder="little bit about food"
             value={this.state.description}
             onChange={ this.handleInput }></textarea>
+          </label>
 
-          <input placeholder="Prep Time" type='number'
-            value={this.state.prep_time} name='prep_time'
-            onChange={ this.handleInput }/>
+          <div className='time-form'>
+            <label>Prep time
+            <input type='number'
+              placeholder="mins"
+              value={this.state.prep_time} name='prep_time'
+              onChange={ this.handleInput }/>
+            </label>
 
-          <input placeholder="Cook Time" type='number'
-            value={this.state.cook_time} name='cook_time'
-            onChange={ this.handleInput }/>
-
-          <textarea placeholder='Ingredients'
-            name='ingredients'
-            value={this.state.ingredients}
-            onChange={ this.handleInput }></textarea>
-
-          <select name='category_id' onChange={ this.handleInput } value={this.state.category_id}>
-            <option selected disabled>Select Category</option>
-            { this.options() }
-          </select>
-
-          <div id='steps'>
+            <label>Cooking time
+              <input type='number'
+                placeholder="mins"
+                value={this.state.cook_time} name='cook_time'
+                onChange={ this.handleInput }/>
+            </label>
           </div>
-          <button id='submit-btn' disabled="true">
-            {this.props.recipe.id ? "Update Recipe": "New Recipe"}
-          </button>
+          <label>Ingredients
+            <textarea
+              name='ingredients'
+              value={this.state.ingredients}
+              onChange={ this.handleInput }></textarea>
+          </label>
+          <label>Category
+            <select name='category_id' onChange={ this.handleInput } value={this.state.category_id}>
+              <option selected disabled>Select Category</option>
+              { this.options() }
+            </select>
+          </label>
+
+          <div className='recipe-form-btns'>
+            <label>Steps click to add</label>
+            <button
+              onClick={this.addSteps.bind(this)}>
+              Step</button>
+            <button
+              onClick={this.uploader.bind(this)}>
+              File</button>
+            </div>
+
+            <div id='steps'>
+            </div>
+
+
+          <input type='submit' id='submit-btn' disabled='true'/>
         </form>
 
-        <button
-          onClick={this.addSteps.bind(this)}>
-          Add a text step</button>
-        <button
-          onClick={this.uploader.bind(this)}>
-          Add Images/Videos</button>
       </div>
     );
   }
 }
 
 export default withRouter(RecipeForm);
-
-// const targetNode = document.getElementById('steps');
-// let imageTag = document.createElement('img');
-// imageTag.src = file.thumbnail_url;
-//
-// let deleteButton = document.createElement('button');
-// deleteButton.innerHTML = "X";
-// deleteButton.addEventListener('click', this.stepDeleteHandler);
-//
-// targetNode.appendChild(imageTag);
-// targetNode.appendChild(deleteButton);
-
-
-  // putStepOnForm(step, idx) {
-  //   const targetNode = document.getElementById('steps');
-  //   let newForm = document.createElement('textarea');
-  //   newForm.placeholder = 'Step text';
-  //   newForm.name = idx;
-  //   newForm.value = step.body.slice(1);
-  //
-  //   newForm.addEventListener('input', this.stepSetHandler);
-  //
-  //   let deleteButton = document.createElement('button');
-  //   deleteButton.innerHTML = "X";
-  //
-  //   deleteButton.addEventListener('click', this.stepDeleteHandler);
-  //
-  //   targetNode.appendChild(newForm);
-  //   targetNode.appendChild(deleteButton);
-  // }

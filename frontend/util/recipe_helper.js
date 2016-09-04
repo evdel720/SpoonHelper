@@ -23,12 +23,13 @@ export const putStepOnForm = (step, deleteHandler, setHandler, idx) => {
   if (step.body[0] === '0') {
     newForm = document.createElement('textarea');
     newForm.placeholder = 'Step text';
+    newForm.className = 'step-textarea';
     newForm.value = step.body.slice(1);
     newForm.addEventListener('input', setHandler);
   } else if (step.body[0] === '1') {
     newForm = document.createElement('img');
     newForm.src = step.body.slice(1);
-    newForm.style = "{width: 100px; height: 100px;}";
+    newForm.className = 'step-img';
   }
 
   newForm.name = idx;
@@ -36,6 +37,7 @@ export const putStepOnForm = (step, deleteHandler, setHandler, idx) => {
   let deleteButton = document.createElement('button');
   deleteButton.innerHTML = "X";
   deleteButton.addEventListener('click', deleteHandler);
+  deleteButton.className = "delete-btn";
 
   targetNode.appendChild(newForm);
   targetNode.appendChild(deleteButton);

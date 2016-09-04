@@ -16,7 +16,7 @@
   color: #35c33f;
 }
 
-.session-form input, textarea {
+.session-form input {
   width: 300px;
   margin: 0 auto;
   font-size: 15px;
@@ -28,13 +28,9 @@
   border: 1px solid #ccc;
 }
 
-.session-form input:focus, textarea:focus {
+.session-form input:focus {
   box-shadow: 0 0 5px #ccc;
   border:1px solid #ccc;
-}
-
-.session-form textarea {
-  height: 150px;
 }
 
 .session-form input {

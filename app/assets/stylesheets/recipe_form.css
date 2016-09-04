@@ -1,0 +1,114 @@
+.recipe-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-title {
+  color: #35c33f;
+  font-size: 30px;
+  text-align: center;
+}
+
+.recipe-form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.recipe-form input, textarea, select {
+  font-size: 18px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.recipe-form input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 10px #ccc;
+  border:1px solid #ccc;
+}
+
+.time-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.time-form label {
+  width: 40%;
+}
+
+.recipe-form textarea {
+  height: 120px;
+}
+
+.step-textarea {
+  width: 94%;
+}
+
+.step-img {
+  width: 90%;
+  margin: 0;
+  display: inline;
+}
+
+.recipe-form label {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: #35c33f;
+}
+
+.recipe-form button, #submit-btn {
+  margin: 20px 10px;
+  display: inline;
+  font-size: 15px;
+  padding: 10px 15px;
+  background: #35c33f;
+  color: #FFF;
+  border-radius: 10px;
+  border: solid 1px #2a9b32;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.2s;
+}
+
+.recipe-form button:hover, .recipe-form button:focus, #submit-btn:hover, #submit-btn:focus {
+  background: #30af39;
+  border: solid 1px #2a9b32;
+  text-decoration: none;
+}
+
+#submit-btn:disabled {
+  background: grey;
+  border-color: transparent;
+}
+
+#submit-btn {
+  width: 130px;
+  margin: 20px auto;
+  margin-bottom: 40px;
+}
+
+.recipe-form button.delete-btn {
+  padding: 4px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.recipe-form-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.recipe-form button:active, #submit-btn:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  background: #45cc4f;
+  border: solid 1px #30af39;
+}
