@@ -42,7 +42,7 @@ class RecipeDetail extends React.Component{
   }
 
   ingredientsHelper(ingredients) {
-    return ingredients.split(", ").map((i, idx) => {
+    return ingredients.split("#@!").map((i, idx) => {
       return <li key={idx} className='ingredient'>{ i }</li>;
     });
   }

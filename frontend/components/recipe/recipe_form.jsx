@@ -9,7 +9,7 @@ class RecipeForm extends React.Component {
     const { title, ingredients, description, prep_time, cook_time, category, steps } = this.props.recipe;
     this.state = {
       title: title || "",
-      ingredients: ingredients || "",
+      ingredients: ingredients ? ingredients.split("#@!") : [],
       description: description || "",
       prep_time: prep_time || "",
       cook_time: cook_time || "",
@@ -55,18 +55,14 @@ class RecipeForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let steps = this.state.steps.map((s, idx) => {
-      s.order = idx;
-      return s;
-    });
-    this.setState({steps: steps});
+
     if (this.props.recipe.id) {
       this.props.updateRecipe(
         this.props.recipe.id,
-        RecipeHelper.updateState(this.state));
+        RecipeHelper.stateHelper(this.state));
     } else {
       this.props.createRecipe({
-        recipe: this.state
+        recipe: RecipeHelper.stateHelper(this.state)
       });
     }
   }
@@ -141,6 +137,33 @@ class RecipeForm extends React.Component {
     }
   }
 
+  ingredientsHandle() {
+    return this.state.ingredients.map((ingredient, idx) => (
+      <li key={idx}
+        className='ingredient'
+        onClick={this.deleteIngredient.bind(this)}>
+        { ingredient }
+      </li>
+    ));
+  }
+
+  addIngredient(e) {
+    e.preventDefault();
+    let inputForm = e.target.previousSibling;
+    if (inputForm.value !== "") {
+      this.setState({'ingredients': this.state.ingredients.concat(inputForm.value)});
+      inputForm.value = "";
+    }
+  }
+
+  deleteIngredient(e) {
+    e.preventDefault();
+    let deleteVal = e.target.innerText;
+    let newIngredients = this.state.ingredients;
+    newIngredients.splice(newIngredients.indexOf(deleteVal), 1);
+    this.setState({'ingredients': newIngredients});
+  }
+
   render() {
     const text = this.props.recipe.id ? "Update Recipe": "New Recipe";
     const { errors } = this.props;
@@ -158,12 +181,12 @@ class RecipeForm extends React.Component {
           </label>
 
           <label>Description
-          <textarea
-            name='description'
-            placeholder="little bit about food"
-            value={this.state.description}
-            onChange={ this.handleInput }></textarea>
-          { this.errorGenerator(errors.description) }
+            <textarea
+              name='description'
+              placeholder="little bit about food"
+              value={this.state.description}
+              onChange={ this.handleInput }></textarea>
+            { this.errorGenerator(errors.description) }
           </label>
 
           <div className='time-form'>
@@ -183,13 +206,18 @@ class RecipeForm extends React.Component {
               { this.errorGenerator(errors.cook_time) }
             </label>
           </div>
+
           <label>Ingredients
-            <textarea
-              name='ingredients'
-              value={this.state.ingredients}
-              onChange={ this.handleInput }></textarea>
+            <ul className='ingredient-list'>{ this.ingredientsHandle() }</ul>
+            <div id='ingredient-form-container'>
+              <input type='text'
+                name='ingredient'
+                placeholder="add ingredient"/>
+              <button id="ingredient-btn" onClick={ this.addIngredient.bind(this) }>+</button>
+            </div>
             { this.errorGenerator(errors.ingredients) }
           </label>
+
           <label>Category
             <select name='category_id' onChange={ this.handleInput } value={this.state.category_id}>
               <option selected disabled>Select Category</option>
@@ -198,19 +226,20 @@ class RecipeForm extends React.Component {
             { this.errorGenerator(errors.category) }
           </label>
 
-          <div className='recipe-form-btns'>
-            <label>Click to add</label>
-            <button
-              onClick={this.addSteps.bind(this)}>
-              Step</button>
-            <button
-              onClick={this.uploader.bind(this)}>
-              File</button>
-            </div>
+          <label>Click button to add steps</label>
+
             <p id='step-length' className='error'></p>
             <div id='steps'>
             </div>
 
+            <div className='recipe-form-btns'>
+              <button
+                onClick={this.addSteps.bind(this)}>
+                Text</button>
+              <button
+                onClick={this.uploader.bind(this)}>
+                File</button>
+            </div>
 
           <input type='submit' id='submit-btn' disabled='true'/>
         </form>
