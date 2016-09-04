@@ -1,2 +1,2 @@
-json.user user, :id, :email, :bio
+json.user user, :id, :username
 # :likes, :collections

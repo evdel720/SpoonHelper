@@ -11,6 +11,9 @@ const SessionMiddleware = (store) => (next) => (action) => {
     store.dispatch(receiveErrors(errors.responseJSON));
   };
   switch (action.type) {
+    case SessionConstants.GUEST_SIGN_IN:
+      SessionUtil.guestSignIn(signUpandInSuccess);
+      break;
     case SessionConstants.SIGN_IN:
       SessionUtil.signIn(action.user, signUpandInSuccess, errorCallback);
       break;

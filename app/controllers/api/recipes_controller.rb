@@ -2,7 +2,7 @@ class Api::RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :destroy]
 
   def index
-    if params[:category_id]
+    if params[:category_id] != '0'
       @recipes = Recipe.where(category_id: params[:category_id])
       @category = Category.find_by(id: params[:category_id]).title
     else

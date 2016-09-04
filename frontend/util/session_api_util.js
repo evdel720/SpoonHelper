@@ -26,4 +26,13 @@ const signOut = (success) => {
   });
 };
 
-export { signIn, signOut, signUp };
+const guestSignIn = (success) => {
+  $.ajax({
+    url: '/api/session.json',
+    type: 'POST',
+    data: {user: {username: 'Guest', password: 'guestpassword'}},
+    success
+  });
+};
+
+export { signIn, signOut, signUp, guestSignIn };

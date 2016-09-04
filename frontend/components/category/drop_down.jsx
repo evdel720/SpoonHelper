@@ -28,6 +28,9 @@ class CategoryDropdown extends React.Component {
         <div className="categories">
           {this.categoryList()}
         </div>
+        <p className='see-all' onClick={ this.clickHandler.bind(this, 0) }>
+          See All Recipes
+        </p>
       </div>
     );
   }

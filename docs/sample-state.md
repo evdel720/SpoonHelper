@@ -3,8 +3,7 @@
   session: {
     currentUser: {
       id: 1,
-      email: "spoon_helper@current.com",
-      bio: "My cool cooking story",
+      username: "spoon_helper@current.com",
       likes: [recipeId1, recipeId2],
       collections: [recipeId1, recipeId2],
     },
@@ -12,7 +11,7 @@
   },
 
   errors: {
-    email: ["Email is too short", "Password can't be blank"],
+    username: ["username is too short", "Password can't be blank"],
     password: ["Password can't be blank"]
   },
 

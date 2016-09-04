@@ -6,7 +6,7 @@ class SignInForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
+      username: "",
       password: ""
     };
     this.handleInput = this.handleInput.bind(this);
@@ -34,7 +34,7 @@ class SignInForm extends React.Component {
   }
 
   guestSignIn() {
-    console.log("Not implemented yet");
+    this.props.guestSignIn();
   }
 
   render() {
@@ -43,10 +43,10 @@ class SignInForm extends React.Component {
         <h1>Sign In</h1>
         <form className="clearfix" onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
-            name="email"
+            name="username"
             onChange={this.handleInput}
-            value={this.state.email}
-            placeholder="Email"/>
+            value={this.state.username}
+            placeholder="Username"/>
           <input type='password'
             name="password"
             onChange={this.handleInput}

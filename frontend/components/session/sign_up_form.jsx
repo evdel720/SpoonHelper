@@ -6,9 +6,8 @@ class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
-      bio: ""
+      username: "",
+      password: ""
     };
     this.handleInput = this.handleInput.bind(this);
   }
@@ -53,10 +52,10 @@ class SignUpForm extends React.Component {
         <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
-            name="email"
+            name="username"
             onChange={this.handleInput}
-            value={this.state.email}
-            placeholder="Email"/>
+            value={this.state.username}
+            placeholder="Username"/>
 
           <input type='password'
             name="password"
@@ -69,12 +68,6 @@ class SignUpForm extends React.Component {
             onChange={this.handleConfirmation.bind(this)}
             placeholder="Password Confirmation"/>
           <p className="confirmation"></p>
-
-          <textarea name="bio"
-            defaultValue={this.state.bio}
-            placeholder="Biography"
-            onChange={this.handleInput}>
-          </textarea>
 
           <button className="btn-submit">Sign Up</button>
         </form>

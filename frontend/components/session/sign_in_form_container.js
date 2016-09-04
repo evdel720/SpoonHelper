@@ -1,6 +1,6 @@
 import SignInForm from './sign_in_form.jsx';
 import { connect } from 'react-redux';
-import { signIn } from '../../actions/session_actions.js';
+import { signIn, guestSignIn } from '../../actions/session_actions.js';
 
 const mapStateToProps = (state) => ({
   signedIn: state.session.signedIn,
@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  signIn: (user) => dispatch(signIn(user))
+  signIn: (user) => dispatch(signIn(user)),
+  guestSignIn: () => dispatch(guestSignIn())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

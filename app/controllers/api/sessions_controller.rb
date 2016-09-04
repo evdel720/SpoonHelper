@@ -1,12 +1,12 @@
 class Api::SessionsController < ApplicationController
 
   def create
-    @user = User.find_by_credentials(user_params[:email], user_params[:password])
+    @user = User.find_by_credentials(user_params[:username], user_params[:password])
     if @user
       login(@user)
       render '/api/users/show'
     else
-      @errors = { email: ["doesn't exist or password is invalid."] }
+      @errors = { username: ["doesn't exist or password is invalid."] }
       render '/api/errors', status: 400
     end
   end

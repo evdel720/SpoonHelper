@@ -5,7 +5,7 @@ const UserSideBar = ({ signedIn, signOut, currentUser }) => {
   if (signedIn) {
     return (
       <ul className="user-side-bar">
-        <Link to="/" className="side-link">{currentUser.email}</Link>
+        <Link to="/" className="side-link">{currentUser.username}</Link>
         <div className="link-separation"></div>
         <a className="side-link" onClick={signOut}>Sign Out</a>
       </ul>

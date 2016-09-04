@@ -54,7 +54,7 @@ class RecipeDetail extends React.Component{
     return (
       <div className="recipe-detail">
         <h1 className="detail-title">{title}</h1>
-        <h4 className="detail-user">Uploaded by {user ? user.email : ""}
+        <h4 className="detail-user">Uploaded by {user ? user.username : ""}
           { this.forAuthor() }
         </h4>
         <div className='time'>

@@ -5,5 +5,5 @@ class Recipe < ActiveRecord::Base
   has_many :steps, dependent: :destroy
   belongs_to :category
   belongs_to :user
-  accepts_nested_attributes_for :steps, reject_if: proc { |attributes| attributes['body'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :steps, reject_if: proc { |attributes| attributes['body'].length == 1 }, allow_destroy: true
 end

@@ -39,6 +39,7 @@ a.side-link {
   width: 2px;
   background-color: #35c33f;
   display: inline-block;
+  margin: 0 5px;
 }
 
 a.side-link:hover {
