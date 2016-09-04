@@ -4,6 +4,7 @@
 }
 
 .recipe-all-part {
+  width: 70%;
   margin: 0 40px;
   display: flex;
   flex-direction: column;
@@ -60,6 +61,7 @@
 }
 
 .ingredient-part {
+  width: 30%;
 }
 
 .ingredient-list {
