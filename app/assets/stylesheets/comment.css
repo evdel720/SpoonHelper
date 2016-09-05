@@ -1,0 +1,50 @@
+.comment-part {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-self: flex-end;
+}
+
+.comment-part form {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-part #submit-btn{
+  padding: 5px;
+  margin: 10px;
+  width: 50px;
+}
+
+.comment-part textarea {
+  width: 90%;
+  height: 50px;
+  font-size: 15px;
+  margin: 0 auto;
+}
+
+.comment-part p.commentor {
+  color: grey;
+}
+
+
+.del-icon {
+  display: inline;
+}
+
+.comment-part {
+  margin-bottom: 50px;
+}
+
+li.comment {
+  margin: 10px 15px;
+  color: #000;
+  font-size: 15px;
+}
+
+p.commentor {
+  color: grey;
+  font-size: 13px;
+  display: inline;
+  margin-right: 15px;
+}

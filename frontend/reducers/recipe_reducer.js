@@ -23,7 +23,8 @@ const RecipeReducer = (state=defaultState, action) => {
       return newState;
     case RecipeConstants.DELETE_COMMENT:
       let comments = newState.detail.comments;
-      comments.splice(comments.indexOf(action.comment), 1);
+      let index = comments.map((c) => c.id).indexOf(parseInt(action.comment.id));
+      comments.splice(index, 1);
       newState.detail.comments = comments;
       return newState;
     case RecipeConstants.RECEIVE_RECIPES:

@@ -12,8 +12,8 @@ const Comment = ({ comment, currentUser, destroyComment }) => {
 
   return (
     <li className='comment'>
-      <p className='commentor'>{comment.user.username}</p>
       { forAuthor() }
+      <p className='commentor'>{comment.user.username}</p>
       { comment.content }
     </li>
   );

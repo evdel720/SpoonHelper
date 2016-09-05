@@ -31,10 +31,6 @@
   display: inline;
 }
 
-.del-icon {
-  display: inline;
-}
-
 .author-buttons img, .del-icon {
   width: 30px;
   height: 30px;
@@ -80,8 +76,8 @@
   margin: 10px 0;
 }
 
-.ingredient {
-  padding: 10px 0;
+li.ingredient {
+  padding: 20px 0;
   color: #000;
   font-size: 17px;
   display: inline;
@@ -95,6 +91,7 @@
 
 .step-img {
   width: 70%;
+  max-width: 400px;
   margin: 30px auto;
   display: block;
   align-self: center;
@@ -107,20 +104,4 @@
 
 .recipe-detail .ingredient-part p {
   margin-bottom: 40px;
-}
-
-.comment-part {
-  margin-bottom: 50px;
-}
-
-li.comment {
-  margin-left: 15px;
-  color: #000;
-  font-size: 15px;
-}
-
-p.commentor {
-  color: grey;
-  font-size: 13px;
-  display: inline;
 }

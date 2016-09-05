@@ -13,10 +13,10 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by(params[:comment_id])
+    @comment = Comment.find_by(id: params[:id])
     if @comment
       @comment.destroy
-      render :show
+      render json: { id: params[:id] }
     else
       render status: 404
     end
