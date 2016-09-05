@@ -9,6 +9,8 @@ import { clearSingleRecipe, requestSingleRecipe, requestCategoryRecipes } from '
 import RecipeFormContainer from '../components/recipe/recipe_form_container.js';
 import RecipeIndexContainer from '../components/recipe/recipe_index_container.js';
 import RecipeDetailContainer from '../components/recipe/recipe_detail_container.js';
+import UserLikedContainer from '../components/userpage/user_liked_container.js';
+import UserRecipesContainer from '../components/userpage/user_recipes_container.js';
 
 
 class AppRouter extends React.Component{
@@ -21,6 +23,7 @@ class AppRouter extends React.Component{
     this._fetchCategories = this._fetchCategories.bind(this);
     this._fetchCategoryRecipes = this._fetchCategoryRecipes.bind(this);
     this._fetchSingleRecipe = this._fetchSingleRecipe.bind(this);
+    this._ensureSignedIn = this._ensureSignedIn.bind(this);
   }
 
   _fetchCategoryRecipes(nextState, replace) {
@@ -69,6 +72,14 @@ class AppRouter extends React.Component{
     this.context.store.dispatch(clearErrors());
   }
 
+  _ensureSignedIn(nextState, replace){
+    const currentState = this.context.store.getState();
+    const currentUser = currentState.session.currentUser;
+    if (!currentUser) {
+      replace('/signin');
+    }
+  }
+
   render() {
     return (
       <Router history={hashHistory}>
@@ -85,10 +96,14 @@ class AppRouter extends React.Component{
           <Route path="edit_recipe" component={ RecipeFormContainer }
             onEnter={ this._editRecipePrepare }
             onLeave={ this._clearErrorsWhenLeave } />
-          <Route path=":cId" component={ RecipeIndexContainer }
+          <Route path="category/:cId" component={ RecipeIndexContainer }
             onEnter={ this._fetchCategoryRecipes } />
           <Route path="recipes/:rId" component={ RecipeDetailContainer }
             onEnter={ this._fetchSingleRecipe }/>
+          <Route path="my_liked" component={ UserLikedContainer }
+            onEnter={ this._ensureSignedIn } />
+          <Route path="my_recipes" component={ UserRecipesContainer }
+            onEnter={ this._ensureSignedIn } />
         </Route>
       </Router>
     );

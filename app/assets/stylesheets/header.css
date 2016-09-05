@@ -53,3 +53,26 @@ a.side-link:hover {
   color: white;
   cursor: pointer;
 }
+
+.user-side-bar .user-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 90px;
+  right: 100px;
+  border: solid #ccc 1px;
+  border-radius: 5px;
+  background-color: white;
+  z-index: 50;
+}
+
+.dropdown-item {
+  padding: 5px;
+  text-decoration: none;
+  color: #35c33f;
+}
+
+.dropdown-item:hover {
+  color: white;
+  background-color: #35c33f;
+}

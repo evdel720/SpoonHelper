@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 
 class CategoryDropdown extends React.Component {
   clickHandler(cId) {
-    this.props.router.push(`/${cId}`);
+    this.props.router.push(`category/${cId}`);
   }
 
   categoryList() {

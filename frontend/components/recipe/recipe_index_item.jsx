@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-const RecipeIndexItem = ({ item, requestSingleRecipe, router }) => {
+const RecipeIndexItem = ({ item, router }) => {
   const goToDetail = () => {
     router.push(`/recipes/${item.id}`);
   };
