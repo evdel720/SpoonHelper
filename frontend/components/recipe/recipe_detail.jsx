@@ -72,16 +72,13 @@ class RecipeDetail extends React.Component{
   }
 
   userLiked() {
-    if (this.props.signedIn) {
-      const { currentUser, recipe } = this.props;
-      let likedRecipeIds = currentUser.liked_recipes.map((r) => r.id);
-      if (likedRecipeIds.includes(recipe.id)) {
-        return true;
-      } else {
-        return false;
-      }
+    const { currentUser, recipe } = this.props;
+    let likedRecipeIds = currentUser.liked_recipes.map((r) => r.id);
+    if (likedRecipeIds.includes(recipe.id)) {
+      return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
   render() {

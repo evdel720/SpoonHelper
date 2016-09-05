@@ -13,7 +13,8 @@ const SessionReducer = (state = defaultState, action) => {
       newState.currentUser.liked_recipes.push(action.recipe);
       return newState;
     case SessionConstants.REMOVE_LIKE:
-      let index = newState.currentUser.liked_recipes.indexOf(action.recipe);
+      let likesRecipeIds = newState.currentUser.liked_recipes.map(r=> r.id);
+      let index = likesRecipeIds.indexOf(action.recipe.id);
       newState.currentUser.liked_recipes.splice(index, 1);
       return newState;
     case SessionConstants.RECEIVE_CURRENT_USER:
