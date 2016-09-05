@@ -1,2 +1,1 @@
-json.user user, :id, :username
-# :likes, :collections
+json.user user, :id, :username, :liked_recipes

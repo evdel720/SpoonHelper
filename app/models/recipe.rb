@@ -5,5 +5,6 @@ class Recipe < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   belongs_to :category
   belongs_to :user
+  has_many :like, dependent: :destroy
   accepts_nested_attributes_for :steps, reject_if: proc { |attributes| attributes['body'].length == 1 }, allow_destroy: true
 end

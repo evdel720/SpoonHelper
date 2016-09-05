@@ -1,5 +1,6 @@
 import { RecipeConstants } from '../actions/recipe_actions.js';
 import merge from 'lodash/merge';
+import { SessionConstants } from '../actions/session_actions.js';
 
 const defaultState = {
   index: {},
@@ -18,6 +19,12 @@ const defaultState = {
 const RecipeReducer = (state=defaultState, action) => {
   let newState = merge({}, state);
   switch (action.type) {
+    case SessionConstants.ADD_LIKE:
+      newState.detail.likes += 1;
+      return newState;
+    case SessionConstants.REMOVE_LIKE:
+      newState.detail.likes -= 1;
+      return newState;
     case RecipeConstants.ADD_COMMENT:
       newState.detail.comments = newState.detail.comments.concat(action.comment.comment);
       return newState;

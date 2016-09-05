@@ -3,8 +3,20 @@ const SessionConstants = {
   SIGN_UP: "SIGN_UP",
   SIGN_OUT: "SIGN_OUT",
   GUEST_SIGN_IN: "GUEST_SIGN_IN",
-  RECEIVE_CURRENT_USER: "RECEIVE_CURRENT_USER"
+  RECEIVE_CURRENT_USER: "RECEIVE_CURRENT_USER",
+  ADD_LIKE: "ADD_LIKE",
+  REMOVE_LIKE: "REMOVE_LIKE"
 };
+
+const addLike = (recipe) => ({
+  type: SessionConstants.ADD_LIKE,
+  recipe
+});
+
+const removeLike = (recipe) => ({
+  type: SessionConstants.REMOVE_LIKE,
+  recipe
+});
 
 const guestSignIn = () => ({
   type: SessionConstants.GUEST_SIGN_IN
@@ -30,4 +42,5 @@ const receiveCurrentUser = (user) => ({
 });
 
 export { SessionConstants, signIn, signUp, signOut,
-        receiveCurrentUser, guestSignIn };
+        receiveCurrentUser, guestSignIn,
+        addLike, removeLike };

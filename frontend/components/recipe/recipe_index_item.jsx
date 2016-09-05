@@ -12,6 +12,7 @@ const RecipeIndexItem = ({ item, requestSingleRecipe, router }) => {
       <p className='item_title'>{item.title}</p>
       <p className='item_author'>by { item.user }</p>
       <p className='item_time'>{ item.total_cooking } mins</p>
+      <p className='like-count'> ❤ { item.likes }</p>
     </li>
   );
 };

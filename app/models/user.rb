@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
+
+  has_many :like, dependent: :destroy
+  has_many :liked_recipes,
+    through: :like,
+    source: :recipe
   attr_reader :password
 
   def password=(password)

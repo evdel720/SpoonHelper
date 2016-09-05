@@ -5,7 +5,6 @@
       id: 1,
       username: "spoon_helper@current.com",
       likes: [recipeId1, recipeId2],
-      collections: [recipeId1, recipeId2],
     },
     signedIn: true
   },

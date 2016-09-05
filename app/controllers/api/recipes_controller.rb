@@ -1,5 +1,6 @@
 class Api::RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :destroy]
+  before_action :redirect_home_if_not_logged_in, only: [:create, :update, :destroy]
 
   def index
     if params[:category_id] != '0'
@@ -61,17 +62,3 @@ class Api::RecipesController < ApplicationController
     params.require(:recipe).permit(:title, :description, :ingredients, :category_id, :prep_time, :cook_time, steps: [:id, :body, :order, :_destroy])
   end
 end
-
-#
-# params = {recipe: {
-#   title: "handleSubmit",
-#   description: "handleSubmithandleSubmit",
-#   ingredients: "handleSubmithandleSubmit",
-#   user_id: 1,
-#   category_id: 2,
-#   steps_attributes: [{
-#     id: 163, body: "new first step", order: 0 },
-#   { id: 164, _destroy: '1'},
-#   { id: 165, body: "new second step", order: 2 },
-#   { id: 166, body: "new third step", order: 3 }]
-# }}

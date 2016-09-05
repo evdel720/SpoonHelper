@@ -52,14 +52,6 @@ user_id     | integer   | not null, foreign key (references users), indexed
 recipe_id   | integer   | not null, foreign key (references recipes), indexed
 has_one image
 
-## collections
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users)
-recipe_id   | integer   | not null, foreign key (references recipes)
-unique, indexed [user_id, recipe_id]
-
 ## likes
 column name | data type | details
 ------------|-----------|-----------------------

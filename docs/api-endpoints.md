@@ -11,7 +11,6 @@
 ### Users
 
 - `POST /api/users`
-- `PATCH /api/users/:id` - for add collections and likes
 - `GET /api/users/:id`
 
 ### Session

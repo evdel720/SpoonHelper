@@ -21,8 +21,8 @@ class RecipeDetail extends React.Component{
     if (currentUser && user && currentUser.id === user.id) {
       return (
         <div className='author-buttons'>
-          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937348/edit_qdlixp.png" onClick={this.editHandler.bind(this)}/>
-          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937356/delete_pmccwp.png" onClick={this.deleteHandler.bind(this)}/>
+          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937348/edit_qdlixp.png" alt="edit" onClick={this.editHandler.bind(this)}/>
+          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937356/delete_pmccwp.png" alt="delete" onClick={this.deleteHandler.bind(this)}/>
         </div>
       );
     }
@@ -60,9 +60,33 @@ class RecipeDetail extends React.Component{
     }
   }
 
+  likeToggle(e) {
+    e.preventDefault();
+    if (this.props.signedIn) {
+      if (this.userLiked()) {
+        this.props.destroyLike(this.props.recipe.id);
+      } else {
+        this.props.createLike(this.props.recipe.id);
+      }
+    }
+  }
+
+  userLiked() {
+    if (this.props.signedIn) {
+      const { currentUser, recipe } = this.props;
+      let likedRecipeIds = currentUser.liked_recipes.map((r) => r.id);
+      if (likedRecipeIds.includes(recipe.id)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  }
+
   render() {
     const { title, user, description, ingredients,
-      category, prep_time, cook_time, steps, id } = this.props.recipe;
+      category, prep_time, cook_time, steps, id, likes } = this.props.recipe;
 
     return (
       <div className='detail-container'>
@@ -79,7 +103,14 @@ class RecipeDetail extends React.Component{
             </label>
           </div>
           <div className="recipe-all-part">
-            <h1 className="detail-title">{title}</h1>
+            <h1 className="detail-title">
+              <button
+                className={ this.props.signedIn && this.userLiked() ? "unlike-btn" : "like-btn"}
+                onClick={ this.likeToggle.bind(this) }
+                disabled={ this.props.signedIn ? false : true }
+                >❤ { likes } </button>
+              {title}
+            </h1>
             <h4 className="detail-user">Uploaded by {user ? user.username : ""}
               { this.forAuthor() }
             </h4>

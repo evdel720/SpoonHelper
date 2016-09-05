@@ -6,6 +6,7 @@ json.user @recipe.user, :id, :username
 json.category @recipe.category, :id, :title
 json.prep_time @recipe.prep_time
 json.cook_time @recipe.cook_time
+json.likes @recipe.like.count
 
 steps = @recipe.steps
 

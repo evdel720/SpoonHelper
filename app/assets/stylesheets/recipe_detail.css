@@ -105,3 +105,18 @@ li.ingredient {
 .recipe-detail .ingredient-part p {
   margin-bottom: 40px;
 }
+
+.like-btn, .unlike-btn {
+  padding: 5px;
+  font-size: 15px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.like-btn {
+  color: grey;
+}
+
+.unlike-btn {
+  color: #35c33f;
+}
