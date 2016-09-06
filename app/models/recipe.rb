@@ -13,6 +13,7 @@ class Recipe < ActiveRecord::Base
     @default_image = '1http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png'
 
     images = self.steps.select { |s| s['body'].start_with?('1') }
+    images = images.sort_by { |s| s['order'] }
     self.rep_img = images.empty? ? @default_image : images.last['body']
   end
 end
