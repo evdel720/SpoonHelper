@@ -11,7 +11,6 @@ class Api::RecipesController < ApplicationController
       @category = 'All'
     end
     @sorted_by = ''
-    @default_image = '1http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png'
     render :index
   end
 

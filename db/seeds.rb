@@ -2,7 +2,7 @@
 User.delete_all
 
 50.times do
-  User.create!(
+  User.create(
     username: Faker::Internet.user_name,
     password: 'password'
   )
@@ -492,7 +492,7 @@ Recipe.create!(
   ]
 )
 
-Comment.create!(recipe_id: 11, user_id: (1..50).to_a.sample, content: "")
+# Comment.create!(recipe_id: 11, user_id: (1..50).to_a.sample, content: "")
 
 # http://allrecipes.com/recipe/223016/fresh-blueberry-cake/?internalSource=staff%20pick&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%208
 Recipe.create!(

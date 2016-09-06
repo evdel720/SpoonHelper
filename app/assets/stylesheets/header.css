@@ -1,27 +1,34 @@
-html {
-  width: 90%;
-  margin: 0 auto;
-}
 
 body {
   font-family: 'Rubik', sans-serif;
 }
 
 .home {
+  width: 90%;
+  margin: 0 auto;
   color: #35c33f;
   display: flex;
-  flex-direction: row wrap;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  margin-bottom: 25px;
 }
 
 .logo {
-  display: inline-block;
-  width: 250px;
-  height: 120px;
+  align-self: flex-start;
+  width: 200px;
+  height: 110px;
   cursor: pointer;
+}
 
+.side-bars {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.include-search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .home-side-bar, .user-side-bar {
@@ -32,7 +39,7 @@ body {
 a.side-link {
   color: #35c33f;
   display: inline-block;
-  font-size: 18px;
+  font-size: 15px;
   padding-left: 10px;
   padding-right: 10px;
   text-decoration: none;

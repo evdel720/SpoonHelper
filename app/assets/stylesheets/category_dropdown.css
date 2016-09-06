@@ -49,7 +49,14 @@
 .category-item:hover {
   color: white;
   background-color: #35c33f;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-radius: 5px;
   border-color: #35c33f;
+}
+
+.category-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 0 10px;
+  padding-bottom: 10px;
 }

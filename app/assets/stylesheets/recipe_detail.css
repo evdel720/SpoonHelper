@@ -87,13 +87,13 @@ li.ingredient {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .step-img {
   width: 70%;
   max-width: 400px;
   margin: 30px auto;
-  display: block;
   align-self: center;
 }
 

@@ -1,0 +1,9 @@
+.userpage-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.userpage-img {
+  width: 200px;
+  height: 200px;
+}

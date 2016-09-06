@@ -8,7 +8,7 @@ const RecipeIndexItem = ({ item, router }) => {
 
   return (
     <li className="recipe_index_item" onClick={ goToDetail } >
-      <img className="rep_img" src={ item.rep_image.slice(1) }/>
+      <img className="rep_img" src={ item.rep_img.slice(1) }/>
       <p className='item_title'>{item.title}</p>
       <p className='item_author'>by { item.user }</p>
       <p className='item_time'>{ item.total_cooking } mins</p>

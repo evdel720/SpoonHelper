@@ -4,10 +4,14 @@ import { withRouter } from 'react-router';
 const UserLiked = ({ recipes, router }) => {
 
   const recipeList = recipes.map((r, idx) => {
-    return <li key={idx}
-      onClick={ () => router.push(`/recipes/${r.id}`)} >
-      { r.title }
-    </li>;
+    return (
+      <div key={idx} className='userpage-item'>
+        <li className='userpage-title'
+        onClick={ () => router.push(`/recipes/${r.id}`)} >
+        { r.title }</li>
+        <img className='userpage-img' src={r.rep_img.slice(1)}/>
+      </div>
+      );
     }
   );
 

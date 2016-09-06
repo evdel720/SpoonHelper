@@ -33,14 +33,19 @@ class Header extends React.Component {
   render () {
     return (
       <header className="home">
-        <div className="home-side-bar">
-          <img onClick={this.homeLink.bind(this)} className="logo" src="http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png" alt="logo"/>
-          <a className="side-link" onClick={this.show.bind(this)} >Categories ▾</a>
-          { this.state.categoryVisible ? <CategoryDropDownContainer /> : "" }
-          <div className="link-separation"></div>
-          <Link className="side-link" to="/new_recipe">New Recipe</Link>
+        <img onClick={this.homeLink.bind(this)} className="logo" src="http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png" alt="logo"/>
+        <div className="include-search">
+          <p>Search bar goes here</p>
+          <div className="side-bars">
+            <div className="home-side-bar">
+              <a className="side-link" onClick={this.show.bind(this)} >Categories ▾</a>
+              { this.state.categoryVisible ? <CategoryDropDownContainer /> : "" }
+              <div className="link-separation"></div>
+              <Link className="side-link" to="/new_recipe">New Recipe</Link>
+            </div>
+            <UserSideBarContainer />
+          </div>
         </div>
-        <UserSideBarContainer />
       </header>
     );
   }

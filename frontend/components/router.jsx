@@ -11,6 +11,7 @@ import RecipeIndexContainer from '../components/recipe/recipe_index_container.js
 import RecipeDetailContainer from '../components/recipe/recipe_detail_container.js';
 import UserLikedContainer from '../components/userpage/user_liked_container.js';
 import UserRecipesContainer from '../components/userpage/user_recipes_container.js';
+import HomeContainer from '../components/home/home_container.js';
 
 
 class AppRouter extends React.Component{
@@ -84,6 +85,7 @@ class AppRouter extends React.Component{
     return (
       <Router history={hashHistory}>
         <Route path="/" component={ App } onEnter={this._fetchCategories}>
+          <IndexRoute component={ HomeContainer } />
           <Route path="signup" component={SignUpFormContainer}
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />
