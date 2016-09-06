@@ -106,6 +106,7 @@ class AppRouter extends React.Component{
             onEnter={ this._ensureSignedIn } />
           <Route path="my_recipes" component={ UserRecipesContainer }
             onEnter={ this._ensureSignedIn } />
+          <Route path="search" component={ RecipeIndexContainer }/>
         </Route>
       </Router>
     );

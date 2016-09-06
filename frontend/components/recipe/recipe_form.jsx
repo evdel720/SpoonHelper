@@ -191,14 +191,14 @@ class RecipeForm extends React.Component {
 
           <div className='time-form'>
             <label>Prep time
-            <input type='number'
-              placeholder="mins"
-              value={this.state.prep_time} name='prep_time'
-              onChange={ this.handleInput }/>
-            { this.errorGenerator(errors.prep_time) }
+              <input type='number'
+                placeholder="mins"
+                value={this.state.prep_time} name='prep_time'
+                onChange={ this.handleInput }/>
+              { this.errorGenerator(errors.prep_time) }
             </label>
 
-            <label>Cooking time
+            <label>Cook time
               <input type='number'
                 placeholder="mins"
                 value={this.state.cook_time} name='cook_time'
@@ -208,7 +208,7 @@ class RecipeForm extends React.Component {
           </div>
 
           <label>Ingredients
-            <ul className='ingredient-list'>{ this.ingredientsHandle() }</ul>
+            { this.state.ingredients.length ? <ul className='ingredient-list'>{ this.ingredientsHandle() }</ul> : ""}
             <div id='ingredient-form-container'>
               <input type='text'
                 name='ingredient'
@@ -238,7 +238,7 @@ class RecipeForm extends React.Component {
                 Text</button>
               <button
                 onClick={this.uploader.bind(this)}>
-                File</button>
+                Image</button>
             </div>
 
           <input type='submit' id='submit-btn' disabled='true'/>

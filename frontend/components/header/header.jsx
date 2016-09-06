@@ -2,6 +2,7 @@ import React from 'react';
 import UserSideBarContainer from '../user_side_bar/user_side_bar_container.js';
 import { Link, withRouter } from 'react-router';
 import CategoryDropDownContainer from '../category/drop_down_container.js';
+import SearchFormContainer from '../search/search_form_container.js';
 
 class Header extends React.Component {
   constructor(props) {
@@ -33,9 +34,9 @@ class Header extends React.Component {
   render () {
     return (
       <header className="home">
-        <img onClick={this.homeLink.bind(this)} className="logo" src="http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png" alt="logo"/>
+        <img id='logo' onClick={this.homeLink.bind(this)} src="http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png" alt="logo"/>
         <div className="include-search">
-          <p>Search bar goes here</p>
+          <SearchFormContainer />
           <div className="side-bars">
             <div className="home-side-bar">
               <a className="side-link" onClick={this.show.bind(this)} >Categories ▾</a>

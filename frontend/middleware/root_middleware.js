@@ -4,13 +4,15 @@ import CategoryMiddleware from './category_middleware.js';
 import RecipeMiddleware from './recipe_middleware.js';
 import CommentMiddleware from './comment_middleware.js';
 import LikeMiddleware from './like_middleware.js';
+import SearchMiddleware from './search_middleware.js';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   CategoryMiddleware,
   RecipeMiddleware,
   CommentMiddleware,
-  LikeMiddleware
+  LikeMiddleware,
+  SearchMiddleware
 );
 
 export default RootMiddleware;

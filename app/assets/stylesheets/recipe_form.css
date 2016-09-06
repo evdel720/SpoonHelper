@@ -40,6 +40,7 @@
 
 .time-form label {
   width: 40%;
+  text-align: center;
 }
 
 .recipe-form textarea {
@@ -50,7 +51,7 @@
   width: 94%;
 }
 
-.step-img {
+.recipe-form .step-img {
   width: 90%;
   margin: 0;
   display: inline;
@@ -106,17 +107,17 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 #ingredient-form-container input {
-  margin: 0 10px;
+  margin-right: 5px;
   display: inline-flex;
   padding: 8px;
-  width: 90%;
+  width: 100%;
 }
 
-.ingredient {
+.recipe-form-container .ingredient {
   margin-left: 20px;
   margin-bottom: 3px;
   padding: 0;
@@ -152,6 +153,11 @@
   border: solid 1px #30af39;
 }
 
-.ingredient {
+.recipe-form select {
+  width: 60%;
+}
 
+.ingredient {
+  color: #000;
+  font-size: 15px;
 }

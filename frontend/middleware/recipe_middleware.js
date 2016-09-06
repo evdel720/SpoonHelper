@@ -26,6 +26,9 @@ const RecipeMiddleware = (store) => (next) => (action) => {
   };
 
   switch (action.type) {
+    case RecipeConstants.REQUEST_SEARCH_RECIPES:
+      RecipeUtil.fetchSearchRecipes(action.data, fetchCategorySuccess);
+      break;
     case RecipeConstants.DESTROY_RECIPE:
       RecipeUtil.deleteRecipe(action.rId, destroySuccess);
       break;

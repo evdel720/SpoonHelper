@@ -1,6 +1,8 @@
 .detail-container {
   display: flex;
   flex-direction: column;
+  width: 90%;
+  margin: 20px auto;
 }
 
 .recipe-detail {
@@ -76,8 +78,9 @@
   margin: 10px 0;
 }
 
-li.ingredient {
+.recipe-detail .ingredient {
   padding: 20px 0;
+  padding-left: 10px;
   color: #000;
   font-size: 17px;
   display: inline;
@@ -91,10 +94,9 @@ li.ingredient {
 }
 
 .step-img {
-  width: 70%;
+  width: 90%;
   max-width: 400px;
   margin: 30px auto;
-  align-self: center;
 }
 
 .step-text {
@@ -110,7 +112,9 @@ li.ingredient {
   padding: 5px;
   font-size: 15px;
   width: 60px;
-  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .like-btn {

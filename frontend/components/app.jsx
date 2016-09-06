@@ -1,8 +1,8 @@
 import React from 'react';
-import HeaderContainer from './header/header_container.js';
+import Header from './header/header.jsx';
 const App = ({children}) => (
   <div>
-    <HeaderContainer />
+    <Header />
     {children}
   </div>
 );

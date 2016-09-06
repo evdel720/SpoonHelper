@@ -9,8 +9,14 @@ export const RecipeConstants = {
   CLEAR_SINGLE_RECIPE: "CLEAR_SINGLE_RECIPE",
   CLEAR_RECIPE_INDEX: "CLEAR_RECIPE_INDEX",
   ADD_COMMENT: "ADD_COMMENT",
-  DELETE_COMMENT: "DELETE_COMMENT"
+  DELETE_COMMENT: "DELETE_COMMENT",
+  REQUEST_SEARCH_RECIPES: "REQUEST_SEARCH_RECIPES"
 };
+
+export const requestSearchRecipes = (data) => ({
+  type: RecipeConstants.REQUEST_SEARCH_RECIPES,
+  data
+});
 
 export const addComment = (comment) => ({
   type: RecipeConstants.ADD_COMMENT,

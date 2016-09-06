@@ -2,8 +2,18 @@ class Api::RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :destroy]
   before_action :redirect_home_if_not_logged_in, only: [:create, :update, :destroy]
 
+  def search
+    if params[:search_option]
+      @recipes = Recipe.where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%").limit(5)
+    end
+    render :search
+  end
+
   def index
-    if params[:category_id] != '0'
+    if params[:search_option]
+      @recipes = Recipe.where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%")
+      @category = 'Search Result'
+    elsif params[:category_id] != '0'
       @recipes = Recipe.where(category_id: params[:category_id])
       @category = Category.find_by(id: params[:category_id]).title
     else

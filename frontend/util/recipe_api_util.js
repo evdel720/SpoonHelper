@@ -1,3 +1,22 @@
+export const fetchAutoComplete = (data, success) => {
+  $.ajax({
+    url: '/api/recipes/search.json',
+    type: 'GET',
+    data: data,
+    success
+  });
+};
+
+export const fetchSearchRecipes = (data, success) => {
+  $.ajax({
+    url: '/api/recipes.json',
+    type: 'GET',
+    data: data,
+    success,
+    error: (resp) => {console.log(resp);}
+  });
+};
+
 export const fetchCategoryRecipes = (cId, success) => {
   $.ajax({
     url: '/api/recipes.json',

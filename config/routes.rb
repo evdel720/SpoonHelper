@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#root'
+  get 'api/recipes/search', to: 'api/recipes#search'
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create, :update]

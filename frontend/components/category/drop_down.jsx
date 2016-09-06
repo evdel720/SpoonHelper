@@ -15,8 +15,7 @@ class CategoryDropdown extends React.Component {
           className="category-item" key={cId}>
           <p>{categoryTitle}</p>
           <img className="category-img" src={this.props.categories[cId].url}
-            alt={categoryTitle}
-            style={{width: '100px', height: '100px'}}/>
+            alt={categoryTitle}/>
         </li>
       );
     });

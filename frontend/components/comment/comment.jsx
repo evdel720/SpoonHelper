@@ -12,9 +12,11 @@ const Comment = ({ comment, currentUser, destroyComment }) => {
 
   return (
     <li className='comment'>
-      { forAuthor() }
-      <p className='commentor'>{comment.user.username}</p>
-      { comment.content }
+      <p className='commentor'>
+        { forAuthor() }
+        {comment.user.username}
+      </p>
+      <p className='comment-content'>{ comment.content }</p>
     </li>
   );
 };

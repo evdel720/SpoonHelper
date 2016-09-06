@@ -1,0 +1,32 @@
+.search-dropdown {
+  border: #eee 1px solid;
+  border-radius: 5px;
+  width: 55%;
+  position: absolute;
+  top: 60px;
+  left: 250px;
+  background-color: white;
+  z-index: 30;
+}
+
+.autocomplete-item {
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.autocomplete-item:hover {
+  color: white;
+  background-color: #35c33f;
+  cursor: pointer;
+}
+
+.autocomplete-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.autocomplete-item p {
+  margin-left: 10px;
+}

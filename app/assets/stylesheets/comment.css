@@ -8,7 +8,7 @@
 
 .comment-part form {
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
 }
 
 .comment-part #submit-btn{
@@ -26,11 +26,15 @@
 
 .comment-part p.commentor {
   color: grey;
+  display: block;
+  border-bottom: #eee solid 1px;
 }
 
 
 .del-icon {
   display: inline;
+  width: 20px;
+  height: 20px;
 }
 
 .comment-part {
@@ -38,7 +42,8 @@
 }
 
 li.comment {
-  margin: 10px 15px;
+  margin: 0 10px;
+  margin-bottom: 30px;
   color: #000;
   font-size: 15px;
 }
