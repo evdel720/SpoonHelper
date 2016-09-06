@@ -22,18 +22,19 @@
 }
 
 .recipe_index_item:hover {
-  background-color: #cbf1ce;
-  border-radius: 5px;
+  background-color: #e3e0d9;
+  border-radius: 10px;
 }
 
 .rep_img {
   width: 400px;
   height: 300px;
   display: block;
+  border-radius: 10px;
 }
 
 .item_title {
-  color: #35c33f;
+  color: #3b3b3b;
   font-size: 20px;
   border-bottom: 1px #ddd solid;
 }
@@ -45,4 +46,18 @@
 
 .item_time {
   padding-left: 10px;
+}
+
+.recipe_index_item .item-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.item-info p {
+  margin: 0 20px;
+}
+
+.item-info p:last-child {
+  color: #e60000;
 }

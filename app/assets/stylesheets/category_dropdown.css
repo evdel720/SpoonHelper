@@ -1,6 +1,5 @@
 
 .category-dropdown {
-  color: black;
   position: absolute;
   z-index: 100;
   top: 100px;
@@ -10,8 +9,8 @@
   flex-direction: column;
   align-items: flex-end;
   border-radius: 10px;
-  border: 1px solid #ccc;
-  background-color: white;
+  border: 2px solid white;
+  background-color: #e3e0d9;
 }
 
 .categories {
@@ -21,7 +20,7 @@
 }
 
 .see-all {
-  color: #35c33f;
+  color: #3b3b3b;
   cursor: pointer;
   margin-bottom: 15px;
   margin-right: 10px;
@@ -31,32 +30,32 @@
 }
 
 .see-all:hover {
-  background-color: #35c33f;
+  background-color: #3b3b3b;
   color: white;
   cursor: pointer;
 }
 
 .category-item {
-  color: #35c33f;
+  color: #3b3b3b;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px auto;
   cursor: pointer;
-  border: 2px white solid;
+  padding: 5px;
+  border: 2px #e3e0d9 solid;
 }
 
 .category-item:hover {
   color: white;
-  background-color: #35c33f;
+  background-color: #3b3b3b;
   border-radius: 5px;
-  border-color: #35c33f;
+  border-color: #3b3b3b;
 }
 
 .category-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  padding: 0 10px;
-  padding-bottom: 10px;
+  border: white 2px solid;
 }

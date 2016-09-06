@@ -1,5 +1,5 @@
-color theme:
-normal green : #35c33f
+button color theme:
+normal : #ffae1a
+border: #e69500
 hover: #30af39
-border: #2a9b32
 active: #45cc4f

@@ -19,7 +19,7 @@
 }
 
 .detail-title {
-  color: #35c33f;
+  color: #825f00;
   font-size: 30px;
 }
 
@@ -47,7 +47,7 @@
 .detail-container label {
   margin: 15px 0;
   font-size: 20px;
-  color: #35c33f;
+  color: #825f00;
 }
 
 .recipe-detail p {
@@ -61,10 +61,11 @@
   padding-left: 10px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
 }
 
 .time h5 {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .ingredient-part {
@@ -122,5 +123,9 @@
 }
 
 .unlike-btn {
-  color: #35c33f;
+  color: #e60000;
+}
+
+.detail-user {
+  text-align: right;
 }

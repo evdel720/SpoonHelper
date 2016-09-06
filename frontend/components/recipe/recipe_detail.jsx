@@ -21,8 +21,8 @@ class RecipeDetail extends React.Component{
     if (currentUser && user && currentUser.id === user.id) {
       return (
         <div className='author-buttons'>
-          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937348/edit_qdlixp.png" alt="edit" onClick={this.editHandler.bind(this)}/>
-          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1472937356/delete_pmccwp.png" alt="delete" onClick={this.deleteHandler.bind(this)}/>
+          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1473204129/edit_ms02yi.png" alt="edit" onClick={this.editHandler.bind(this)}/>
+          <img src="http://res.cloudinary.com/wkdal720/image/upload/v1473204036/remove-icon-png-32_zonmih.png" alt="delete" onClick={this.deleteHandler.bind(this)}/>
         </div>
       );
     }

@@ -1,12 +1,12 @@
 
 body {
   font-family: 'Rubik', sans-serif;
+  background-color: #fffbf0;
 }
 
 .home {
   width: 90%;
   margin: 0 auto;
-  color: #35c33f;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,7 +38,7 @@ body {
 }
 
 a.side-link {
-  color: #35c33f;
+  color: #3b3b3b;
   display: inline-block;
   font-size: 15px;
   padding-left: 10px;
@@ -51,13 +51,13 @@ a.side-link {
 .link-separation {
   height: 20px;
   width: 2px;
-  background-color: #35c33f;
+  background-color: #3b3b3b;
   display: inline-block;
   margin: 0 5px;
 }
 
 a.side-link:hover {
-  background-color: #35c33f;
+  background-color: #3b3b3b;
   color: white;
   cursor: pointer;
 }
@@ -68,19 +68,20 @@ a.side-link:hover {
   position: absolute;
   top: 90px;
   right: 100px;
-  border: solid #ccc 1px;
+  border: solid white 2px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #e3e0d9;
   z-index: 50;
 }
 
 .dropdown-item {
   padding: 5px;
   text-decoration: none;
-  color: #35c33f;
+  color: #3b3b3b;
+  border-radius: 5px;
 }
 
 .dropdown-item:hover {
   color: white;
-  background-color: #35c33f;
+  background-color: #3b3b3b;
 }

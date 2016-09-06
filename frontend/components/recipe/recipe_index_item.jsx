@@ -10,9 +10,11 @@ const RecipeIndexItem = ({ item, router }) => {
     <li className="recipe_index_item" onClick={ goToDetail } >
       <img className="rep_img" src={ item.rep_img.slice(1) }/>
       <p className='item_title'>{item.title}</p>
-      <p className='item_author'>by { item.user }</p>
-      <p className='item_time'>{ item.total_cooking } mins</p>
-      <p className='like-count'> ❤ { item.likes }</p>
+      <div className='item-info'>
+        <p className='item_author'>by { item.user }</p>
+        <p className='item_time'>{ item.total_cooking } mins</p>
+        <p className='like-count'> ❤ { item.likes }</p>
+      </div>
     </li>
   );
 };

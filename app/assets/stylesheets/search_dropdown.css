@@ -5,7 +5,7 @@
   position: absolute;
   top: 60px;
   left: 250px;
-  background-color: white;
+  background-color: #e3e0d9;
   z-index: 30;
 }
 
@@ -18,7 +18,8 @@
 
 .autocomplete-item:hover {
   color: white;
-  background-color: #35c33f;
+  background-color: #3b3b3b;
+  border-radius: 5px;
   cursor: pointer;
 }
 

@@ -21,9 +21,11 @@
   background-color: transparent;
   border: 0;
   padding: 0;
+  margin-left: 5px;
 }
 
 .search-form button > img {
+  margin-left: 5px;
   width: 30px;
   height: 30px;
 }
