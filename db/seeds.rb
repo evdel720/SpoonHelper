@@ -176,8 +176,6 @@ Comment.create!(recipe_id: 3, user_id: (1..50).to_a.sample, content: "Good basic
 Comment.create!(recipe_id: 3, user_id: (1..50).to_a.sample, content: "These are simply delicious. Quick and easy to make. Left overs store well n the frig. I am single. I make the whole recipe and am good for the week.")
 
 
-
-
 # http://allrecipes.com/recipe/20156/clone-of-a-cinnabon/?internalSource=staff%20pick&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%208
 Recipe.create!(
   title: 'Clone of a Cinnabon',
@@ -357,16 +355,6 @@ Comment.create!(recipe_id: 8, user_id: (1..50).to_a.sample, content: "I buy the 
 Comment.create!(recipe_id: 8, user_id: (1..50).to_a.sample, content: "My sister-in-law made these for Christmas. Instead of chopping the basil she threaded a leaf between the cheese and tomato.")
 Comment.create!(recipe_id: 8, user_id: (1..50).to_a.sample, content: "These have been the highlight of my summer! I've taken them to parties and love them the next day for lunch or with a sandwich or salad.")
 
-
-
-
-
-
-
-
-
-# TODO
-
 # http://allrecipes.com/recipe/237116/waldorfs-sour-cream-cheesecake/?internalSource=hn_carousel%2002_Waldorf%27s%20Sour%20Cream%20Cheesecake&referringId=79&referringContentType=recipe%20hub&referringPosition=carousel%2002
 Recipe.create!(
   title: 'Waldorf\'s Sour Cream Cheesecake',
@@ -410,7 +398,16 @@ Recipe.create!(
   ]
 )
 
-# Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "FANTASTIC! I was leary of using 1/2 cup of margarine in the crust, and it was pretty oily when I was pressing it into the pan, but it came out great.")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "Wooooow goood")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "This cheesecake was delicious! But one thing I would add, when you're beating the filling, use a low setting. I put it on high and once it was done, the texture was a bit odd and spongey.")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "Terrific! I wouldn't change a thing. I didn't even have an opportunity to take a picture because my family devoured it too soon.")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "This recipe had me second guessing it, but it was delicious! Lots of raving from friends who tried it.")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "We made this before for family, and everyone loved it. Will make it again soon.")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "Absolutely a crowd pleaser and rather easy to make. Followed the recipe except I used a 10\" spring pan with water bath under (as precaution based on other review).")
+Comment.create!(recipe_id: 9, user_id: (1..50).to_a.sample, content: "Really delicious and wonderful size for a crowd. I made it in a glass 9 by 13 inch pan and didn't have trouble with cracks or flaws like I have with some other cheesecakes.")
+
+
 
 # http://allrecipes.com/recipe/25037/best-big-fat-chewy-chocolate-chip-cookie/?internalSource=hub%20recipe&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%2014
 Recipe.create!(
@@ -439,6 +436,30 @@ Recipe.create!(
   }
   ]
 )
+
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "We thought these were great. It's not the only chocolate chip cookie recipe I'll use, but when you want a \"big, fat, chewy cookie,\" this is awesome.")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "I have tried quite a few chocolate chip cookie recipes, and this is by far the BEST! Don't be alarmed by the reviewers who say theirs turned out flat.")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "Update: Learn from my mistake...Use MARGARINE rather than butter in this recipe if you want a thick cookie. Wow! This cookie is absolutely heavenly!")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "W-O-W!!!! I'm speechless. Just when I was beginning to give up my faith in this website.")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "This was the worst cookie recipe ever...They were so good i ate waaaayyy too many and got sick for 2 days...no joke. :) Great job.")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "After sitting hours upon hours in front of a computer searching for that one chocolate chip cookie recipe that would be 'the one', I finally found it.")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "These cookies are wonderful! They look just like they came from one of the cookie shops at the mall. I am impressed.")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "These cookies are delicious! They really are big and I dropped 1/8 cup of the cookie mix onto the cookie sheet instead of the whole 1/4 cup.")
+Comment.create!(recipe_id: 10, user_id: (1..50).to_a.sample, content: "I made this exactly as the recipe is stated and the cookies came out very thin. They had an excellent flavor though. I am going to read the other reviews and try again.")
+
+
+
+
+
+
+
+
+# TODO
+
+
+
+
+
 
 # http://allrecipes.com/recipe/10549/best-brownies/?internalSource=hub%20recipe&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%2018
 Recipe.create!(
@@ -470,6 +491,8 @@ Recipe.create!(
   }
   ]
 )
+
+Comment.create!(recipe_id: 11, user_id: (1..50).to_a.sample, content: "")
 
 # http://allrecipes.com/recipe/223016/fresh-blueberry-cake/?internalSource=staff%20pick&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%208
 Recipe.create!(
