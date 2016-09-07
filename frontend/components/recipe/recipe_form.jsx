@@ -22,33 +22,6 @@ class RecipeForm extends React.Component {
     this.stepDeleteHandler = this.stepDeleteHandler.bind(this);
   }
 
-  componentDidMount() {
-    this.props.recipe.steps.forEach((s, idx) => {
-      let oldStep = { id: s.id, body: s.body };
-      RecipeHelper.putStepOnForm(oldStep, this.stepDeleteHandler, null, idx);
-    });
-  }
-
-  componentWillReceiveProps(props) {
-    this.render();
-  }
-
-  componentWillUpdate() {
-    RecipeHelper.reorderSteps();
-  }
-
-  componentDidUpdate() {
-    let submitButton = document.getElementById('submit-btn');
-    let errorMessage = document.getElementById('step-length');
-    if (this.state.steps.length > 0) {
-      errorMessage.innerHTML = "";
-      submitButton.disabled = false;
-    } else {
-      errorMessage.innerHTML = "Every recipe needs at least one step";
-      submitButton.disabled = true;
-    }
-  }
-
   handleInput(e) {
     this.setState({[e.target.name]: e.target.value});
   }
@@ -76,43 +49,37 @@ class RecipeForm extends React.Component {
 
   stepDeleteHandler(e) {
     e.preventDefault();
-    let targetStep = e.target.previousSibling;
-    let targetStepIndex = parseInt(targetStep.name);
-    let marked = this.state.steps[targetStepIndex].id;
+    let targetIndex = parseInt(e.target.previousSibling.name);
+    let marked = this.state.steps[targetIndex].id;
     if (marked) {
       this.setState({
-        'stepsToBeDeleted': this.state.stepsToBeDeleted.concat({id: marked, _destroy: '1'})
+        stepsToBeDeleted: this.state.stepsToBeDeleted.concat({id: marked, _destroy: '1'})
       });
     }
-    targetStep.remove();
-    e.target.remove();
-
-    let removedState = this.state['steps'];
-    removedState.splice(parseInt(targetStep.name), 1);
+    let removedState = this.state.steps;
+    removedState.splice(targetIndex, 1);
     this.setState({
-      'steps': removedState
+      steps: removedState
     });
   }
 
   stepSetHandler(e) {
-    let addedState = this.state['steps'];
+    let addedState = this.state.steps;
     let newValue = addedState[e.target.name];
     newValue.body = "0" + e.target.value;
     addedState[e.target.name] = newValue;
-    this.setState({'steps': addedState});
+    this.setState({steps: addedState});
   }
 
   addSteps(e) {
     e.preventDefault();
     let newStep = { id: null, body: "0" };
-    this.setState({'steps': this.state['steps'].concat(newStep)});
-    RecipeHelper.putStepOnForm(newStep, this.stepDeleteHandler, this.stepSetHandler);
+    this.setState({steps: this.state.steps.concat(newStep)});
   }
 
   addFile(file) {
     let newFile = {id: null, body: "1" + file.url };
-    this.setState({'steps': this.state['steps'].concat(newFile)});
-    RecipeHelper.putStepOnForm(newFile, this.stepDeleteHandler, null, this.state.steps.length - 1);
+    this.setState({steps: this.state.steps.concat(newFile)});
   }
 
   handleFiles(error, result) {
@@ -133,13 +100,13 @@ class RecipeForm extends React.Component {
 
   errorGenerator(errors) {
     if (errors) {
-      return errors.map((e, idx) => (<p key={e.length + idx} className='error'>{e}</p>));
+      return errors.map((e, idx) => (<p key={e + idx} className='error'>{e}</p>));
     }
   }
 
   ingredientsHandle() {
     return this.state.ingredients.map((ingredient, idx) => (
-      <li key={idx}
+      <li key={ingredient + idx}
         className='ingredient'
         onClick={this.deleteIngredient.bind(this)}>
         { ingredient }
@@ -164,6 +131,35 @@ class RecipeForm extends React.Component {
     this.setState({'ingredients': newIngredients});
   }
 
+  stepList(steps) {
+    return steps.map((s, idx) => {
+      if (s.body[0] === '0') {
+        return (
+          <div key={s + idx} className='step-item'>
+            <textarea placeholder="step text goes here"
+              name={idx}
+              className='step-textarea step-value-node'
+              onChange={ this.stepSetHandler }
+              value={ s.body.slice(1) } >
+            </textarea>
+            <button className="delete-btn"
+              onClick={ this.stepDeleteHandler }>X</button>
+          </div>
+        );
+      } else {
+        return (
+          <div key={s + idx} className='step-item'>
+            <img src={this.state.steps[idx].body.slice(1)}
+              name={idx}
+              className='step-img step-value-node'/>
+            <button className="delete-btn"
+              onClick={ this.stepDeleteHandler }>X</button>
+          </div>
+        );
+      }
+    });
+  }
+
   render() {
     const text = this.props.recipe.id ? "Update Recipe": "New Recipe";
     const { errors } = this.props;
@@ -177,7 +173,6 @@ class RecipeForm extends React.Component {
               value={this.state.title}
               onChange={ this.handleInput }/>
               { this.errorGenerator(errors.title) }
-
           </label>
 
           <label>Description
@@ -212,7 +207,7 @@ class RecipeForm extends React.Component {
             <div id='ingredient-form-container'>
               <input type='text'
                 name='ingredient'
-                placeholder="add ingredient"/>
+                placeholder="add each ingredient"/>
               <button id="ingredient-btn" onClick={ this.addIngredient.bind(this) }>+</button>
             </div>
             { this.errorGenerator(errors.ingredients) }
@@ -226,10 +221,14 @@ class RecipeForm extends React.Component {
             { this.errorGenerator(errors.category_id) }
           </label>
 
-          <label>Click button to add steps</label>
+          <label>Click buttons below to add steps</label>
 
-            <p id='step-length' className='error'></p>
+            <p className='error'>
+              {this.state.steps.length ? "" : "Every recipe needs at least one step"}
+            </p>
+
             <div id='steps'>
+              { this.state.steps.length ? this.stepList(this.state.steps) : ""}
             </div>
 
             <div className='recipe-form-btns'>
@@ -241,7 +240,9 @@ class RecipeForm extends React.Component {
                 Image</button>
             </div>
 
-          <input type='submit' id='submit-btn' disabled='true'/>
+          <input type='submit'
+            id='submit-btn'
+            disabled={ this.state.steps.length ? false : true } />
         </form>
 
       </div>
