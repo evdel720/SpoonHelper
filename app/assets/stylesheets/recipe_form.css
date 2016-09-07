@@ -99,10 +99,10 @@
   padding: 4px 6px;
 }
 
-.ingredient-list {
+.ingredient-list-in-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-self: flex-start;
 }
 
 #ingredient-form-container {
@@ -120,8 +120,6 @@
 }
 
 
-
-/* TODO make this width inline */
 .recipe-form-container li.ingredient {
   display: inline;
   width: auto;

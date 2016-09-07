@@ -2,31 +2,49 @@ import React from 'react';
 import { withRouter } from 'react-router';
 
 class SearchForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search_option: 'title',
+      search_value: ""
+    };
+    this.clearForm = this.clearForm.bind(this);
+  }
+
   inputHandler(e) {
     e.preventDefault();
-    if (e.target.value !== "") {
-      let search_option = e.target.previousSibling.value;
-      let search_value = e.target.value;
-      this.props.requestSearchAutocomplete({search_option, search_value});
-      document.addEventListener('click', () => this.clearForm());
-    } else {
+    this.setState({
+      search_option: e.target.previousSibling.value,
+      search_value: e.target.value
+    });
+    if (e.target.value === "") {
       this.props.clearAutocomplete();
+    } else {
+      this.props.requestSearchAutocomplete(this.state);
     }
+    document.addEventListener('mousedown', this.clearForm );
   }
 
   clearForm() {
-    document.getElementById('search-input').value = "";
+    this.setState({search_option: 'title', search_value: ""});
     this.props.clearAutocomplete();
+    document.removeEventListener('mousedown', this.clearForm );
   }
 
   submitHandler(e) {
     e.preventDefault();
-    if (e.target.search_value !== "") {
-      let search_option = e.target.search_option.value;
-      let search_value = e.target.search_value.value;
-      this.props.requestSearchRecipes({search_option, search_value});
-      this.props.router.push(`/search`);
+    if (this.state.search_value !== "") {
+      this.props.requestSearchRecipes(this.state);
+      this.props.router.push('/search');
+      this.clearForm();
     }
+    // if (e.target.search_value.value !== "") {
+    //   let search_option = e.target.search_option.value;
+    //   let search_value = e.target.search_value.value;
+    //   debugger;
+    //   this.props.requestSearchRecipes({search_option, search_value});
+    //   this.props.router.push(`/search`);
+    // }
   }
 
   searchResult() {
@@ -47,14 +65,20 @@ class SearchForm extends React.Component {
   render() {
     return (
       <div className='search-container'>
-        <form className='search-form' onSubmit={this.submitHandler.bind(this)}>
-          <select id='select' name='search_option'>
+        <form className='search-form'
+          onSubmit={ this.submitHandler.bind(this) }>
+          <select id='select' name='search_option'
+            value={ this.state.search_option }
+            onChange={ (e) => this.setState({search_option: e.target.value })}>
             <option value='title'>Recipe name</option>
             <option value='ingredients'>Ingredient</option>
           </select>
-          <input id="search-input" name="search_value" type='text' onChange={ this.inputHandler.bind(this)} placeholder='Search'/>
+          <input id="search-input"
+            name="search_value" type='text' value={ this.state.search_value }
+            onChange={ this.inputHandler.bind(this)} placeholder='Search'/>
           <button>
-            <img className='hvr-pop' src='http://res.cloudinary.com/wkdal720/image/upload/v1473203868/search_1_gesyxt.png' alt='icon'/>
+            <img className='hvr-pop'
+              src='http://res.cloudinary.com/wkdal720/image/upload/v1473203868/search_1_gesyxt.png' alt='icon'/>
           </button>
         </form>
         { this.props.search.length ? <ul className='search-dropdown'> {this.searchResult()} </ul> : ""}

@@ -219,7 +219,7 @@ class RecipeForm extends React.Component {
           </div>
 
           <label>Ingredients
-            { this.state.ingredients.length ? <ul className='ingredient-list'>{ this.ingredientsHandle() }</ul> : ""}
+            { this.state.ingredients.length ? <ul className='ingredient-list-in-form'>{ this.ingredientsHandle() }</ul> : ""}
             <div id='ingredient-form-container'>
               <input type='text'
                 name='ingredient'

@@ -129,11 +129,10 @@ class RecipeDetail extends React.Component{
               <p>{description}</p>
             </label>
 
-            <label>Steps
+            <label>Steps</label>
               <ol id='steps-list'>
                 { this.putSteps(steps) }
               </ol>
-            </label>
           </div>
         </div>
 
