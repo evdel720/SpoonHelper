@@ -20,7 +20,6 @@ class Api::RecipesController < ApplicationController
       @recipes = Recipe.all
       @category = 'All'
     end
-    @sorted_by = ''
     render :index
   end
 

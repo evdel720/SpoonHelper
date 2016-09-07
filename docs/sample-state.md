@@ -30,7 +30,6 @@
   recipes: {
     index: {
       category: categoryTitle, / "search result" if it is search result
-      sortedBy: ["created_at", "asc"],
       items {
         1: {
           title: "Recipe Index1",

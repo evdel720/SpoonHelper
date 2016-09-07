@@ -117,5 +117,4 @@ and destroyed through the API.
 
 ### Bonus Features (TBD)
 - [ ] Search Recipes by title auto complete, ingredients
-- [ ] Sort by Recipe title, create date
 - [ ] Mailer
