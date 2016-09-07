@@ -42,12 +42,12 @@ class AppRouter extends React.Component{
   }
 
   _newRecipePrepare(nextState, replace){
+    this.context.store.dispatch(clearSingleRecipe());
     const currentState = this.context.store.getState();
     const currentUser = currentState.session.currentUser;
     if (!currentUser) {
       replace('/signin');
     }
-    this.context.store.dispatch(clearSingleRecipe());
   }
 
   _editRecipePrepare(nextState, replace){
@@ -70,7 +70,7 @@ class AppRouter extends React.Component{
   }
 
   _clearErrorsWhenLeave() {
-    // clear input forms 
+    // clear input forms
     this.context.store.dispatch(clearErrors());
   }
 

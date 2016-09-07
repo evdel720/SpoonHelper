@@ -1,6 +1,7 @@
 class Api::RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :destroy]
   before_action :redirect_home_if_not_logged_in, only: [:create, :update, :destroy]
+  before_action :redirect_home_if_is_not_author, only: [:update, :destroy]
 
   def search
     if params[:search_option]
@@ -68,5 +69,10 @@ class Api::RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :description, :ingredients, :category_id, :prep_time, :cook_time, steps: [:id, :body, :order, :_destroy])
+  end
+
+  def redirect_home_if_is_not_author
+    render json: {}, status: 401 unless current_user.id == @recipe.user.id
+    return
   end
 end

@@ -76,6 +76,11 @@
   border: solid 1px #b37400;
 }
 
+.session-form button:disabled {
+  background: grey;
+  border-color: transparent;
+}
+
 .error {
   font-size: 15px;
   color: red;

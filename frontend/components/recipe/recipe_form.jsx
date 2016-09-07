@@ -160,6 +160,22 @@ class RecipeForm extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.recipe.id) {
+      this.setState({
+        title: "",
+        ingredients: [],
+        description: "",
+        prep_time: "",
+        cook_time: "",
+        category_id: undefined,
+        steps: [],
+        stepsToBeDeleted: []
+      });
+      this.render();
+    }
+  }
+
   render() {
     const text = this.props.recipe.id ? "Update Recipe": "New Recipe";
     const { errors } = this.props;
