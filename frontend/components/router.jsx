@@ -70,7 +70,6 @@ class AppRouter extends React.Component{
   }
 
   _clearErrorsWhenLeave() {
-    // clear input forms
     this.context.store.dispatch(clearErrors());
   }
 
