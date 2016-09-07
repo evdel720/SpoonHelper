@@ -115,12 +115,22 @@
 }
 
 .like-btn, .unlike-btn {
+  margin-right: 5px;
   padding: 5px;
   font-size: 15px;
   width: 60px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.like-btn:focus, .unlike-btn:focus {
+  border: none;
+  outline: none;
+}
+
+.like-btn:disabled {
+  cursor: default;
 }
 
 .like-btn {
@@ -133,4 +143,8 @@
 
 .detail-user {
   text-align: right;
+}
+
+.ingredient-part .category-link {
+  cursor: pointer;
 }

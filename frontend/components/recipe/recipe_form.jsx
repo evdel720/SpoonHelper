@@ -161,7 +161,7 @@ class RecipeForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.recipe.id) {
+    if (!nextProps.recipe.id && !Object.keys(nextProps.errors).length) {
       this.setState({
         title: "",
         ingredients: [],

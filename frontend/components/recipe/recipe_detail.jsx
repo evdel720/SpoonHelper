@@ -81,6 +81,14 @@ class RecipeDetail extends React.Component{
     }
   }
 
+  likeBtnClassName() {
+    if (this.props.signedIn) {
+      return this.userLiked() ? "unlike-btn hvr-pulse" : "like-btn hvr-pulse";
+    } else {
+      return 'like-btn';
+    }
+  }
+
   render() {
     const { title, user, description, ingredients,
       category, prep_time, cook_time, steps, id, likes } = this.props.recipe;
@@ -90,7 +98,8 @@ class RecipeDetail extends React.Component{
         <div className="recipe-detail">
           <div className="ingredient-part">
             <label>Category
-              <p>{category ? category.title : ""}</p>
+              <p className="category-link" onClick={() => this.props.router.push(`/category/${category.id}`)}
+                >{category ? category.title : ""}</p>
             </label>
 
             <label>Ingredients
@@ -102,7 +111,7 @@ class RecipeDetail extends React.Component{
           <div className="recipe-all-part">
             <h1 className="detail-title">
               <button
-                className={ this.props.signedIn && this.userLiked() ? "unlike-btn hvr-pop" : "like-btn hvr-pop"}
+                className={ this.likeBtnClassName() }
                 onClick={ this.likeToggle.bind(this) }
                 disabled={ this.props.signedIn ? false : true }
                 >❤ { likes } </button>

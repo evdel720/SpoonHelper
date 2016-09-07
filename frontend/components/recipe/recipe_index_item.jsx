@@ -13,7 +13,7 @@ const RecipeIndexItem = ({ item, router }) => {
       <div className='item-info'>
         <p className='item_author'>by { item.user }</p>
         <p className='item_time'>{ item.total_cooking } mins</p>
-        <p className='like-count'> ❤ { item.likes }</p>
+        <p className='like-count'>{ item.likes } likes</p>
       </div>
     </li>
   );

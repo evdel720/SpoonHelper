@@ -9,10 +9,11 @@
   <script type="text/javascript">
     window.cloudinary_options = {
       cloud_name: '<%= ENV['CLOUD_NAME'] %>',
-      upload_preset: '<%= ENV["UPLOAD_PRESET"] %>'
+      upload_preset: '<%= ENV["UPLOAD_PRESET"] %>',
+      client_allowed_formats: ['png', 'jpg', 'jpeg', 'gif', 'bmp']
     }
   </script>
-  
+
   <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 </head>
 <body>
