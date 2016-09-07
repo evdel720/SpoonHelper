@@ -52,9 +52,11 @@
 }
 
 .recipe-form .step-img {
-  width: 90%;
+  width: 94%;
   margin: 0;
   display: inline;
+  margin-top: 10px;
+  align-self: flex-end;
 }
 
 .recipe-form label {
@@ -165,4 +167,10 @@
 .ingredient {
   color: #000;
   font-size: 15px;
+}
+
+div.step-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
