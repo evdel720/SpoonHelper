@@ -1,9 +1,7 @@
 .comment-part {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   width: 70%;
-  align-self: flex-end;
 }
 
 .comment-part form {
