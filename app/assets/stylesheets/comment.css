@@ -55,3 +55,7 @@ p.commentor {
   display: inline;
   margin-right: 15px;
 }
+
+.comment-content {
+  margin-left: 10px;
+}
