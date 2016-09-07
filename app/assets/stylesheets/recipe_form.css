@@ -117,7 +117,12 @@
   width: 100%;
 }
 
-.recipe-form-container .ingredient {
+
+
+/* TODO make this width inline */
+.recipe-form-container li.ingredient {
+  display: inline;
+  width: auto;
   margin-left: 20px;
   margin-bottom: 3px;
   padding: 0;

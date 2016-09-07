@@ -39,10 +39,10 @@ class Header extends React.Component {
           <SearchFormContainer />
           <div className="side-bars">
             <div className="home-side-bar">
-              <a className="side-link" onClick={this.show.bind(this)} >Categories ▾</a>
+              <a className="side-link hvr-fade" onClick={this.show.bind(this)} >Categories ▾</a>
               { this.state.categoryVisible ? <CategoryDropDownContainer /> : "" }
               <div className="link-separation"></div>
-              <Link className="side-link" to="/new_recipe">New Recipe</Link>
+              <Link className="side-link hvr-fade" to="/new_recipe">New Recipe</Link>
             </div>
             <UserSideBarContainer />
           </div>

@@ -102,7 +102,7 @@ class RecipeDetail extends React.Component{
           <div className="recipe-all-part">
             <h1 className="detail-title">
               <button
-                className={ this.props.signedIn && this.userLiked() ? "unlike-btn" : "like-btn"}
+                className={ this.props.signedIn && this.userLiked() ? "unlike-btn hvr-pop" : "like-btn hvr-pop"}
                 onClick={ this.likeToggle.bind(this) }
                 disabled={ this.props.signedIn ? false : true }
                 >❤ { likes } </button>

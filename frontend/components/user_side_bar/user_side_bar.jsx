@@ -27,8 +27,8 @@ class UserSideBar extends React.Component {
   dropDown() {
     return (
       <ul className="user-dropdown">
-        <Link className="dropdown-item" to="/my_liked">Liked Recipes</Link>
-        <Link className="dropdown-item" to="/my_recipes">Created Recipes</Link>
+        <Link className="dropdown-item hvr-fade" to="/my_liked">Liked Recipes</Link>
+        <Link className="dropdown-item hvr-fade" to="/my_recipes">Created Recipes</Link>
       </ul>
     );
   }
@@ -38,12 +38,12 @@ class UserSideBar extends React.Component {
     if (signedIn) {
       return (
         <ul className="user-side-bar">
-          <a className="side-link"
+          <a className="side-link hvr-fade"
             onClick={ this.show.bind(this) }>
             {currentUser.username} ▾</a>
           { this.state.userDropdown ? this.dropDown() : "" }
           <div className="link-separation"></div>
-          <a className="side-link" onClick={signOut}>Sign Out</a>
+          <a className="side-link hvr-fade" onClick={signOut}>Sign Out</a>
         </ul>
       );
     } else {

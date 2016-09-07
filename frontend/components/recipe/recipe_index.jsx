@@ -16,6 +16,9 @@ class RecipeIndex extends React.Component {
     return (
       <div className="recipe_index_container">
         <h1 className="category_title">{categoryTitle}</h1>
+        <select>
+          <option></option>
+        </select>
         <ul className="recipe_index">
           { itemList }
         </ul>

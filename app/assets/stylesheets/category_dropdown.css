@@ -43,14 +43,17 @@
   margin: 10px auto;
   cursor: pointer;
   padding: 5px;
+  border-radius: 10px;
   border: 2px #e3e0d9 solid;
+}
+
+.category-item p {
+  text-align: center;
 }
 
 .category-item:hover {
   color: white;
   background-color: #3b3b3b;
-  border-radius: 5px;
-  border-color: #3b3b3b;
 }
 
 .category-img {

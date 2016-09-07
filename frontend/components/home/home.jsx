@@ -39,7 +39,7 @@ class Home extends React.Component {
     let categories = this.props.categories;
     return Object.keys(categories).map((cId, idx) => {
       return (
-        <li key={cId + idx}
+        <li key={cId + idx} className="hvr-grow"
           onClick={ () => { this.props.router.push(`/category/${cId}`); }}>
           { categories[cId].title }
         </li>

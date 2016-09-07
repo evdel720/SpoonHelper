@@ -12,7 +12,7 @@ class CategoryDropdown extends React.Component {
       let categoryTitle = this.props.categories[cId].title;
       return (
         <li onClick={ this.clickHandler.bind(this, cId) }
-          className="category-item" key={cId}>
+          className="category-item hvr-fade" key={cId}>
           <p>{categoryTitle}</p>
           <img className="category-img" src={this.props.categories[cId].url}
             alt={categoryTitle}/>
@@ -27,7 +27,7 @@ class CategoryDropdown extends React.Component {
         <div className="categories">
           {this.categoryList()}
         </div>
-        <p className='see-all' onClick={ this.clickHandler.bind(this, 0) }>
+        <p className='see-all hvr-fade' onClick={ this.clickHandler.bind(this, 0) }>
           See All Recipes
         </p>
       </div>

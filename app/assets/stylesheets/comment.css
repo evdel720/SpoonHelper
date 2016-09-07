@@ -1,7 +1,10 @@
+/* TODO make the collapse go away*/
+
 .comment-part {
   display: flex;
   flex-direction: column;
   width: 70%;
+  margin: auto;
 }
 
 .comment-part form {

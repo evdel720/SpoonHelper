@@ -54,7 +54,7 @@ class SearchForm extends React.Component {
           </select>
           <input id="search-input" name="search_value" type='text' onChange={ this.inputHandler.bind(this)} placeholder='Search'/>
           <button>
-            <img src='http://res.cloudinary.com/wkdal720/image/upload/v1473203868/search_1_gesyxt.png' alt='icon'/>
+            <img className='hvr-pop' src='http://res.cloudinary.com/wkdal720/image/upload/v1473203868/search_1_gesyxt.png' alt='icon'/>
           </button>
         </form>
         { this.props.search.length ? <ul className='search-dropdown'> {this.searchResult()} </ul> : ""}
