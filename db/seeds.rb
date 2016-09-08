@@ -1056,7 +1056,626 @@ Comment.create!(recipe_id: 25, user_id: (1..301).to_a.sample, content: "Yummy! I
 Comment.create!(recipe_id: 25, user_id: (1..301).to_a.sample, content: "I substituted 1/3 cup applesauce for oil and made my own buttermilk using 1 tablespoon vinegar and enough milk to make 1 cup.")
 
 
-# form for recipe create
+# http://allrecipes.com/recipe/16895/fluffy-french-toast/?internalSource=hub%20recipe&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%2019
+Recipe.create!(
+  title: 'Fluffy French Toast',
+  description: 'This French toast recipe is different because it uses flour. I have given it to some friends and they\'ve all liked it better than the French toast they usually make!',
+  ingredients: '1/4 cup all-purpose flour#@!1 cup milk#@!1 pinch salt#@!3 eggs#@!1/2 teaspoon ground cinnamon#@!1 teaspoon vanilla extract#@!1 tablespoon white sugar#@!12 thick slices bread',
+  user_id: (1..301).to_a.sample,
+  category_id: 1,
+  prep_time: 10,
+  cook_time: 20,
+  steps_attributes: [{
+    body: '0Measure flour into a large mixing bowl. Slowly whisk in the milk. Whisk in the salt, eggs, cinnamon, vanilla extract and sugar until smooth.',
+    order:0
+  }, {
+    body: '0Heat a lightly oiled griddle or frying pan over medium heat.',
+    order:1
+  }, {
+    body: '0Soak bread slices in mixture until saturated. Cook bread on each side until golden brown. Serve hot.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473287729/3870262_ibabg8.jpg',
+    order:3
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473287727/2049275_rqqxph.jpg',
+    order:4
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "I love this recipe, and I had been searching for a good French toast recipe for a while. This one is the winner of all those I've tried.")
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "This is the only way I'll make my french toastWe enjoyed the idea and tweaked the recipe a little;we doubled the cinnamon,added 2 pureed bananas and shot of dark rum to the mixture.Grand Marnier works well too.That'll cure what ails ya!!. It tastes like a restaurant's. The flour is the secret.")
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "Wow, LOVED this recipe! In reading a LOT of reviews last night, the common theme seemed to be to double the vanilla and the cinnamon so I did.")
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "We enjoyed the idea and tweaked the recipe a little;we doubled the cinnamon,added 2 pureed bananas and shot of dark rum to the mixture.Grand Marnier works well too.That'll cure what ails ya!!")
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "Delicious! Every french toast recipe I've ever used turned out soggy, but not this one. I added more cinnamon (1 1/2 tsp total) and an extra tsp. of vanilla.")
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "OMG! I love french toast and thought that my recipe was great until I tried this one. The addition of flour made me curious to try it and I'm glad that I did. It really made a difference.")
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "Great recipe for french toast! I never thought flour would make a difference - but it thickens up the egg mixture nicely.")
+Comment.create!(recipe_id: 26, user_id: (1..301).to_a.sample, content: "This recipe got rave reviews from everyone (including my best friend's little 2 year old :-P). The flavor and texture were perfect.")
+
+
+# http://allrecipes.com/recipe/20177/todds-famous-blueberry-pancakes/?internalSource=recipe%20hub&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%2025
+Recipe.create!(
+  title: 'Todd\'s Famous Blueberry Pancakes',
+  description: 'My husband makes the most fabulous pancakes I\'ve ever eaten! Well worth the hour wait! We serve them with butter and brown sugar.',
+  ingredients: '1 1/4 cups all-purpose flour#@!1/2 teaspoon salt#@!1 tablespoon baking powder#@!1 1/4 teaspoons white sugar#@!1 egg#@!1 cup milk#@!1/2 tablespoon butter, melted#@!1/2 cup frozen blueberries, thawed',
+  user_id: (1..301).to_a.sample,
+  category_id: 1,
+  prep_time: 10,
+  cook_time: 15,
+  steps_attributes: [{
+    body: '0In a large bowl, sift together flour, salt, baking powder and sugar. In a small bowl, beat together egg and milk. Stir milk and egg into flour mixture. Mix in the butter and fold in the blueberries. Set aside for 1 hour.',
+    order:0
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473288099/3842475_nhxpgr.jpg',
+    order:1
+  }, {
+    body: '0Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473288099/1882197_cpvonv.jpg',
+    order:3
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473288099/686460_qhuszg.jpg',
+    order:4
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "Can you say \"YUM\"? This is a top of the line blueberry pancake recipe. It always comes out perfect--fluffy, yet not cake-like. It's very moist with the blueberries; not a dry pancake at all.")
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "This recipe is amazing. I have made it several times for several people and they all agree it is GREAT! It is very easy to make and the brown sugar & butter topping is yummy. ")
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "GREAT WORTH THE WAIT. USE FRESH BERRIES.")
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "The pancakes didn't have much flavor. I definitely needed syrup to be able to eat them. I liked the texture of it though. Very easy to make, indeed. You must drain blueberries.")
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "Great blueberry pancakes! Will make again.")
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "terrific pancakes, well worth the hour wait. I liked them with the butter and brown sugar. My husband preferred syrup. Also I used fresh blueberries.")
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "My batch of pancakes turned out fabulous. They were fluffy and had a good consistency. I loved the recipe, but I added more sugar.")
+Comment.create!(recipe_id: 27, user_id: (1..301).to_a.sample, content: "I thought that this recipe was great! You do have to plan ahead for the hour wait, but the fluffy raised texture of the pancakes is worth it.")
+
+
+# http://allrecipes.com/recipe/221131/baked-buffalo-chicken-dip/?internalSource=staff%20pick&referringId=76&referringContentType=recipe%20hub&clickId=cardslot%204
+Recipe.create!(
+  title: 'Baked Buffalo Chicken Dip',
+  description: 'You can\'t keep showing up at these Super Bowl parties with a bag of chips every year. So, if you\'re ready to go from snack scrub to appetizer all-star, then give this great baked dip a try.',
+  ingredients: '3 cups diced cooked rotisserie chicken#@!2 (8 ounce) packages cream cheese, softened#@!3/4 cup hot pepper sauce (such as Frank\'s RedHot®)#@!1/2 cup shredded pepper Jack cheese#@!1/2 cup blue cheese dressing#@!1/2 cup crumbled blue cheese#@!1/2 teaspoon seafood seasoning (such as Old Bay®)#@!1 pinch cayenne pepper, or to taste#@!2 tablespoons shredded pepper Jack cheese#@!1 pinch cayenne pepper, for garnish',
+  user_id: (1..301).to_a.sample,
+  category_id: 2,
+  prep_time: 15,
+  cook_time: 15,
+  steps_attributes: [{
+    body: '0Preheat oven to 400 degrees F (200 degrees C).',
+    order:0
+  }, {
+    body: '0Combine chicken, cream cheese, hot pepper sauce, 1/2 cup pepper Jack cheese, blue cheese dressing, crumbled blue cheese, seafood seasoning, and cayenne pepper in a large bowl.',
+    order:1
+  }, {
+    body: '0Transfer chicken mixture to a 9-inch round baking dish and sprinkle with 2 tablespoons pepper Jack cheese.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473286354/963308_dyxfyl.jpg',
+    order:3
+  }, {
+    body: '0Bake until lightly browned, 15 to 20 minutes. Remove from oven and garnish with cayenne pepper.',
+    order:4
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473286354/2661543_sieosd.jpg',
+    order:4
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "I'm rating this 4 stars but don't get me wrong, it's very addictive, just be sure everyone in your group loves blue cheese. I prefer the original Frank's recipe which is on this site.")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "I made this dip back on Super Bowl Sunday for a potluck party and got mixed reviews.")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "Delicious! I made this last night to bring over to my friends house and we just couldn't stop eating it. Thanks for the great recipe.")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "I found a way to make EVERYONE happy! I made 1 1/2 recipes. With half of the mix I used pepper jack cheese, blue cheese dressing and a scant 1/4C blue cheese crumbles.")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "Made this for a family get-together and everyone raved about it. It's very addicting. Only thing I did different was to substitute ranch dressing for the blue cheese dressing")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "I made this quick and easy recipe today for a birthday party and it was amazing! I used everything except for the crumbled blue cheese.")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "Huge hit! I made it the night before and couldn't stop eating it cold straight out of the fridge. I left out the cayenne, cut the hot sauce to 1/2 C, and used cheddar/jack")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "I made this for a Super Bowl party--no substitutions. It was fantastic! Even my super picky boyfriend and friend who doesn't like blue cheese got seconds. ")
+Comment.create!(recipe_id: 28, user_id: (1..301).to_a.sample, content: "OH MY WORD. SO GOOD. I made this exactly as written and my super bowl party loved it. It's got the right amount of spicy and savory and ... yummy.")
+
+
+# http://allrecipes.com/recipe/228048/strawberry-goat-cheese-bruschetta/?internalSource=staff%20pick&referringId=76&referringContentType=recipe%20hub&clickId=cardslot%205
+Recipe.create!(
+  title: 'Strawberry Goat Cheese Bruschetta',
+  description: 'The way the tangy, slightly salty goat cheese works with the syrupy, balsamic-coated strawberries and crispy, charred bread is a thing of beauty.',
+  ingredients: '1/2 cup balsamic vinegar#@!12 slices Italian bread#@!1 tablespoon olive oil#@!1 pound strawberries, washed and diced#@!2 teaspoons fresh thyme leaves, plus more for serving#@!1 cup goat cheese, room temperature#@!salt and freshly ground pepper to taste',
+  user_id: (1..301).to_a.sample,
+  category_id: 2,
+  prep_time: 10,
+  cook_time: 15,
+  steps_attributes: [{
+    body: '0Heat vinegar in a small skillet over medium-low heat. Simmer until reduced by about half, 8 to 10 minutes. Remove from heat and allow to cool to room temperature.',
+    order:0
+  }, {
+    body: '0Prepare a grill for high heat. Place bread slices on a foil-lined baking sheet and drizzle with olive oil.',
+    order:1
+  }, {
+    body: '0Combine strawberries and thyme in a small bowl and set aside.',
+    order:2
+  }, {
+    body: '0Grill bread on the preheated grill until browned, about 3 minutes per side.',
+    order:3
+  }, {
+    body: '0Spread goat cheese on toasted bread. Add black pepper, salt, and reduced vinegar to the strawberry mixture. Spoon over the goat cheese topped bruschetta. Garnish with additional thyme.',
+    order:4
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473286704/1022906_kxuqms.jpg',
+    order:5
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "Let me make this perfectly clear....I Don't like goat cheese, too earthy. I don't like strawberries, too many little seeds to get caught in my teeth.")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "I have made this using basil instead of the thyme and its amazing!!! People always ask me for the recipe.")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "Good. I had some trouble reducing the vinegar, it turned hard fast. But the flavors came together well in the end.")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "Tastes fan-freakin'-tastic. The saucy cut-up fruit does not travel well. Wait til it's the last possible moment to mix it up.")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "I had some goat cheese that I wanted to use, so I tried this recipe.")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "This is outstanding!!! I am afraid of our grill, so I toasted the bread in the oven, but otherwise followed the directions exactly.")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "These are amazing!! We took the advice of another and used basil instead of thyme. My kids 12 & 7 ask for these daily and even the picky hubs likes them too. Thanks for the great recipe!")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "I enjoyed this but thought the thyme was a little overpowering for my taste. I am going to make again using basil.")
+Comment.create!(recipe_id: 29, user_id: (1..301).to_a.sample, content: "Don't change one single thing. Absolutely delicious. I just served it to my book club pals. Huge hit! And my 11 year-old twins loved helping me make it. Thank you!")
+
+# http://allrecipes.com/recipe/26692/annies-fruit-salsa-and-cinnamon-chips/?internalSource=hub%20recipe&referringId=76&referringContentType=recipe%20hub&clickId=cardslot%2014
+Recipe.create!(
+  title: 'Annie\s Fruit Salsa and Cinnamon Chips',
+  description: 'Easy to make, tasty fruit salsa and cinnamon tortilla chips. Great as an appetizer or a snack. Great for anytime!',
+  ingredients: '2 kiwis, peeled and diced#@!2 Golden Delicious apples - peeled, cored and diced#@!8 ounces raspberries#@!1 pound strawberries#@!2 tablespoons white sugar#@!1 tablespoon brown sugar#@!3 tablespoons fruit preserves, any flavor#@!10 (10 inch) flour tortillas#@!butter flavored cooking spray#@!2 tablespoons cinnamon sugar',
+  user_id: (1..301).to_a.sample,
+  category_id: 2,
+  prep_time: 15,
+  cook_time: 10,
+  steps_attributes: [{
+    body: '0In a large bowl, thoroughly mix kiwis, Golden Delicious apples, raspberries, strawberries, white sugar, brown sugar and fruit preserves. Cover and chill in the refrigerator at least 15 minutes.',
+    order:0
+  }, {
+    body: '0Preheat oven to 350 degrees F (175 degrees C).',
+    order:1
+  }, {
+    body: '0Coat one side of each flour tortilla with butter flavored cooking spray. Cut into wedges and arrange in a single layer on a large baking sheet. Sprinkle wedges with desired amount of cinnamon sugar. Spray again with cooking spray.',
+    order:2
+  }, {
+    body: '0Bake in the preheated oven 8 to 10 minutes. Repeat with any remaining tortilla wedges. Allow to cool approximately 15 minutes. Serve with chilled fruit mixture.',
+    order:3
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473287227/829527_i60duf.jpg',
+    order:4
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 30, user_id: (1..301).to_a.sample, content: "I loved this, but made some changes after reading ALL of the reviews and making it several times. To cut back on the sweetness and on the juice, I used NO added sugar in the fruit.")
+Comment.create!(recipe_id: 30, user_id: (1..301).to_a.sample, content: "Here's a tip to save time chopping: Buy an egg slicer (available on the kitchen aisle of most grocery stores for about $4). It works great on strawberries!!!")
+Comment.create!(recipe_id: 30, user_id: (1..301).to_a.sample, content: "I have made this recipe numerous times & everyone ALWAYS LOVES IT! It can take some time to make. I recommend chopping fruit with a food chopper (pampered chef has an excellent one). ")
+Comment.create!(recipe_id: 30, user_id: (1..301).to_a.sample, content: "I made the chips 2 days ahead of time and the salsa the morning of. I was worried since the fruit was out of season, but it turned out great!")
+Comment.create!(recipe_id: 30, user_id: (1..301).to_a.sample, content: "Very tasty! I cut the sugars in half, used plain ol' grape jelly and added blueberries...YUM.")
+Comment.create!(recipe_id: 30, user_id: (1..301).to_a.sample, content: "Have made several times, all with rave reviews. Don't have time to make the tortilla chips??? Substitute them with cinnamon graham crackers.")
+Comment.create!(recipe_id: 30, user_id: (1..301).to_a.sample, content: "WOW...USED GRANNY SMITH APPLES,STRAWBERRIES,RASBERRIES,KIWI,AND PLUMS.STRAWBERRY PRESERVES GAVE IT A NICE COLOR.MADE THE NIGHT BEFORE.")
+
+# http://allrecipes.com/recipe/72815/fresh-cherry-cobbler/?internalSource=staff%20pick&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%202
+Recipe.create!(
+  title: 'Fresh Cherry Cobbler',
+  description: 'This is a delicious cherry cobbler made with fresh cherries instead of canned. It may take a little longer to make because you need to pit the cherries, but it is well worth it when you taste the finished product.',
+  ingredients: '1/2 cup butter#@!1 cup all-purpose flour#@!1 cup white sugar#@!1 teaspoon baking powder#@!1 cup milk#@!2 cups pitted sour cherries#@!3/4 cup white sugar#@!1 tablespoon all-purpose flour',
+  user_id: (1..301).to_a.sample,
+  category_id: 3,
+  prep_time: 60,
+  cook_time: 60,
+  steps_attributes: [{
+    body: '0Preheat the oven to 350 degrees F (175 degrees C). Place the butter in a 9x13 inch baking dish, and place in the oven to melt while the oven is preheating. Remove as soon as butter has melted, about 5 minutes.',
+    order:0
+  }, {
+    body: '0In a medium bowl, stir together 1 cup of flour, 1 cup of sugar, and baking powder. Mix in the milk until well blended, then pour the batter into the pan over the butter. Do not stir.',
+    order:1
+  }, {
+    body: '0Rinse out the bowl from the batter, and dry. Place cherries into the bowl, and toss with the remaining 3/4 cup of sugar and 1 tablespoon of flour. Distribute the cherry mixture evenly over the batter. Do not stir.',
+    order:2
+  }, {
+    body: '0Bake for 50 to 60 minutes in the preheated oven, until golden brown. A toothpick inserted into the cobber should come out clean.',
+    order:3
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473291437/1035865_cghrgg.jpg',
+    order:4
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "OUTSTANDING! I followed reviewers' suggestions and used 1/2 cup less sugar, more cherries, added a tsp of Pampered Chef Cinnamon Plus spice blend, and a tsp of vanilla.")
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "Wonderful! I picked up a pail of Door County Wisconsin cherries while on vacation and have made this four times (for myself and to share with others)")
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "I hate to give something a bad review but I really did not like this recipe. I expected cobbler to have a biscut-like drop dough. This is more like a sponge cake or an upside-down cake.")
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "Thank you for this recipe -- it has been a huge hit.")
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "I used sweet cherries and also halved both sugar amounts. Very tasty. I used 2% milk which worked great.")
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "Wow - easy and delicious! Plus it uses \"fresh\" fruit vs. canned which makes a huge difference.")
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "Sour cherries are in season & we’re fortunate to have an orchard full of them quite close. (They also offer free cherry pitting to boot!) This cobbler recipe is easy & really delicious.")
+Comment.create!(recipe_id: 31, user_id: (1..301).to_a.sample, content: "Wonderful! this was a huge hit... got future hubbie to pit the cherries! I used only 3/4 cup sugar in the base and only 1/2 cup in the cherries - and it was wonderful.")
+
+
+# http://allrecipes.com/recipe/12682/apple-pie-by-grandma-ople/?internalSource=hub%20recipe&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%2015
+Recipe.create!(
+  title: 'Apple Pie by Grandma Ople',
+  description: 'This was my grandmother\'s apple pie recipe. I have never seen another one quite like it. It will always be my favorite and has won me several first place prizes in local competitions. I hope it becomes one of your favorites as well!',
+  ingredients: '1 recipe pastry for a 9 inch double crust pie#@!1/2 cup unsalted butter#@!3 tablespoons all-purpose flour#@!1/4 cup water#@!1/2 cup white sugar#@!1/2 cup packed brown sugar#@!8 Granny Smith apples - peeled, cored and sliced',
+  user_id: (1..301).to_a.sample,
+  category_id: 3,
+  prep_time: 30,
+  cook_time: 60,
+  steps_attributes: [{
+    body: '0Preheat oven to 425 degrees F (220 degrees C). Melt the butter in a saucepan. Stir in flour to form a paste. Add water, white sugar and brown sugar, and bring to a boil. Reduce temperature and let simmer.',
+    order:0
+  }, {
+    body: '0Place the bottom crust in your pan. Fill with apples, mounded slightly. Cover with a lattice work crust. Gently pour the sugar and butter liquid over the crust. Pour slowly so that it does not run off.',
+    order:1
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473291749/3917180_pscczp.jpg',
+    order:2
+  }, {
+    body: '0Bake 15 minutes in the preheated oven. Reduce the temperature to 350 degrees F (175 degrees C). Continue baking for 35 to 45 minutes, until apples are soft.',
+    order:3
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473291748/736203_gjce7j.jpg',
+    order:4
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "A++ Decadently Delicious! Ive tried many recipes from this site, all of them pleasing. But this is the first time I've ever been so inspired by one to write a review!")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "Believe the hype. I made this for the first time for a dinner party I had last week - mostly because I wanted to see what all the fuss was about. And it did not disappoint.")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "WONDERFUL PIE!!! I heeded other's warnings and suggestions on this one. 1. I baked the pie at 350 degreees for the entire time to minimize scorching.")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "Delicious! It came out perfect, though I did not lattice the crust. I just put some decorative cuts into it...obviously won't change the taste, just the look.")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "Delicious, I loved how gooey this pie filling is! I did cheat and used store bought pie dough for the crust.")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "This past weekend 9/6 - 9/8/02 I made this pie for the Hillsboro County Fair in New Hampshire and won the First Prize Blue Ribbon.")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "I've made good apple pies for decades. :-) This is an excellent-tasting apple pie and stellar-looking as well.")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "Epic Recipe. After you taste this you'll understand how Lando Calrissian and Nien Nunb felt after they destroyed the 2nd Death Star.")
+Comment.create!(recipe_id: 32, user_id: (1..301).to_a.sample, content: "Grandma Ople was right: this pie doesn't need vanilla, cinnamon and/or nutmeg. In fact, those extra ingredients just ruin the subtlety of the flavour and overpower it.")
+
+
+# http://allrecipes.com/recipe/7565/too-much-chocolate-cake/?internalSource=hub%20recipe&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%2020
+Recipe.create!(
+  title: 'Too Much Chocolate Cake',
+  description: 'This cake won me First Prize at the county fair last year. It is very chocolaty.',
+  ingredients: '1 (18.25 ounce) package devil\'s food cake mix#@!1 (5.9 ounce) package instant chocolate pudding mix#@!1 cup sour cream#@!1 cup vegetable oil#@!4 eggs#@!1/2 cup warm water#@!2 cups semisweet chocolate chips',
+  user_id: (1..301).to_a.sample,
+  category_id: 3,
+  prep_time: 20,
+  cook_time: 60,
+  steps_attributes: [{
+    body: '0Preheat oven to 350 degrees F (175 degrees C).',
+    order:0
+  }, {
+    body: '0In a large bowl, mix together the cake and pudding mixes, sour cream, oil, beaten eggs and water. Stir in the chocolate chips and pour batter into a well greased 12 cup bundt pan.',
+    order:1
+  }, {
+    body: '0Bake for 50 to 55 minutes, or until top is springy to the touch and a wooden toothpick inserted comes out clean. Cool cake thoroughly in pan at least an hour and a half before inverting onto a plate If desired, dust the cake with powdered sugar.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473292075/1130307_mndcab.jpg',
+    order:3
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "Cut the calories and this cake still tastes awesome. ")
+Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "Very, very moist, rich cake. Followed recipe exactly. This is going to become a standard at our house. Perfect with a dusting of powdered sugar and a cold glass of milk.")
+Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "Delicious! I made this for my mom's birthday and it was a big hit! Slight changes: I used a dark chocolate fudge cake mix, with 1/2 cup veg.")
+Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "I had to make a second cake. The recipe has too much oil and would not cook completely without the outside being overdone. Cooked it again with 1/2 the oil and it was great.")
+Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "I was hesitant because I always cook from scratch. But I've had so much trouble lately with getting my chocolate cakes moist because of the high altitude I'm at, so I'll try anything.")
+Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "This chocolate cake is phenomenal! I have been making this for about 2 years now for many, many different occasions, and it always gets rave reviews.")
+Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "Thanks for posting this recipe, Denise. It's a keeper for me. I can say that for me, it is just almost too much chocolate cake.")
+
+
+#
+Recipe.create!(
+  title: ,
+  description: ,
+  ingredients: ,
+  user_id: (1..301).to_a.sample,
+  category_id: 4,
+  prep_time: ,
+  cook_time: ,
+  steps_attributes: [{
+    body: ,
+    order:
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "")
+
+
+# http://allrecipes.com/recipe/73208/spinach-and-sun-dried-tomato-pasta/?internalSource=rotd&referringId=87&referringContentType=recipe%20hub&clickId=cardslot%201
+Recipe.create!(
+  title: 'Spinach and Sun-Dried Tomato Pasta',
+  description: 'I created this simple Sicilian-style pasta dish one day when trying to use up some sun-dried tomatoes.',
+  ingredients: '1 cup vegetable broth#@!12 dehydrated sun-dried tomatoes#@!1 (8 ounce) package uncooked penne pasta#@!2 tablespoons pine nuts#@!1 tablespoon olive oil#@!1/4 teaspoon crushed red pepper flakes#@!1 clove garlic, minced#@!1 bunch fresh spinach, rinsed and torn into bite-size pieces#@!1/4 cup grated Parmesan cheese',
+  user_id: (1..301).to_a.sample,
+  category_id: 4,
+  prep_time: 15,
+  cook_time: 25,
+  steps_attributes: [{
+    body: '0In a small saucepan, bring the broth to a boil. Remove from heat. Place the sun-dried tomatoes in the broth 15 minutes, or until softened. Drain, reserving broth, and coarsely chop.',
+    order:0
+  }, {
+    body: '0Bring a large pot of lightly salted water to a boil. Place penne pasta in the pot, cook 9 to 12 minutes, until al dente, and drain.',
+    order:1
+  }, {
+    body: '0Place the pine nuts in a skillet over medium heat. Cook and stir until lightly toasted.',
+    order:2
+  }, {
+    body: '0Heat the olive oil and red pepper flakes in a skillet over medium heat, and saute the garlic 1 minute, until tender. Mix in the spinach, and cook until almost wilted. Pour in the reserved broth, and stir in the chopped sun-dried tomatoes. Continue cooking 2 minutes, or until heated through.',
+    order:3
+  }, {
+    body: '0In a large bowl, toss the cooked pasta with the spinach and tomato mixture and pine nuts. Serve with Parmesan cheese.',
+    order:4
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473292888/211950_v9d51d.jpg',
+    order:5
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 35, user_id: (1..301).to_a.sample, content: "Really easy and very tasty! Few changes: used chicken broth, oil packed tomatoes, doubled the garlic and pepper flakes, and added about a tbsp of fresh basil. Will make again.")
+Comment.create!(recipe_id: 35, user_id: (1..301).to_a.sample, content: "One of my favorites ... very simple to prepare and tasty!")
+Comment.create!(recipe_id: 35, user_id: (1..301).to_a.sample, content: "Lacking depth as is. If you want to make this dish taste like fine restaurant quality, do not reconstitute the sd tomatoes. Eliminate the broth altogether. Boil your penne to al dente.")
+Comment.create!(recipe_id: 35, user_id: (1..301).to_a.sample, content: "Very good, very simple. I added some artichoke hearts and a little salt to taste. Toast the pine nuts and use 1 Tbsp per serving. As others have said, I would add a lot more spinach.")
+Comment.create!(recipe_id: 35, user_id: (1..301).to_a.sample, content: "This recipe is great as written but if you have a little extra time I'd reccommend soaking the sun dried toms.")
+Comment.create!(recipe_id: 35, user_id: (1..301).to_a.sample, content: "This pasta recipe is PERFECT! It was easily adaptable, simple to prepare and looked beautiful in the serving bowl! Here were my substitutions: I had no broth so I used water.")
+Comment.create!(recipe_id: 35, user_id: (1..301).to_a.sample, content: "Ok...this was just plain AWESOME!!!! I made one addition...MUSHROOMS!!!!!!!!!!!! This dish was just screaming for them! Otherwise, did not alter anything...yum...yum..yum...YUM!!!!!!")
+
+
+# http://allrecipes.com/recipe/47247/chili-rellenos-casserole/?internalSource=staff%20pick&referringId=87&referringContentType=recipe%20hub&clickId=cardslot%206
+Recipe.create!(
+  title: 'Chili Rellenos Casserole',
+  description: 'This Chili Rellenos Casserole is very easy to prepare and is loaded with flavor. Great for a busy week night, and good enough for company.',
+  ingredients: '2 (7 ounce) cans whole green chile peppers, drained#@!8 ounces Monterey Jack cheese, shredded#@!8 ounces Longhorn or Cheddar cheese, shredded#@!2 eggs, beaten#@!1 (5 ounce) can evaporated milk#@!2 tablespoons all-purpose flour#@!1/2 cup milk#@!1 (8 ounce) can tomato sauce',
+  user_id: (1..301).to_a.sample,
+  category_id: 4,
+  prep_time: 15,
+  cook_time: 45,
+  steps_attributes: [{
+    body: '0Preheat oven to 350 degrees F (175 degrees C). Spray a 9x13-inch baking dish with cooking spray.',
+    order:0
+  }, {
+    body: '0Lay half of the chilies evenly in bottom of baking dish. Sprinkle with half of the Jack and Cheddar cheeses, and cover with remaining chilies. In a bowl, mix together the eggs, milk, and flour, and pour over the top of the chilies.',
+    order:1
+  }, {
+    body: '0Bake in the preheated oven for 25 minutes. Remove from oven, pour tomato sauce evenly over the top, and continue baking another 15 minutes. Sprinkle with remaining Jack and Cheddar cheeses, and serve.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473293183/634160_zxeii1.jpg',
+    order:3
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "My husband and I love chiles rellenos, and I have tried to make them in the past, but they were just too much work. This casserole is perfect for us.")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "Great recipe. My mother-in-law said it was better than hers and that she would be using this recipe from now on. Everybody had seconds.")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "What a terrific recipe. I will make again and again. The only change would be to chop the green chilies rather than leaving them in whole pieces. Served this with tacos!")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "This recipe was so good. I added black olives for something different. I recommend it. :)")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "Made this without the tomato sauce but it was YUMMY anyway and a whole lot easier to make than the traditional chile rellenos.")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "I just prepared this recipe and it's delicious. It really tastes like a chili relleno. I wouldn't make any changes.")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "Yummy!!!!")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "Excellent! I am one for sortcuts. I bought the already shredded Mexican cheese in a bag. Open the cans, measure the ingredients. Whalla, in a matter of minutes ready to cook!")
+Comment.create!(recipe_id: 36, user_id: (1..301).to_a.sample, content: "This is DELISH! I had forgotten about it. My Mom make this dish, with two exceptions. She uses diced chiles, and she adds 1/2 tsp garlic powder to the tomato sauce.")
+
+# http://allrecipes.com/recipe/16066/awesome-slow-cooker-pot-roast/?internalSource=hub%20recipe&referringId=92&referringContentType=recipe%20hub&clickId=cardslot%2015
+Recipe.create!(
+  title: 'Awesome Slow Cooker Pot Roast',
+  description: 'This is a very easy recipe for a delicious pot roast. It makes its own gravy. It\'s designed especially for the working person who does not have time to cook all day, but it tastes like you did. You\'ll want the cut to be between 5 and 6 pounds.',
+  ingredients: '2 (10.75 ounce) cans condensed cream of mushroom soup#@!1 (1 ounce) package dry onion soup mix#@!1 1/4 cups water#@!5 1/2 pounds pot roast',
+  user_id: (1..301).to_a.sample,
+  category_id: 5,
+  prep_time: 10,
+  cook_time: 480,
+  steps_attributes: [{
+    body: '0In a slow cooker, mix cream of mushroom soup, dry onion soup mix and water. Place pot roast in slow cooker and coat with soup mixture.',
+    order:0
+  }, {
+    body: '0Cook on High setting for 3 to 4 hours, or on Low setting for 8 to 9 hours.',
+    order:1
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473293635/2505121_rj3znp.jpg',
+    order:2
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 37, user_id: (1..301).to_a.sample, content: "I used golden mushroom soup and added cut-up potatoes as I knew I wouldn't have time to fix them later. I removed the potatoes & mashed them-my 3 yr old loved them. There's plenty of gravy.")
+Comment.create!(recipe_id: 37, user_id: (1..301).to_a.sample, content: "My husband always says my pot roast is his favorite, but after making it this way I will never make it another way again. The gravey was wonderful!")
+Comment.create!(recipe_id: 37, user_id: (1..301).to_a.sample, content: "I actually converted non-potroast lovers with this one. (They'll never know my secret)")
+Comment.create!(recipe_id: 37, user_id: (1..301).to_a.sample, content: "easy and delicious for the busy family!")
+Comment.create!(recipe_id: 37, user_id: (1..301).to_a.sample, content: "My oldest daughter couldn't get enough of it. She loves it. my entire family thought it was delicious!:)")
+Comment.create!(recipe_id: 37, user_id: (1..301).to_a.sample, content: "Yum... This makes a great gravy.")
+Comment.create!(recipe_id: 37, user_id: (1..301).to_a.sample, content: "The name says it all")
+
+
+# http://allrecipes.com/recipe/9023/baked-teriyaki-chicken/?internalSource=hub%20recipe&referringId=92&referringContentType=recipe%20hub&clickId=cardslot%2023
+Recipe.create!(
+  title: 'Baked Teriyaki Chicken',
+  description: 'A much requested chicken recipe! Easy to double for a large group. Delicious!',
+  ingredients: '1 tablespoon cornstarch#@!1 tablespoon cold water#@!1/2 cup white sugar#@!1/2 cup soy sauce#@!1/4 cup cider vinegar#@!1 clove garlic, minced#@!1/2 teaspoon ground ginger#@!1/4 teaspoon ground black pepper#@!12 skinless chicken thighs',
+  user_id: (1..301).to_a.sample,
+  category_id: 5,
+  prep_time: 30,
+  cook_time: 60,
+  steps_attributes: [{
+    body: '0In a small saucepan over low heat, combine the cornstarch, cold water, sugar, soy sauce, vinegar, garlic, ginger and ground black pepper. Let simmer, stirring frequently, until sauce thickens and bubbles.',
+    order:0
+  }, {
+    body: '0Preheat oven to 425 degrees F (220 degrees C).',
+    order:1
+  }, {
+    body: '0Place chicken pieces in a lightly greased 9x13 inch baking dish. Brush chicken with the sauce. Turn pieces over, and brush again.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473294196/3914650_eyxwee.jpg',
+    order:3
+  }, {
+    body: '0Bake in the preheated oven for 30 minutes. Turn pieces over, and bake for another 30 minutes, until no longer pink and juices run clear. Brush with sauce every 10 minutes during cooking.',
+    order:4
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473294196/3588658_ttktbr.jpg',
+    order:5
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "I love it! My husband love it! We'll definitely make this again.")
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "Yummy, good enough to make a nice dinner out of, also deemed worthy of the Sunday Football Game, this dish will please ANY crowd, even my 2 year old daughter loved it!")
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "This recipe was Delicious, and easy to make. I tried the sauce on grilled beef, and it was just as good. Thanks")
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "This was absolutely delicious and pleased the whole family. Will definately be making this on a regular basis.")
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "Very good recipe. Everybody liked it.")
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "This is a wonderfully easy and delicious recipe. I will definitely be preparing this on a regular basis.")
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "This was delicious, but next time I'm going to double the sauce!")
+Comment.create!(recipe_id: 38, user_id: (1..301).to_a.sample, content: "This recipe was great for a dinner for two and was loved at my anniversary party as well (50 couples)! Great taste and an easy clean-up! I absolutely loved it (and so did everyone else)!")
+
+
+# http://allrecipes.com/recipe/65896/zesty-slow-cooker-chicken-barbecue/?internalSource=hub%20recipe&referringId=92&referringContentType=recipe%20hub&clickId=cardslot%2029
+Recipe.create!(
+  title: 'Zesty Slow Cooker Chicken Barbecue',
+  description: 'Use your slow cooker to prepare this great twist on basic barbecue chicken. Throw the chicken breasts in frozen, and serve with baked potatoes.',
+  ingredients: '6 frozen skinless, boneless chicken breast halves#@!1 (12 ounce) bottle barbeque sauce#@!1/2 cup Italian salad dressing#@!1/4 cup brown sugar#@!2 tablespoons Worcestershire sauce',
+  user_id: (1..301).to_a.sample,
+  category_id: 5,
+  prep_time: 10,
+  cook_time: 240,
+  steps_attributes: [{
+    body: '0Place chicken in a slow cooker. In a bowl, mix the barbecue sauce, Italian salad dressing, brown sugar, and Worcestershire sauce. Pour over the chicken.',
+    order:0
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473294547/3868403_ujvoby.jpg',
+    order:1
+  }, {
+    body: '0Cover, and cook 3 to 4 hours on High or 6 to 8 hours on Low.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473294547/879977_kekpqu.jpg',
+    order:3
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "This was great everyone loved it! Super easy! Make sure you like the kind of dressing and BBQ sause you put in, it makes all the differance!")
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "I love this sauce! The only change I made was to add about 1/2 cup of diced onion and 1 teaspoon of liquid smoke. I used Sweet Baby Ray's Honey barbecue sauce and the sauce was perfect.")
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "excellent!!! Very quick and easy, what a great taste. I used dinosaur BBQ sauce.")
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "Incredibly easy and really good. Uses ingredients I usually have on hand. Great served with rice to soak up some of the sauce.")
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "Wonderful and easy! Defrosted chicken breasts worked fine, and the family asked for seconds. Thanks.")
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "This recipes was extremely good!! I was looking for something easy to make at about 1:00 pm to make for dinner (not to mention I love my crock pot!!) and came upon this.")
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "This was great! I used this sauce for country ribs instead (slow cooker) and it was the best. I used KC masterpiece. Thanks for the recipe.")
+Comment.create!(recipe_id: 39, user_id: (1..301).to_a.sample, content: "This is one of those recipes that when you first look at it, you wonder why someone would put these ingredients together.")
+
+
+# http://allrecipes.com/recipe/12720/grilled-salmon-i/?internalSource=hub%20recipe&referringId=93&referringContentType=recipe%20hub&clickId=cardslot%2013
+Recipe.create!(
+  title: 'Grilled Salmon',
+  description: 'A simple soy sauce and brown sugar marinade, with hints of lemon and garlic, are the perfect salty-sweet complement to rich salmon fillets. Even my 9 year old loves this recipe!',
+  ingredients: '1 1/2 pounds salmon fillets#@!lemon pepper to taste#@!garlic powder to taste#@!salt to taste#@!1/3 cup soy sauce#@!1/3 cup brown sugar#@!1/3 cup water#@!1/4 cup vegetable oil',
+  user_id: (1..301).to_a.sample,
+  category_id: 6,
+  prep_time: 15,
+  cook_time: 16,
+  steps_attributes: [{
+    body: '0Season salmon fillets with lemon pepper, garlic powder, and salt.',
+    order:0
+  }, {
+    body: '0In a small bowl, stir together soy sauce, brown sugar, water, and vegetable oil until sugar is dissolved. Place fish in a large resealable plastic bag with the soy sauce mixture, seal, and turn to coat. Refrigerate for at least 2 hours.',
+    order:1
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473294932/3649338_ujp4ky.jpg',
+    order:2
+  }, {
+    body: '0Preheat grill for medium heat.',
+    order:3
+  }, {
+    body: '0Lightly oil grill grate. Place salmon on the preheated grill, and discard marinade. Cook salmon for 6 to 8 minutes per side, or until the fish flakes easily with a fork.',
+    order:4
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473294932/800839_ulzmb9.jpg',
+    order:5
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "WONDERFUL!! We had friends over for dinner and they though we cooked steak! Wonderful taste - perfect for the salmon. I plan to use this marinade for other meats like pork or chicken.")
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "This is a very easy delicious recipe. I made it for my in-laws and they couldn't stop talking about it. Even my very fussy 2 year old loved it.")
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "My wife loved this recipe. She usually does not like salmon.")
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "Simply the best salmon recipe we have EVER tried, and we eat a lot of salmon. Quick and easy.")
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "This is a wonderful recipe! We love garlic, so I add 1-2 cloves chopped garlic, as well as some fish/poultry seasoning, to the marinade. The longer you marinate, the better!")
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "very good and easy to prepare great dish for company I added a little balsamic vinegar for a little added flavor")
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "Your right my 9 year old girl loves this. Great. Even my inlaws raved.")
+Comment.create!(recipe_id: 40, user_id: (1..301).to_a.sample, content: "Great recipe. The salmon fillets had a wonderful flavor. Highly recommend it.")
+
+
+# http://allrecipes.com/recipe/45833/ginger-glazed-mahi-mahi/?internalSource=hub%20recipe&referringId=93&referringContentType=recipe%20hub&clickId=cardslot%2021
+Recipe.create!(
+  title: 'Ginger Glazed Mahi Mahi',
+  description: "This Ginger Glazed Mahi Mahi is bursting with flavor and combines both sweet and sour taste sensations. The 30 minute prep time includes 20 minutes to marinate. This recipe is a snap and so delicious. You'll love it!",
+  ingredients: '3 tablespoons honey#@!3 tablespoons soy sauce#@!3 tablespoons balsamic vinegar#@!1 teaspoon grated fresh ginger root#@!1 clove garlic, crushed or to taste#@!2 teaspoons olive oil#@!4 (6 ounce) mahi mahi fillets#@!salt and pepper to taste#@!1 tablespoon vegetable oil',
+  user_id: (1..301).to_a.sample,
+  category_id: 6,
+  prep_time: 5,
+  cook_time: 12,
+  steps_attributes: [{
+    body: '0In a shallow glass dish, stir together the honey, soy sauce, balsamic vinegar, ginger, garlic and olive oil. Season fish fillets with salt and pepper, and place them into the dish. If the fillets have skin on them, place them skin side down. Cover, and refrigerate for 20 minutes to marinate.',
+    order:0
+  }, {
+    body: '0Heat vegetable oil in a large skillet over medium-high heat. Remove fish from the dish, and reserve marinade. Fry fish for 4 to 6 minutes on each side, turning only once, until fish flakes easily with a fork. Remove fillets to a serving platter and keep warm.',
+    order:1
+  }, {
+    body: '0Pour reserved marinade into the skillet, and heat over medium heat until the mixture reduces to a glaze consistently. Spoon glaze over fish, and serve immediately.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473295257/958722_tztsdg.jpg',
+    order:3
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "Great recipe! It was easy and delicious!")
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "Wow! Superb glaze which would work well over chicken, pork, or steamed vegies. I am still thinking about the flavor!")
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "This recipe was superb. The glaze is very flavorful and a perfect combo with the fish. I served it with a simple brown rice pilaf, green beans and whole grain rolls. Fabulous and healthy too!")
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "This was very, very good...Kids even enjoyed it. Simple to prepare and quite a treat!!")
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "My 10 year old boys and my wife (who doesn't like \"fish\") all loved this dish. I skipped the salt before adding to marinade and it was almost too salty. I would suggest low-sodium soy sauce.")
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "This was awesome. I had to cook the fish fillets about twice as long as instructed...perhaps these fillets were thicker than most.")
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "This was fabulous!!!! I am still thinking about it four days later. Even my kids and husband who do not like fish, loved this dish.")
+Comment.create!(recipe_id: 41, user_id: (1..301).to_a.sample, content: "I just made this, and it's superb!! It's a perfect marinade for mahi mahi. It takes a fish that's hard to prepare right and makes it very easy and extremely good. Five stars easy!")
+
+
+# http://allrecipes.com/recipe/74169/hudsons-baked-tilapia-with-dill-sauce/?internalSource=recipe%20hub&referringId=93&referringContentType=recipe%20hub&clickId=cardslot%2030
+Recipe.create!(
+  title: "Hudson's Baked Tilapia with Dill Sauce",
+  description: 'Baked tilapia seasoned with Cajun and citrus served with a creamy sauce of fresh dill and lemon.',
+  ingredients: '4 (4 ounce) fillets tilapia#@!salt and pepper to taste#@!1 tablespoon Cajun seasoning, or to taste#@!1 lemon, thinly sliced#@!1/4 cup mayonnaise#@!1/2 cup sour cream#@!1/8 teaspoon garlic powder#@!1 teaspoon fresh lemon juice#@!2 tablespoons chopped fresh dill',
+  user_id: (1..301).to_a.sample,
+  category_id: 6,
+  prep_time: 10,
+  cook_time: 20,
+  steps_attributes: [{
+    body: '0Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a 9x13 inch baking dish.',
+    order:0
+  }, {
+    body: '0Season the tilapia fillets with salt, pepper and Cajun seasoning on both sides. Arrange the seasoned fillets in a single layer in the baking dish. Place a layer of lemon slices over the fish fillets. I usually use about 2 slices on each piece so that it covers most of the surface of the fish.',
+    order:1
+  }, {
+    body: '0Bake uncovered for 15 to 20 minutes in the preheated oven, or until fish flakes easily with a fork.',
+    order:2
+  }, {
+    body: '0While the fish is baking, mix together the mayonnaise, sour cream, garlic powder, lemon juice and dill in a small bowl. Serve with tilapia.',
+    order:3
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473295493/610360_kmg47t.jpg',
+    order:4
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 42, user_id: (1..301).to_a.sample, content: "this was really good and so easy! i made it without lemon slices ... just added a little lemon juice to the tilapia before baking. my husband liked it a lot too. will be making it again.")
+Comment.create!(recipe_id: 42, user_id: (1..301).to_a.sample, content: "This recipe is easy, quick and great! The whole family loved it. There were no leftovers. I followed the recipe exactly as stated.")
+Comment.create!(recipe_id: 42, user_id: (1..301).to_a.sample, content: "Great sauce! Easy recipe. Will make again.")
+Comment.create!(recipe_id: 42, user_id: (1..301).to_a.sample, content: "used a little more crushed red pepper to spice it up a little more, and loved it. the dill sauce is great")
+Comment.create!(recipe_id: 42, user_id: (1..301).to_a.sample, content: "WONDERFUL! A great spring/summer recipe. The dill sauce makes it so refreshing. Very delicious!")
+Comment.create!(recipe_id: 42, user_id: (1..301).to_a.sample, content: "I thought this was very good. I did make some adjustments, however. Because my family dislikes mayo, I substituted plain yogurt instead. I also added some lemon zest and MSG to the sauce.")
+Comment.create!(recipe_id: 42, user_id: (1..301).to_a.sample, content: "This was really delicious, just a little salty. I served these with rice.")
+
+
 # Recipe.create!(
 #   title: ,
 #   description: ,
@@ -1072,9 +1691,8 @@ Comment.create!(recipe_id: 25, user_id: (1..301).to_a.sample, content: "I substi
 #   ]
 # )
 
-# comment form
 # Comment.create!(recipe_id: , user_id: (1..301).to_a.sample, content: "")
 
-2000.times {
-  Like.create(user_id: (1..301).to_a.sample, recipe_id: (1..30).to_a.sample)
+2500.times {
+  Like.create(user_id: (1..301).to_a.sample, recipe_id: (1..42).to_a.sample)
 }

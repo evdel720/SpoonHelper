@@ -16,7 +16,7 @@ class CommentForm extends React.Component{
     e.preventDefault();
     if (this.props.signedIn) {
       this.props.createComment(this.state, this.props.rId);
-      e.target.children[0].value = "";
+      this.setState({content: ""});
     }
   }
 
@@ -27,8 +27,8 @@ class CommentForm extends React.Component{
         <textarea
           onChange={this.handleInput.bind(this)}
           placeholder={ placeholder }
+          value={this.state.content}
           disabled={this.props.signedIn ? false : true }>
-          {this.state.content}
         </textarea>
         <button id='submit-btn'
           disabled={this.props.signedIn ? false : true }>

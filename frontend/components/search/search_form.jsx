@@ -22,13 +22,13 @@ class SearchForm extends React.Component {
     } else {
       this.props.requestSearchAutocomplete(this.state);
     }
-    document.addEventListener('mousedown', this.clearForm );
+    document.addEventListener('mouseup', this.clearForm );
   }
 
-  clearForm() {
+  clearForm(e) {
     this.setState({search_option: 'title', search_value: ""});
     this.props.clearAutocomplete();
-    document.removeEventListener('mousedown', this.clearForm );
+    document.removeEventListener('mouseup', this.clearForm );
   }
 
   submitHandler(e) {
@@ -38,13 +38,6 @@ class SearchForm extends React.Component {
       this.props.router.push('/search');
       this.clearForm();
     }
-    // if (e.target.search_value.value !== "") {
-    //   let search_option = e.target.search_option.value;
-    //   let search_value = e.target.search_value.value;
-    //   debugger;
-    //   this.props.requestSearchRecipes({search_option, search_value});
-    //   this.props.router.push(`/search`);
-    // }
   }
 
   searchResult() {
@@ -53,7 +46,7 @@ class SearchForm extends React.Component {
         this.props.search.map((r, idx) => (
           <li key={r.id + idx}
             className='autocomplete-item'
-            onClick={() => this.props.router.push(`/recipes/${r.id}`)}>
+            onMouseDown={() => this.props.router.push(`/recipes/${r.id}`)}>
             <img src={r.rep_img.slice(1)}/>
             <p>{r.title}</p>
           </li>
