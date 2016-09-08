@@ -30,7 +30,6 @@ class RecipeForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     if (this.props.recipe.id) {
       this.props.updateRecipe(
         this.props.recipe.id,
@@ -196,7 +195,7 @@ class RecipeForm extends React.Component {
           <label>Description
             <textarea
               name='description'
-              placeholder="little bit about food"
+              placeholder="Tell us a little bit about your recipe!"
               value={this.state.description}
               onChange={ this.handleInput }></textarea>
             { this.errorGenerator(errors.description) }
