@@ -1,18 +1,18 @@
 {
   "name": "SpoonHelper",
   "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description": "http://www.spoonhelper.us",
   "main": "index.js",
   "directories": {
     "doc": "docs",
     "test": "test"
   },
+  "scripts": {
+    "heroku-postbuild": "webpack --config webpack.config.prod.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/evdel720/SpoonHelper.git"
-  },
-  "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "keywords": [],
   "author": "",
