@@ -62,3 +62,9 @@
 .item-info p:last-child {
   color: #825f00;
 }
+
+.index-sorting {
+  width: 20%;
+  align-self: flex-end;
+  margin: 15px;
+}

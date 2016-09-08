@@ -61,3 +61,25 @@ export const convertToHour = (h, m) => {
 
   return `${h}${hs} ${m}${ms}`;
 };
+
+const sortByKey = (key, order) => {
+  return (a, b) => {
+    if (a[key] < b[key]){
+      return order[0];
+    } else if (a[key] > b[key]) {
+      return order[1];
+    } else {
+      return 0;
+    }
+  };
+};
+
+
+export const sortBy = (keyword, items) => {
+  let array = Object.keys(items).map((i) => items[i]);
+  if (keyword === 'newest') {
+    return array.sort(sortByKey('id', [-1, 1]));
+  } else {
+    return array.sort(sortByKey('likes', [1, -1]));
+  }
+};
