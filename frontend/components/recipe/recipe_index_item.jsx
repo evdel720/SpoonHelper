@@ -8,9 +8,7 @@ const RecipeIndexItem = ({ item, router }) => {
   };
 
   const hourHelper = () => {
-    let h = Math.floor(item.total_cooking / 60);
-    let m = item.total_cooking % 60;
-    return convertToHour(h, m);
+    return convertToHour(item.total_cooking);
   };
 
   return (

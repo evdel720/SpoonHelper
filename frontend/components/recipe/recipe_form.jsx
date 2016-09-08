@@ -203,11 +203,11 @@ class RecipeForm extends React.Component {
 
           <div className='time-form'>
             <label>Prep time
-              <input type='number'
+              <input min='0' type='number'
                 placeholder="hours"
                 value={this.state.prep_hour} name='prep_hour'
                 onChange={ this.handleInput }/>
-              <input type='number'
+              <input min='0' type='number'
                 placeholder="mins"
                 value={this.state.prep_min} name='prep_min'
                 onChange={ this.handleInput }/>
@@ -215,11 +215,11 @@ class RecipeForm extends React.Component {
             </label>
 
             <label>Cook time
-              <input type='number'
+              <input min='0' type='number'
                 placeholder="hours"
                 value={this.state.cook_hour} name='cook_hour'
                 onChange={ this.handleInput }/>
-              <input type='number'
+              <input min='0' type='number'
                 placeholder="mins"
                 value={this.state.cook_min} name='cook_min'
                 onChange={ this.handleInput }/>

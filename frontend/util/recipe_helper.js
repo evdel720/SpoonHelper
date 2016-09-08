@@ -33,7 +33,9 @@ const convertToMins = (hourStr, minStr) => {
   }
 };
 
-export const convertToHour = (h, m) => {
+export const convertToHour = (mins) => {
+  let h = Math.floor(mins / 60);
+  let m = mins % 60;
   let hs, ms;
   switch (h) {
     case 0:

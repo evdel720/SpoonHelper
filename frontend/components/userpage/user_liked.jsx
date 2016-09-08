@@ -5,7 +5,7 @@ const UserLiked = ({ recipes, router }) => {
 
   const recipeList = recipes.map((r, idx) => {
     return (
-      <img className='userpage-img'
+      <img key={r + idx} className='userpage-img'
         src={r.rep_img.slice(1)}
         onClick={ () => router.push(`/recipes/${r.id}`)} />
       );

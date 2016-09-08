@@ -19,7 +19,7 @@ vegetarian = Category.create!(title: 'Vegetarian')
 meat = Category.create!(title: 'Meat')
 seafood = Category.create!(title: 'Seafood')
 
-seafood_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472947427/seafood_n15nbl.jpg')
+seafood_img = Image.create!(url: 'http://res.cloudinary.com/wkdal720/image/upload/v1473346607/seafood_gvpnfz.jpg')
 seafood_img.imageable = seafood
 seafood_img.save!
 
@@ -48,47 +48,43 @@ Recipe.delete_all
 Comment.delete_all
 
 
-# http://allrecipes.com/recipe/76278/orange-pecan-french-toast/?internalSource=staff%20pick&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%202
+# http://allrecipes.com/recipe/20156/clone-of-a-cinnabon/?internalSource=staff%20pick&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%208
 Recipe.create!(
-  title: 'Orange Pecan French Toast',
-  description: 'My husband and I were vacationing recently and had this lovely French toast at a bed and breakfast. When we came back home, I kept missing it so I called them up and requested it. They actually gave me the recipe over the phone! I generally halve the recipe for my husband and I, and bake it in an 8 inch square pan. Reheats well in the toaster oven. I served it to my in-laws recently and they loved it. Serve with a little sweetened whipped cream and berries!',
-  ingredients: '1 cup packed brown sugar#@!1/3 cup butter- melted#@!2 tablespoons corn syrup#@!1/3 cup chopped pecans#@!12 (3/4 inch thick) slices French bread#@!1 teaspoon grated orange zest#@!1 cup fresh orange juice#@!1/2 cup 2% milk#@!3 tablespoons white sugar#@!1 teaspoon ground cinnamon#@!1 teaspoon vanilla extract#@!3 egg whites#@!2 eggs#@!1 tablespoon confectioners\' sugar for dusting',
+  title: 'Clone of a Cinnabon',
+  description: 'You have got to try these. The first time I made them, I thought of how much money I could save by making my own!',
+  ingredients: '1 cup warm milk (110 degrees F/45 degrees C)#@!2 eggs, room temperature#@!1/3 cup margarine, melted#@!4 1/2 cups bread flour#@!1 teaspoon salt#@!1/2 cup white sugar#@!2 1/2 teaspoons bread machine yeast#@!2 1/2 teaspoons bread machine yeast#@!2 1/2 tablespoons ground cinnamon#@!1/3 cup butter, softened#@!1 (3 ounce) package cream cheese, softened#@!1 1/2 cups confectioners\' sugar#@!1/2 teaspoon vanilla extract#@!1/8 teaspoon salt',
   user_id: (1..250).to_a.sample,
   category_id: 1,
   prep_time: 20,
-  cook_time: 35,
-  steps_attributes: [
-    {
-    body: '0In a small bowl, stir together the brown sugar, melted butter, and corn syrup. Pour into a greased 9x13 inch baking dish, and spread evenly. Sprinkle pecans over the sugar mixture. Arrange the bread slices in the bottom of the dish so they are in a snug single layer.',
+  cook_time: 15,
+  steps_attributes: [{
+    body: '0Place ingredients in the pan of the bread machine in the order recommended by the manufacturer. Select dough cycle; press Start.',
     order: 0
-  },
-  {
-    body: '0In a medium bowl, whisk together the orange zest, orange juice, milk, sugar, cinnamon, vanilla, egg whites, and eggs. Pour this mixture over the bread, pressing on the bread slices to help absorb the liquid. Cover and refrigerate for at least one hour, or overnight.',
+  }, {
+    body: '0After the dough has doubled in size turn it out onto a lightly floured surface, cover and let rest for 10 minutes. In a small bowl, combine brown sugar and cinnamon.',
     order: 1
-  },
-  {
-    body: '0Preheat the oven to 350 degrees F (175 degrees C ). Remove the cover from the baking dish, and let stand for 20 minutes at room temperature.',
+  }, {
+    body: '0Roll dough into a 16x21-inch rectangle. Spread dough with 1/3 cup butter and sprinkle evenly with sugar/cinnamon mixture. Roll up dough and cut into 12 rolls. Place rolls in a lightly greased 9x13 inch baking pan. Cover and let rise until nearly doubled, about 30 minutes. Meanwhile, preheat oven to 400 degrees F (200 degrees C).',
     order: 2
-  },
-  {
-    body: '0Bake for 35 minutes in the preheated oven, until golden brown. Dust with confectioners\' sugar before serving.',
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473106985/3839539_ccye8h.jpg',
     order: 3
-  },
-  {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1472849746/1_c4ohzr.jpg',
+  }, {
+    body: '0Bake rolls in preheated oven until golden brown, about 15 minutes. While rolls are baking, beat together cream cheese, 1/4 cup butter, confectioners\' sugar, vanilla extract and salt. Spread frosting on warm rolls before serving.',
     order: 4
-  }]
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473351782/cinnamon-rolls_dxvcim.jpg',
+    order: 5
+    }
+  ]
 )
-
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "This is a great variation to your breakfast menu. I prepared the night before and then baked in the morning. It would go great with a cream cheese frosting!")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "This recipe is phenomenal. One tip is to either use stale bread or crisp it up in the oven before hand. My family adores it!")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "AMAZING! Would make again in a heartbeat, no modifications needed to the recipe in my opinion!")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "I made this for Christmas brunch. Everyone loved it! Almost all went back for seconds. I enjoyed a slice that was left over the next day. Definitely will make again.")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "very easy, very very yummy! I make it for breakfast for dinner once a month!")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "It was a hit at our brunch. I might tweak it and use a little less sugar, but otherwise it was perfect.")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "Delicious! I used Italian bread for bigger slices, and served with raspberries and whipped cream.")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "I cut the sugar in half and it was still deliciously sweet. I thought it was just right! yummy!")
-Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "This recipe is amazing! The neat thing about it is that you can make it ahead of time (like overnight) and it still tastes great!")
+Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "I made these for a girls only brunch & they were gobbled up!! Fabulous!")
+Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "I made these for a girls only brunch & they were gobbled up!! Fabulous!")
+Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "These are wonderfull! Not difficult to make and they are YUMMY. Highly reccomend this recipe. I would like to know if these are okay to refigerate overnight before placing in the oven.")
+Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "This really does taste like a cinnabon. I thought that they were great and my husband even likes them!")
+Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "Scrumptious!! I doubled the frosting recipe :)")
+Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "I had no idea I could make something so good! The bread machine really makes this easy and they are delicious. Marsha, thanks for sharing such a great recipe.")
+Comment.create!(recipe_id: 1, user_id: (1..250).to_a.sample, content: "This recipe is fabulous. Will definately make again!")
 
 # http://allrecipes.com/recipe/17681/belgian-waffles/?internalSource=staff%20pick&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%205
 Recipe.create!(
@@ -177,45 +173,48 @@ Comment.create!(recipe_id: 3, user_id: (1..250).to_a.sample, content: "Good basi
 Comment.create!(recipe_id: 3, user_id: (1..250).to_a.sample, content: "These are simply delicious. Quick and easy to make. Left overs store well n the frig. I am single. I make the whole recipe and am good for the week.")
 
 
-# http://allrecipes.com/recipe/20156/clone-of-a-cinnabon/?internalSource=staff%20pick&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%208
+
+# http://allrecipes.com/recipe/76278/orange-pecan-french-toast/?internalSource=staff%20pick&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%202
 Recipe.create!(
-  title: 'Clone of a Cinnabon',
-  description: 'You have got to try these. The first time I made them, I thought of how much money I could save by making my own!',
-  ingredients: '1 cup warm milk (110 degrees F/45 degrees C)#@!2 eggs, room temperature#@!1/3 cup margarine, melted#@!4 1/2 cups bread flour#@!1 teaspoon salt#@!1/2 cup white sugar#@!2 1/2 teaspoons bread machine yeast#@!2 1/2 teaspoons bread machine yeast#@!2 1/2 tablespoons ground cinnamon#@!1/3 cup butter, softened#@!1 (3 ounce) package cream cheese, softened#@!1 1/2 cups confectioners\' sugar#@!1/2 teaspoon vanilla extract#@!1/8 teaspoon salt',
+  title: 'Orange Pecan French Toast',
+  description: 'My husband and I were vacationing recently and had this lovely French toast at a bed and breakfast. When we came back home, I kept missing it so I called them up and requested it. They actually gave me the recipe over the phone! I generally halve the recipe for my husband and I, and bake it in an 8 inch square pan. Reheats well in the toaster oven. I served it to my in-laws recently and they loved it. Serve with a little sweetened whipped cream and berries!',
+  ingredients: '1 cup packed brown sugar#@!1/3 cup butter- melted#@!2 tablespoons corn syrup#@!1/3 cup chopped pecans#@!12 (3/4 inch thick) slices French bread#@!1 teaspoon grated orange zest#@!1 cup fresh orange juice#@!1/2 cup 2% milk#@!3 tablespoons white sugar#@!1 teaspoon ground cinnamon#@!1 teaspoon vanilla extract#@!3 egg whites#@!2 eggs#@!1 tablespoon confectioners\' sugar for dusting',
   user_id: (1..250).to_a.sample,
   category_id: 1,
   prep_time: 20,
-  cook_time: 15,
-  steps_attributes: [{
-    body: '0Place ingredients in the pan of the bread machine in the order recommended by the manufacturer. Select dough cycle; press Start.',
+  cook_time: 35,
+  steps_attributes: [
+    {
+    body: '0In a small bowl, stir together the brown sugar, melted butter, and corn syrup. Pour into a greased 9x13 inch baking dish, and spread evenly. Sprinkle pecans over the sugar mixture. Arrange the bread slices in the bottom of the dish so they are in a snug single layer.',
     order: 0
-  }, {
-    body: '0After the dough has doubled in size turn it out onto a lightly floured surface, cover and let rest for 10 minutes. In a small bowl, combine brown sugar and cinnamon.',
+  },
+  {
+    body: '0In a medium bowl, whisk together the orange zest, orange juice, milk, sugar, cinnamon, vanilla, egg whites, and eggs. Pour this mixture over the bread, pressing on the bread slices to help absorb the liquid. Cover and refrigerate for at least one hour, or overnight.',
     order: 1
-  }, {
-    body: '0Roll dough into a 16x21-inch rectangle. Spread dough with 1/3 cup butter and sprinkle evenly with sugar/cinnamon mixture. Roll up dough and cut into 12 rolls. Place rolls in a lightly greased 9x13 inch baking pan. Cover and let rise until nearly doubled, about 30 minutes. Meanwhile, preheat oven to 400 degrees F (200 degrees C).',
+  },
+  {
+    body: '0Preheat the oven to 350 degrees F (175 degrees C ). Remove the cover from the baking dish, and let stand for 20 minutes at room temperature.',
     order: 2
-  }, {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473106985/3839539_ccye8h.jpg',
+  },
+  {
+    body: '0Bake for 35 minutes in the preheated oven, until golden brown. Dust with confectioners\' sugar before serving.',
     order: 3
-  }, {
-    body: '0Bake rolls in preheated oven until golden brown, about 15 minutes. While rolls are baking, beat together cream cheese, 1/4 cup butter, confectioners\' sugar, vanilla extract and salt. Spread frosting on warm rolls before serving.',
+  },
+  {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1472849746/1_c4ohzr.jpg',
     order: 4
-  }, {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473106985/cinnamon_x9dyno.jpg',
-    order: 5
-    }
-  ]
+  }]
 )
-Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "I made these for a girls only brunch & they were gobbled up!! Fabulous!")
-Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "I made these for a girls only brunch & they were gobbled up!! Fabulous!")
-Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "These are wonderfull! Not difficult to make and they are YUMMY. Highly reccomend this recipe. I would like to know if these are okay to refigerate overnight before placing in the oven.")
-Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "This really does taste like a cinnabon. I thought that they were great and my husband even likes them!")
-Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "Scrumptious!! I doubled the frosting recipe :)")
-Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "I had no idea I could make something so good! The bread machine really makes this easy and they are delicious. Marsha, thanks for sharing such a great recipe.")
-Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "This recipe is fabulous. Will definately make again!")
 
-
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "This is a great variation to your breakfast menu. I prepared the night before and then baked in the morning. It would go great with a cream cheese frosting!")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "This recipe is phenomenal. One tip is to either use stale bread or crisp it up in the oven before hand. My family adores it!")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "AMAZING! Would make again in a heartbeat, no modifications needed to the recipe in my opinion!")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "I made this for Christmas brunch. Everyone loved it! Almost all went back for seconds. I enjoyed a slice that was left over the next day. Definitely will make again.")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "very easy, very very yummy! I make it for breakfast for dinner once a month!")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "It was a hit at our brunch. I might tweak it and use a little less sugar, but otherwise it was perfect.")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "Delicious! I used Italian bread for bigger slices, and served with raspberries and whipped cream.")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "I cut the sugar in half and it was still deliciously sweet. I thought it was just right! yummy!")
+Comment.create!(recipe_id: 4, user_id: (1..250).to_a.sample, content: "This recipe is amazing! The neat thing about it is that you can make it ahead of time (like overnight) and it still tastes great!")
 
 # http://allrecipes.com/recipe/235095/easy-rumaki-with-pineapple/?internalSource=staff%20pick&referringId=76&referringContentType=recipe%20hub&clickId=cardslot%202
 Recipe.create!(
@@ -236,7 +235,7 @@ Recipe.create!(
     body: '0Bake in the preheated oven for 7 minutes; turn and continue baking until bacon is almost crisp, about 8 more minutes. Brush rumaki with sesame-ginger dressing and continue baking until bacon is crisp, about 5 more minutes. Garnish rumaki with green onion.',
     order: 2
   }, {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473107469/1291543_mppc0r.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473351782/rumaki_v7u2hy.jpg',
     order: 3
   }
   ]
@@ -393,7 +392,7 @@ Recipe.create!(
     body: '0Bake until topping is set, about 5 minutes. Cool cheesecake to room temperature and refrigerate until serving.',
     order:8
   }, {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473108941/1401385_anvntw.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473351782/cheesecake_pyq5al.jpg',
     order:9
   }
   ]
@@ -554,7 +553,7 @@ Recipe.create!(
     body: '0Bake for 15 to 20 minutes in the preheated oven, until sauce is bubbling and cheese is lightly browned at the edges.',
     order:3
   }, {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473110125/454897_gnwqh3.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473351782/spinach_rbml3q.jpg',
     order:4
   }
   ]
@@ -725,7 +724,7 @@ Recipe.create!(
     body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473118331/2981163_g0o5rp.jpg',
     order:4
   }, {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473118331/2457809_fqd93r.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473351783/steak_amqcsx.jpg',
     order:5
   }
   ]
@@ -885,7 +884,7 @@ Recipe.create!(
     body: '0Place the baking dish in the preheated oven, and bake salmon uncovered 20 minutes, or until easily flaked with a fork.',
     order:4
   }, {
-    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473119794/862371_jsjcdz.jpg',
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473351781/salmon_lmyt8o.jpg',
     order:5
   }
   ]

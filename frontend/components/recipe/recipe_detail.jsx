@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import CommentForm from '../comment/comment_form.jsx';
 import Comment from '../comment/comment.jsx';
+import { convertToHour } from '../../util/recipe_helper.js';
 
 class RecipeDetail extends React.Component{
   editHandler() {
@@ -121,8 +122,8 @@ class RecipeDetail extends React.Component{
               { this.forAuthor() }
             </h4>
             <div className='time'>
-              <h5>Prep {prep_time} mins</h5>
-              <h5>Cook {cook_time} mins</h5>
+              <h5>Prep {convertToHour(prep_time)}</h5>
+              <h5>Cook {convertToHour(cook_time)}</h5>
             </div>
 
             <label>Description

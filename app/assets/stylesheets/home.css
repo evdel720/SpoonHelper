@@ -1,12 +1,12 @@
+
 .suggestion-container > img {
   width: 100%;
+  min-width: 100vh;
   height: 83vh;
-  margin: 0 auto;
   z-index: -1;
+  animation: fadein 3s;
   position: absolute;
   left: 0;
-  top: 110px;
-  animation: fadein 3s;
 }
 
 @keyframes fadein {
@@ -14,15 +14,8 @@
     to   { opacity: 1; }
 }
 
-
-.suggestion-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .suggestion-container p {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bolder;
   color: white;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -31,16 +24,17 @@
 }
 
 .texts {
+  z-index: 20;
   position: absolute;
   top: 200px;
-  left: 100px;
+  left: 10%;
 }
 
 .category-titles {
   list-style: none;
   position: absolute;
-  bottom: 10px;
-  right: 80px;
+  bottom: 30px;
+  right: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -52,5 +46,20 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   letter-spacing: 4px;
   cursor: pointer;
-  margin: 10px;
+  margin: 15px;
+}
+
+
+@media all and (max-width: 700px) {
+  .category-titles {
+    display: none;
+  }
+
+  ul.user-side-bar {
+    position: relative;
+  }
+
+  .suggestion-container p {
+    font-size: 20px;
+  }
 }

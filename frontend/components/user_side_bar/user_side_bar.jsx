@@ -48,11 +48,11 @@ class UserSideBar extends React.Component {
       );
     } else {
       return (
-        <div className="user-side-bar">
+        <ul className="user-side-bar">
           <Link to="signin" className="side-link">Sign In</Link>
           <div className="link-separation"></div>
           <Link to="signup" className="side-link">Sign Up</Link>
-        </div>
+        </ul>
       );
     }
   }

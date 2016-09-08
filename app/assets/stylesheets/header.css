@@ -21,7 +21,6 @@ body {
 .include-search {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .home-side-bar, .user-side-bar {
@@ -63,11 +62,12 @@ a.side-link:hover {
 }
 
 .user-side-bar .user-dropdown {
+  width: 150px;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 90px;
-  right: 100px;
+  top: 30px;
+  right: 70px;
   border: solid white 2px;
   border-radius: 5px;
   background-color: #e3e0d9;
@@ -84,4 +84,9 @@ a.side-link:hover {
 .dropdown-item:hover {
   color: white;
   background-color: #3b3b3b;
+}
+
+ul.user-side-bar {
+  position: absolute;
+  right: 30px;
 }
