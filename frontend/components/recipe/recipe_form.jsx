@@ -150,7 +150,7 @@ class RecipeForm extends React.Component {
       } else {
         return (
           <div key={s + idx} className='step-item'>
-            <img src={this.state.steps[idx].body.slice(1)}
+            <img src={s.body.slice(1)}
               name={idx}
               className='step-img step-value-node'/>
             <button className="delete-btn"
