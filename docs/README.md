@@ -97,24 +97,19 @@ and destroyed through the API.
 - [ ] Style Comments components
 - [ ] Seed Comments
 
-### Phase 5: Likes and Collection feature (1 day)
+### Phase 5: Likes feature (1 day)
 
-**objective:** Add like and Collection feature on recipe
+**objective:** Add like feature on recipe
 
-- [ ] `Like` and `Collection` model
+- [ ] `Like` model
 - [ ] Seed database with a small amount of test data
-- [ ] Add like and collect button in RecipeDetail and RecipeIndexItem
+- [ ] Add like button in RecipeDetail and RecipeIndexItem
 - [ ] Add proper request and response
 
-### Phase 6: - Pagination / infinite scroll for Recipes Index (1 day)
+### Phase 6: - Search for Recipes (1 day)
 
-**objective:** Add infinite scroll to Recipes Index
+**objective:** Add search feature
 
-- [ ] Paginate Recipes Index API to send 9 results at a time
-- [ ] Append next set of results when user scrolls and is near bottom
-- [ ] Style scroll components and transitions
-- [ ] Ensure seed data demonstrates infinite scroll
-
-### Bonus Features (TBD)
-- [ ] Search Recipes by title auto complete, ingredients
-- [ ] Mailer
+- [ ] Search Recipes by title and ingredients
+- [ ] Add auto complete dropdown
+- [ ] Add search Result page

@@ -1,74 +1,76 @@
-# FresherNote
+# SpoonHelper
 
-[FresherNote live][heroku] **NB:** This should be a link to your production site
+[SpoonHelper live][http://www.spoonhelper.us]
 
-[heroku]: http://www.herokuapp.com
-
-FresherNote is a full-stack web application inspired by Evernote.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
+SpoonHelper is a full-stack web application inspired by Instructables. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the front-end.
 
 ## Features & Implementation
 
- **NB**: don't copy and paste any of this.  Many folks will implement similar features, and many employers will see the READMEs of a lot of a/A grads.  You must write in a way that distinguishes your README from that of other students', but use this as a guide for what topics to cover.  
-
 ### Single-Page App
 
-FresherNote is truly a single-page; all content is delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
+  SpoonHelper is a single-page app. All content is rendered on one static page by React Route.
 
-```ruby
-class Api::SessionsController < ApplicationController
-    def get_user
-      if current_user
-        render :current_user
-      else
-        render json: errors.full_messages
-      end
+### User and Session
+  When user signs in or signs up, the front-end sends ajax request to rails backend and creates action accordingly. It sets current user or returns error in proper structure with jbuilder which makes inline error showing in every form possible. The app keeps the errors in store and clears them when the user leaves the form component.
+
+### Categories
+  This app has 6 categories and each can have an image as polymorphic association. Each recipe can also have an representative image as polymorphic association. All recipes are belonged to categories.
+  When a user first visit the app, the front-end requests categories to the database and keep them in store to make category dropdown menu. The database will send back categories with recipe suggestions and those become the front page.
+  Categories store doesn't fetch after first time until user refresh the page.
+
+### Recipes
+  Recipes can have many steps. Steps can be text or image. When user creates Recipe, user can dynamically add, remove, and organize steps without making any request to the database. All request would be taken care of when the user submits the recipe. It also ignores empty text steps. For that, when creating new recipe, the steps attributes has to be passed and treated at once.
+  In the Recipe model, this makes it possible to create and update steps dynamically.
+  ``` ruby  
+    accepts_nested_attributes_for :steps, reject_if: proc { |attributes| attributes['body'].length == 1 }, allow_destroy: true
+  ```
+  All the recipes will grab an image after it is created, the last image step as a representative image.
+
+  Recipe can have many comments and likes.
+
+  Recipes controller's index action treats search result page and each category page. When it receives category id or search params, it returns recipes accordingly like below.
+
+  ```ruby
+    if params[:search_option]
+      @recipes = Recipe.where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%")
+      @category = 'Search Result'
+    elsif params[:category_id] != '0'
+      @recipes = Recipe.where(category_id: params[:category_id])
+      @category = Category.find_by(id: params[:category_id]).title
+    else
+      @recipes = Recipe.all
+      @category = 'All'
     end
- end
   ```
 
-### Note Rendering and Editing
+  Since the store is constructed as Objects with ids as their keys for searching efficiency, recipe sorting is treated at the front-end. To make things cleaner, sorting functions are kept in util/recipe_heper.js
 
-  On the database side, the notes are stored in one table in the database, which contains columns for `id`, `user_id`, `content`, and `updated_at`.  Upon login, an API call is made to the database which joins the user table and the note table on `user_id` and filters by the current user's `id`.  These notes are held in the `NoteStore` until the user's session is destroyed.  
+### Like
+  User can like recipes to collect them in their liked recipe page. Like table is a join table which links Recipe table and User table. With this unique validation, user can't like one recipe more than once.
+  ```ruby
+    :likes, [:user_id, :recipe_id], unique: true # in database migration
 
-  Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
+    validates :recipe_id, uniqueness: { scope: :user_id } # in like model
+  ```
+### Comment
+  User can leave comments when they are signed in. User can delete their own comments only.
 
-![image of notebook index](wireframes/home-logged-in.jpg)
+### Search feature
+  When user type text in the search bar, the front-end sends ajax request to fetch auto complete. It only shows 5 things from top. When user submit the form, it takes user to the search result page which shows all results.
+  All dropdown menus become hidden when user clicks anything in document.
 
-Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
-
-### Notebooks
-
-Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
-
-The React component structure for notebooks mirrored that of notes: the `NotebookIndex` component renders a list of `CondensedNotebook`s as subcomponents, along with one `ExpandedNotebook`, kept track of by `NotebookStore.selectedNotebook()`.  
-
-`NotebookIndex` render method:
-
-```javascript
-render: function () {
-  return ({this.state.notebooks.map(function (notebook) {
-    return <CondensedNotebook notebook={notebook} />
-  }
-  <ExpandedNotebook notebook={this.state.selectedNotebook} />)
-}
-```
-
-### Tags
-
-As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
-
-Tags are maintained on the frontend in the `TagStore`.  Because creating, editing, and destroying notes can potentially affect `Tag` objects, the `NoteIndex` and the `NotebookIndex` both listen to the `TagStore`.  It was not necessary to create a `Tag` component, as tags are simply rendered as part of the individual `Note` components.  
-
-![tag screenshot](wireframes/tag-search.jpg)
+### Recipe form edit authority and Route
+  In front-end, edit recipe page's Route is edit_recipe. The Route doesn't rely on any information about recipe so other users except the author can't go to the edit page even if they know recipe's id.
 
 ## Future Directions for the Project
 
-In addition to the features already implemented, I plan to continue work on this project.  The next steps for FresherNote are outlined below.
+In addition to the features already implemented, I plan to continue work on this project. The next steps for SpoonHelper are outlined below.
 
-### Search
+### Recipe rating by user
+  User can rate the recipes.
 
-Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks.  This search will look go through tags, note titles, notebook titles, and note content.  
+### Recipe photos by other users
+  Other users can upload pictures that they made with the recipe.
 
-### Direct Messaging
-
-Although this is less essential functionality, I also plan to implement messaging between FresherNote users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  
+### Shopping cart
+  Shopping list model which belongs to users. User can click ingredients to add list items. The list sorts the items by grocery store's categories.

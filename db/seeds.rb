@@ -91,7 +91,7 @@ Recipe.create!(
   title: 'Belgian Waffles',
   description: 'Belgian waffles are tender and flavorful waffles made with yeast. They\'re great topped with butter, whipped cream and fresh fruit.',
   ingredients: '1 (.25 ounce) package active dry yeast#@!1/4 cup warm milk (110 degrees F/45 degrees C)#@!3 egg yolks#@!2 3/4 cups warm milk (110 degrees F/45 degrees C)#@!3/4 cup butter, melted and cooled to lukewarm#@!1/2 cup white sugar#@!1 1/2 teaspoons salt#@!2 teaspoons vanilla extract#@!4 cups all-purpose flour#@!3 egg whites',
-  user_id: (1..user_count).to_a.sample,
+  user_id: 1,
   category_id: 1,
   prep_time: 15,
   cook_time: 20,
@@ -122,15 +122,15 @@ Recipe.create!(
   }]
 )
 
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "Make the night before.....they turn out perfectly.")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "I loved this recipe! True belgian waffles are a yeast batter, and this one is very genuine. My only gripe is that it makes a lot of dishes (yeast, butter, milk, mixing bowl, egg whites).")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "FINALLY a recipe worthy of a five star rating! I have made these waffles several times. For time purposes, I prefer preparing the batter the night before versus the morning of. ")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "I made these delicious waffles for our woman's retreat breakfast at church, and those women loved them.")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "These are good when you first make them, but if you leave the batter in the fridge overnight and then make them they are DIVINE. Such a difference in taste. It's amazing!")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "These were awesome! One waffle is so filling! I made this the night before and did a cold rise in the fridge. I would definitely recommend this unless you have time to wait.")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "This is EXACTLY the type of waffle I was looking for! Light and fluffy, yet lightly crispy on the outside. Soooo yummy!")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "This was my first attempt at Belgian Waffles and the recipe looked pretty simple in case I wasn't very awake in the morning. :) I made them as directed and they were a hit.")
-Comment.create!(recipe_id: 2, user_id: (1..user_count).to_a.sample, content: "I followed the recipe to the letter except that I made it the night before and let it rise in the fridge. These waffles are awesome!")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "Make the night before.....they turn out perfectly.")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "I loved this recipe! True belgian waffles are a yeast batter, and this one is very genuine. My only gripe is that it makes a lot of dishes (yeast, butter, milk, mixing bowl, egg whites).")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "FINALLY a recipe worthy of a five star rating! I have made these waffles several times. For time purposes, I prefer preparing the batter the night before versus the morning of. ")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "I made these delicious waffles for our woman's retreat breakfast at church, and those women loved them.")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "These are good when you first make them, but if you leave the batter in the fridge overnight and then make them they are DIVINE. Such a difference in taste. It's amazing!")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "These were awesome! One waffle is so filling! I made this the night before and did a cold rise in the fridge. I would definitely recommend this unless you have time to wait.")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "This is EXACTLY the type of waffle I was looking for! Light and fluffy, yet lightly crispy on the outside. Soooo yummy!")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "This was my first attempt at Belgian Waffles and the recipe looked pretty simple in case I wasn't very awake in the morning. :) I made them as directed and they were a hit.")
+Comment.create!(recipe_id: 2, user_id: (2..user_count).to_a.sample, content: "I followed the recipe to the letter except that I made it the night before and let it rise in the fridge. These waffles are awesome!")
 
 
 # http://allrecipes.com/recipe/21014/good-old-fashioned-pancakes/?internalSource=hub%20recipe&referringId=151&referringContentType=recipe%20hub&clickId=cardslot%2013
@@ -255,7 +255,7 @@ Recipe.create!(
   title: 'Stuffed Jalapeno Firecrackers',
   description: 'This recipe came about after years of competition with family and friends over the perfect stuffed jalapeno. Bring your tissues because these are HOT! Goes well with Summer Beer I from this site.',
   ingredients: '12 jalapeno peppers, halved lengthwise#@!1 (8 ounce) package cream cheese, softened#@!Cajun seasoning, or to taste#@!12 slices jalapeno bacon, cut in half#@!toothpicks',
-  user_id: (1..user_count).to_a.sample,
+  user_id: 1,
   category_id: 2,
   prep_time: 15,
   cook_time: 20,
@@ -278,12 +278,12 @@ Recipe.create!(
   ]
 )
 
-Comment.create!(recipe_id: 6, user_id: (1..user_count).to_a.sample, content: "Here in Texas it seems every store has the jalapeno bacon. If you cannot find it at your local grocer you can purchase the bacon online")
-Comment.create!(recipe_id: 6, user_id: (1..user_count).to_a.sample, content: "I've made these for years. Everytime I make them they are the first app to go. I haven't tried with the cajun seasoning but will next time.")
-Comment.create!(recipe_id: 6, user_id: (1..user_count).to_a.sample, content: "Fantastic twist to the usual jalapeno popper. After reading reviews I pulled it off like this: Did all the recommended prep plus baked the jalapenos for 15 minutes at 350 to lessen the heat.")
-Comment.create!(recipe_id: 6, user_id: (1..user_count).to_a.sample, content: "hese are fantastic!! I also added some chopped pineapple and garlic powder to the cream cheese. Everyone loved them! Also added a sprinkle of brown sugar over the bacon for extra yum.")
-Comment.create!(recipe_id: 6, user_id: (1..user_count).to_a.sample, content: "OK, rule of thumb, the smaller the Jalapeno, the hotter it is. Use gloves to seed the peppers, else you get the oils on your hands and hurt for some time.")
-Comment.create!(recipe_id: 6, user_id: (1..user_count).to_a.sample, content: "My family loves this. I find is faster to just lay and push the bacon into the cream cheese a little to make it stick on top, that way the bacon is crisp all over.")
+Comment.create!(recipe_id: 6, user_id: (2..user_count).to_a.sample, content: "Here in Texas it seems every store has the jalapeno bacon. If you cannot find it at your local grocer you can purchase the bacon online")
+Comment.create!(recipe_id: 6, user_id: (2..user_count).to_a.sample, content: "I've made these for years. Everytime I make them they are the first app to go. I haven't tried with the cajun seasoning but will next time.")
+Comment.create!(recipe_id: 6, user_id: (2..user_count).to_a.sample, content: "Fantastic twist to the usual jalapeno popper. After reading reviews I pulled it off like this: Did all the recommended prep plus baked the jalapenos for 15 minutes at 350 to lessen the heat.")
+Comment.create!(recipe_id: 6, user_id: (2..user_count).to_a.sample, content: "hese are fantastic!! I also added some chopped pineapple and garlic powder to the cream cheese. Everyone loved them! Also added a sprinkle of brown sugar over the bacon for extra yum.")
+Comment.create!(recipe_id: 6, user_id: (2..user_count).to_a.sample, content: "OK, rule of thumb, the smaller the Jalapeno, the hotter it is. Use gloves to seed the peppers, else you get the oils on your hands and hurt for some time.")
+Comment.create!(recipe_id: 6, user_id: (2..user_count).to_a.sample, content: "My family loves this. I find is faster to just lay and push the bacon into the cream cheese a little to make it stick on top, that way the bacon is crisp all over.")
 
 
 

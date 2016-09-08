@@ -41,18 +41,16 @@ class SearchForm extends React.Component {
   }
 
   searchResult() {
-    {
-      return (
-        this.props.search.map((r, idx) => (
-          <li key={r.id + idx}
-            className='autocomplete-item'
-            onMouseDown={() => this.props.router.push(`/recipes/${r.id}`)}>
-            <img src={r.rep_img.slice(1)}/>
-            <p>{r.title}</p>
-          </li>
-        ))
-      );
-    }
+    return (
+      this.props.search.map((r, idx) => (
+        <li key={r.id + idx}
+          className='autocomplete-item'
+          onMouseDown={() => this.props.router.push(`/recipes/${r.id}`)}>
+          <img src={r.rep_img.slice(1)}/>
+          <p>{r.title}</p>
+        </li>
+      ))
+    );
   }
 
   render() {
@@ -74,7 +72,7 @@ class SearchForm extends React.Component {
               src='http://res.cloudinary.com/wkdal720/image/upload/v1473203868/search_1_gesyxt.png' alt='icon'/>
           </button>
         </form>
-        { this.props.search.length ? <ul className='search-dropdown'> {this.searchResult()} </ul> : ""}
+        { this.props.search.length ? <ul className='search-dropdown'> {this.searchResult()} <li className="search-explanation"> Press enter to see all results.</li> </ul> : ""}
       </div>
     );
   }

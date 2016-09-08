@@ -31,3 +31,9 @@
 .autocomplete-item p {
   margin-left: 10px;
 }
+
+
+.search-explanation {
+  padding: 5px 20px;
+  text-align: center;
+}
