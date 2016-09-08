@@ -64,7 +64,7 @@ class SignInForm extends React.Component {
         <p>Don't have an account?</p>
         <div className="btns">
           <button className="signin-btn" onClick={ this.toSignUpPage.bind(this) }>Sign Up</button>
-          <button className="signin-btn" onClick={ this.guestSignIn.bind(this) }>Guest Sign In</button>
+          <button className="signin-btn" onClick={ this.guestSignIn.bind(this) }>Guest</button>
         </div>
       </div>
     );

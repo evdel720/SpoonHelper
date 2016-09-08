@@ -11,8 +11,10 @@ class RecipeForm extends React.Component {
       title: title || "",
       ingredients: ingredients ? ingredients.split("#@!") : [],
       description: description || "",
-      prep_time: prep_time || "",
-      cook_time: cook_time || "",
+      prep_hour: Math.floor(prep_time / 60) || "",
+      prep_min: prep_time % 60 || "",
+      cook_hour: Math.floor(cook_time / 60) || "",
+      cook_min: cook_time % 60 || "",
       category_id: category ? category.id : undefined,
       steps: steps || [],
       stepsToBeDeleted: []
@@ -28,7 +30,7 @@ class RecipeForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    debugger
     if (this.props.recipe.id) {
       this.props.updateRecipe(
         this.props.recipe.id,
@@ -203,16 +205,24 @@ class RecipeForm extends React.Component {
           <div className='time-form'>
             <label>Prep time
               <input type='number'
+                placeholder="hours"
+                value={this.state.prep_hour} name='prep_hour'
+                onChange={ this.handleInput }/>
+              <input type='number'
                 placeholder="mins"
-                value={this.state.prep_time} name='prep_time'
+                value={this.state.prep_min} name='prep_min'
                 onChange={ this.handleInput }/>
               { this.errorGenerator(errors.prep_time) }
             </label>
 
             <label>Cook time
               <input type='number'
+                placeholder="hours"
+                value={this.state.cook_hour} name='cook_hour'
+                onChange={ this.handleInput }/>
+              <input type='number'
                 placeholder="mins"
-                value={this.state.cook_time} name='cook_time'
+                value={this.state.cook_min} name='cook_min'
                 onChange={ this.handleInput }/>
               { this.errorGenerator(errors.cook_time) }
             </label>

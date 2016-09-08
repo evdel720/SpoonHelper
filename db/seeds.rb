@@ -1,14 +1,14 @@
 
 User.delete_all
+User.create!(username: 'Guest', password: 'guestpassword')
 
 300.times do
   User.create(
     username: Faker::Internet.user_name,
-    password: 'password'
+    password: 'userpassword'
   )
 end
 
-User.create!(username: 'Guest', password: 'guestpassword')
 
 Category.delete_all
 
@@ -1217,7 +1217,7 @@ Comment.create!(recipe_id: 29, user_id: (1..250).to_a.sample, content: "Don't ch
 
 # http://allrecipes.com/recipe/26692/annies-fruit-salsa-and-cinnamon-chips/?internalSource=hub%20recipe&referringId=76&referringContentType=recipe%20hub&clickId=cardslot%2014
 Recipe.create!(
-  title: 'Annie\s Fruit Salsa and Cinnamon Chips',
+  title: 'Annie\'s Fruit Salsa and Cinnamon Chips',
   description: 'Easy to make, tasty fruit salsa and cinnamon tortilla chips. Great as an appetizer or a snack. Great for anytime!',
   ingredients: '2 kiwis, peeled and diced#@!2 Golden Delicious apples - peeled, cored and diced#@!8 ounces raspberries#@!1 pound strawberries#@!2 tablespoons white sugar#@!1 tablespoon brown sugar#@!3 tablespoons fruit preserves, any flavor#@!10 (10 inch) flour tortillas#@!butter flavored cooking spray#@!2 tablespoons cinnamon sugar',
   user_id: (1..250).to_a.sample,
