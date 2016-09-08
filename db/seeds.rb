@@ -1362,23 +1362,39 @@ Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "This cho
 Comment.create!(recipe_id: 33, user_id: (1..301).to_a.sample, content: "Thanks for posting this recipe, Denise. It's a keeper for me. I can say that for me, it is just almost too much chocolate cake.")
 
 
-#
+# http://allrecipes.com/recipe/67952/roasted-brussels-sprouts/?internalSource=hub%20recipe&referringId=87&referringContentType=recipe%20hub&clickId=cardslot%2020
 Recipe.create!(
-  title: ,
-  description: ,
-  ingredients: ,
+  title: 'Roasted Brussels Sprouts',
+  description: 'This recipe is from my mother. It may sound strange, but these are really good and very easy to make. The Brussels sprouts should be brown with a bit of black on the outside when done. Any leftovers can be reheated or even just eaten cold from the fridge. I don\'t know how, but they taste sweet and salty at the same time!',
+  ingredients: '1 1/2 pounds Brussels sprouts, ends trimmed and yellow leaves removed#@!3 tablespoons olive oil#@!1 teaspoon kosher salt#@!1/2 teaspoon freshly ground black pepper',
   user_id: (1..301).to_a.sample,
   category_id: 4,
-  prep_time: ,
-  cook_time: ,
+  prep_time: 15,
+  cook_time: 45,
   steps_attributes: [{
-    body: ,
-    order:
+    body: '0Preheat oven to 400 degrees F (205 degrees C).',
+    order:0
+  }, {
+    body: '0Place trimmed Brussels sprouts, olive oil, kosher salt, and pepper in a large resealable plastic bag. Seal tightly, and shake to coat. Pour onto a baking sheet, and place on center oven rack.',
+    order:1
+  }, {
+    body: '0Roast in the preheated oven for 30 to 45 minutes, shaking pan every 5 to 7 minutes for even browning. Reduce heat when necessary to prevent burning. Brussels sprouts should be darkest brown, almost black, when done. Adjust seasoning with kosher salt, if necessary. Serve immediately.',
+    order:2
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473295875/812447_sp0kma.jpg',
+    order:3
   }
   ]
 )
 
-Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "Yum, yum, yum!!! I cooked them at 450 (misread it!) and they turned out fabulous. Brown and a little crunchy on the outside and creamy and tender on the inside.")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "AWESOME AWESOME AWESOME...I was out of plastic zipper bags(how did that happen????) so I poured the oil/salt/pepper in the pan and shook it up...worked equally as well.")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "I thought this was delicious as printed, but my partner did not care for these until I started roasting them in butter.")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "The Best! Sweet, Salty, Nutty....They were a hit! Not a sprout was left on the dish!")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "I just finished eating the leftovers reheated in the oven and HAD to share my experience. Both times now these sprouts have been the first thing to eat and finish on my plate...")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "This is a very simple recipe and combines the tastes of sweet and salty. It is an excellent side dish for many meats.")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "I have been making this recipe ever since i saw it in Ina Gartner's Barefoot Contessa recipe book. It is simple, healthy and delicious.")
+Comment.create!(recipe_id: 34, user_id: (1..301).to_a.sample, content: "This is a simple and very tasty recipe which succeeds because of the contrasts in textures and flavors. We loved the contrasts: crunchy, salty outer leaves and creamy, subtley sweet sprouts.")
 
 
 # http://allrecipes.com/recipe/73208/spinach-and-sun-dried-tomato-pasta/?internalSource=rotd&referringId=87&referringContentType=recipe%20hub&clickId=cardslot%201
