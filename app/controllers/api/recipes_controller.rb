@@ -5,7 +5,7 @@ class Api::RecipesController < ApplicationController
 
   def search
     if params[:search_option]
-      @recipes = Recipe.where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%").limit(5)
+      @recipes = Recipe.includes(:image).where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%").limit(5)
     end
     render :search
   end
