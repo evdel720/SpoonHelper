@@ -72,7 +72,7 @@ class Api::RecipesController < ApplicationController
   end
 
   def redirect_home_if_is_not_author
-    render json: {}, status: 401 unless current_user.id == @recipe.user.id
+    render json: {error: "Not an author"}, status: 401 unless current_user.id == @recipe.user.id
     return
   end
 end
