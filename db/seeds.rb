@@ -1894,23 +1894,69 @@ Comment.create!(recipe_id: 48, user_id: (1..user_count).to_a.sample, content: "F
 Comment.create!(recipe_id: 48, user_id: (1..user_count).to_a.sample, content: "This marinade was great. Even my 4 year old daughter loved the tuna!")
 
 
+# http://allrecipes.com/recipe/15057/overnight-blueberry-french-toast/?internalSource=hub%20recipe&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%2034
+Recipe.create!(
+  title: 'Overnight Blueberry French Toast',
+  description: 'This is a very unique breakfast dish. Good for any holiday breakfast or brunch, it\'s filled with the fresh taste of blueberries, and covered with a rich blueberry sauce to make it a one of a kind.',
+  ingredients: '12 slices day-old bread, cut into 1-inch cubes#@!2 (8 ounce) packages cream cheese, cut into 1 inch cubes#@!1 cup fresh blueberries#@!12 eggs, beaten#@!2 cups milk#@!1 teaspoon vanilla extract#@!1/3 cup maple syrup#@!1 cup white sugar#@!2 tablespoons cornstarch#@!1 cup water#@!1 cup fresh blueberries#@!1 tablespoon butter',
+  user_id: (1..user_count).to_a.sample,
+  category_id: 1,
+  prep_time: 15,
+  cook_time: 75,
+  steps_attributes: [{
+    body: '0Lightly grease a 9x13 inch baking dish. Arrange half the bread cubes in the dish, and top with cream cheese cubes. Sprinkle 1 cup blueberries over the cream cheese, and top with remaining bread cubes.',
+    order:0
+  }, {
+    body: '0In a large bowl, mix the eggs, milk, vanilla extract, and syrup. Pour over the bread cubes. Cover, and refrigerate overnight.',
+    order:1
+  }, {
+    body: '0Remove the bread cube mixture from the refrigerator about 30 minutes before baking. Preheat the oven to 350 degrees F (175 degrees C).',
+    order:2
+  }, {
+    body: '0Cover, and bake 30 minutes. Uncover, and continue baking 25 to 30 minutes, until center is firm and surface is lightly browned.',
+    order:3
+  }, {
+    body: '0In a medium saucepan, mix the sugar, cornstarch, and water. Bring to a boil. Stirring constantly, cook 3 to 4 minutes. Mix in the remaining 1 cup blueberries. Reduce heat, and simmer 10 minutes, until the blueberries burst. Stir in the butter, and pour over the baked French toast.',
+    order:4
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473436096/381517_tj7jhp.jpg',
+    order:5
+  }
+  ]
+)
 
-# Recipe.create!(
-#   title: ,
-#   description: ,
-#   ingredients: ,
-#   user_id: (1..user_count).to_a.sample,
-#   category_id: ,
-#   prep_time: ,
-#   cook_time: ,
-#   steps_attributes: [{
-#     body: ,
-#     order:
-#   }
-#   ]
-# )
+Comment.create!(recipe_id: 49, user_id: (1..user_count).to_a.sample, content: "I served this Christmas morning, and it was delicious. I really liked that I could prepare it the night before. My parents even took the recipe home with them.")
+Comment.create!(recipe_id: 49, user_id: (1..user_count).to_a.sample, content: "We were looking for something different for Christmas morning and this was a big hit with the whole family. It was sweet without being overly so. This is a keeper!")
+Comment.create!(recipe_id: 49, user_id: (1..user_count).to_a.sample, content: "I used fat-free cream cheese and liquid egg substitute with success.")
+Comment.create!(recipe_id: 49, user_id: (1..user_count).to_a.sample, content: "This is AWESOME...If you love French Toast..and if you LOVE Blueberries..this recipe is GREAT.. HINT..Make the sauce the night before and reheat in the morning..the flavor is SO MUCH Better!!!!")
+Comment.create!(recipe_id: 49, user_id: (1..user_count).to_a.sample, content: "I have served this dish 3 times, it is terrific.")
+Comment.create!(recipe_id: 49, user_id: (1..user_count).to_a.sample, content: "I made this for a Bible study brunch and it was very well recieved by all of the ladies who tried it. Since I had to go early , it was great to know it was all made except to bake.")
+Comment.create!(recipe_id: 49, user_id: (1..user_count).to_a.sample, content: "I took this to an Easter brunch potluck. Received rave reviews. Everyone wanted my recipe!!Had to pay $5.00 for two bags of blueberries!!")
 
-# Comment.create!(recipe_id: , user_id: (1..user_count).to_a.sample, content: "")
+# http://allrecipes.com/recipe/23539/strawberry-oatmeal-breakfast-smoothie/?internalSource=recipe%20hub&referringId=78&referringContentType=recipe%20hub&clickId=cardslot%2035
+Recipe.create!(
+  title: 'Strawberry Oatmeal Breakfast Smoothie',
+  description: 'This is a fast vegan smoothie with a deep pink color and a rich, creamy texture. VERY filling, and perfect for people in a rush in the morning. You don\'t have to give up a good breakfast when it\'s this fast to make! I use vitamin fortified soy milk.',
+  ingredients: '1 cup soy milk#@!1/2 cup rolled oats#@!1 banana, broken into chunks#@!14 frozen strawberries#@!1/2 teaspoon vanilla extract#@!1 1/2 teaspoons white sugar',
+  user_id: (1..user_count).to_a.sample,
+  category_id: 1,
+  prep_time: 5,
+  cook_time: 5,
+  steps_attributes: [{
+    body: '0In a blender, combine soy milk, oats, banana and strawberries. Add vanilla and sugar if desired. Blend until smooth. Pour into glasses and serve.',
+    order:0
+  }, {
+    body: '1http://res.cloudinary.com/wkdal720/image/upload/v1473436638/409456_ispdzw.jpg',
+    order:1
+  }
+  ]
+)
+
+Comment.create!(recipe_id: 50, user_id: (1..user_count).to_a.sample, content: "This was really good. I made it exactly as directed (using cows milk), but my frozen strawberries were sliced, so I just added them until it was thick.")
+Comment.create!(recipe_id: 50, user_id: (1..user_count).to_a.sample, content: "Delicious! I have tried other smoothie recipes with varying degrees of success and this one really delivers! It is smooth & creamy and just the right thickness.")
+Comment.create!(recipe_id: 50, user_id: (1..user_count).to_a.sample, content: "Being a chocolate lover, I didn't try this recipe as written, though it does sound good. I used chocolate soy milk instead of regular, and in place of the sugar, I used chocolate milk powder.")
+Comment.create!(recipe_id: 50, user_id: (1..user_count).to_a.sample, content: "This is my new favorite smoothie!!I didn't need to add sugar or vanilla though. I just used vanilla soymilk. Very filling and easy. Try it with rasberries too.")
+Comment.create!(recipe_id: 50, user_id: (1..user_count).to_a.sample, content: "I put the oats in first and ground them fine. It was great!!! Very filling and yummy.")
 
 2500.times {
   Like.create(user_id: (1..user_count).to_a.sample, recipe_id: (1..48).to_a.sample)
