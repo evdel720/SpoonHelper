@@ -53,6 +53,14 @@ class SearchForm extends React.Component {
     );
   }
 
+  ulGenerator() {
+    let li = <li className="search-explanation">Press enter to see all results.</li>;
+    return (<ul className='search-dropdown'>
+      {this.searchResult()}
+      { this.props.search.length === 5 ? li : "" }
+    </ul>);
+  }
+
   render() {
     return (
       <div className='search-container'>
@@ -72,7 +80,7 @@ class SearchForm extends React.Component {
               src='http://res.cloudinary.com/wkdal720/image/upload/v1473203868/search_1_gesyxt.png' alt='icon'/>
           </button>
         </form>
-        { this.props.search.length ? <ul className='search-dropdown'> {this.searchResult()} <li className="search-explanation"> Press enter to see all results.</li> </ul> : ""}
+        { this.props.search.length ? this.ulGenerator() : ""}
       </div>
     );
   }

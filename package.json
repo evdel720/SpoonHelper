@@ -27,6 +27,7 @@
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
+    "react-share": "^1.9.3",
     "redux": "^3.5.2",
     "webpack": "^1.13.1"
   },

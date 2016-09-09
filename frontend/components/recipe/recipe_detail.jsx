@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import CommentForm from '../comment/comment_form.jsx';
 import Comment from '../comment/comment.jsx';
 import { convertToHour } from '../../util/recipe_helper.js';
+import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
 
 class RecipeDetail extends React.Component{
   editHandler() {
@@ -94,6 +95,23 @@ class RecipeDetail extends React.Component{
     const { title, user, description, ingredients,
       category, prep_time, cook_time, steps, id, likes } = this.props.recipe;
 
+    const {
+      FacebookShareButton,
+      GooglePlusShareButton,
+      LinkedinShareButton,
+      TwitterShareButton,
+      PinterestShareButton,
+      VKShareButton
+    } = ShareButtons;
+
+    const FacebookIcon = generateShareIcon('facebook');
+    const TwitterIcon = generateShareIcon('twitter');
+    const GooglePlusIcon = generateShareIcon('google');
+    const LinkedinIcon = generateShareIcon('linkedin');
+    const PinterestIcon = generateShareIcon('pinterest');
+    const VKIcon = generateShareIcon('vk');
+    const shareUrl = `http://www.spoonhelper.us/#/recipes/${id}`;
+
     return (
       <div className='detail-container'>
         <div className="recipe-detail">
@@ -135,6 +153,67 @@ class RecipeDetail extends React.Component{
                 { this.putSteps(steps) }
               </ol>
           </div>
+        </div>
+
+        <div className='share-buttons'>
+          <FacebookShareButton
+            url={ shareUrl }
+            title={ title }
+            className="share-btn">
+            <FacebookIcon
+              size={32}
+              round />
+          </FacebookShareButton>
+
+          <TwitterShareButton
+            url={ shareUrl }
+            title={ title }
+            className="share-btn">
+            <TwitterIcon
+              size={32}
+              round />
+          </TwitterShareButton>
+
+          <GooglePlusShareButton
+            url={shareUrl}
+            title={title}
+            className="share-btn">
+            <GooglePlusIcon
+              size={32}
+              round />
+          </GooglePlusShareButton>
+
+          <LinkedinShareButton
+            url={shareUrl}
+            title={title}
+            windowWidth={750}
+            windowHeight={600}
+            className="share-btn">
+            <LinkedinIcon
+              size={32}
+              round />
+          </LinkedinShareButton>
+
+          <PinterestShareButton
+            title={title}
+            url={String(window.location)}
+            media={`${String(window.location)}/`}
+            windowWidth={1000}
+            windowHeight={730}
+            className="share-btn">
+            <PinterestIcon size={32} round />
+          </PinterestShareButton>
+
+          <VKShareButton
+            title={title}
+            url={shareUrl}
+            windowWidth={660}
+            windowHeight={460}
+            className="share-btn">
+            <VKIcon
+              size={32}
+              round />
+          </VKShareButton>
         </div>
 
         <div className='comment-part'>

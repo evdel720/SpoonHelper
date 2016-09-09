@@ -147,3 +147,15 @@
 .ingredient-part .category-link {
   cursor: pointer;
 }
+
+.share-btn {
+  display: inline;
+  margin: 30px 10px;
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin: 0 auto;
+}
