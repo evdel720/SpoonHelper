@@ -63,6 +63,9 @@ validates :recipe_id, uniqueness: { scope: :user_id } # in like model
 ### Recipe form edit authority and Route
   In the frontend, the edit recipe page's Route is /edit_recipe. The Route doesn't rely on any information about the recipe so other users besides the author can't go to the edit page even if they know recipe's id.
 
+### Share
+  In recipe detail, user can share the recipe link with on social networks.
+
 ## Future Directions for the Project
 
 In addition to the features already implemented, I plan to continue work on this project. The next steps for SpoonHelper are outlined below.

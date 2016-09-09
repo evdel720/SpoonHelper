@@ -1959,5 +1959,5 @@ Comment.create!(recipe_id: 50, user_id: (1..user_count).to_a.sample, content: "T
 Comment.create!(recipe_id: 50, user_id: (1..user_count).to_a.sample, content: "I put the oats in first and ground them fine. It was great!!! Very filling and yummy.")
 
 2500.times {
-  Like.create(user_id: (1..user_count).to_a.sample, recipe_id: (1..48).to_a.sample)
+  Like.create(user_id: (1..user_count).to_a.sample, recipe_id: (1..50).to_a.sample)
 }
