@@ -31,7 +31,7 @@ class CommentForm extends React.Component{
           disabled={this.props.signedIn ? false : true }>
         </textarea>
         <button id='submit-btn'
-          disabled={this.props.signedIn ? false : true }>
+          disabled={this.props.signedIn && this.state.content !== "" ? false : true }>
           Add
         </button>
       </form>
