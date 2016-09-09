@@ -12,27 +12,26 @@ export const fetchSearchRecipes = (data, success) => {
     url: '/api/recipes.json',
     type: 'GET',
     data: data,
-    success,
-    error: (resp) => {console.log(resp);}
+    success
   });
 };
 
-export const fetchCategoryRecipes = (cId, success) => {
+export const fetchCategoryRecipes = (cId, success, error) => {
   $.ajax({
     url: '/api/recipes.json',
     type: "GET",
     data: {category_id: cId},
     success,
-    error: (resp) => {console.log(resp);}
+    error
   });
 };
 
-export const fetchSingleRecipe = (rId, success) => {
+export const fetchSingleRecipe = (rId, success, error) => {
   $.ajax({
     url: `/api/recipes/${rId}.json`,
     type: "GET",
     success,
-    error: (resp) => {console.log(resp);}
+    error
   });
 };
 

@@ -32,13 +32,13 @@ SpoonHelper is a full-stack web application inspired by Instructables. It utiliz
 
   ```ruby
     if params[:search_option]
-      @recipes = Recipe.where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%")
+      @recipes = Recipe.includes(:image, :user, :like).where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%")
       @category = 'Search Result'
     elsif params[:category_id] != '0'
-      @recipes = Recipe.where(category_id: params[:category_id])
+      @recipes = Recipe.includes(:image, :user, :like).where(category_id: params[:category_id])
       @category = Category.find_by(id: params[:category_id]).title
     else
-      @recipes = Recipe.all
+      @recipes = Recipe.includes(:image, :user, :like).all
       @category = 'All'
     end
   ```
@@ -55,6 +55,16 @@ validates :recipe_id, uniqueness: { scope: :user_id } # in like model
   ```
 ### Comment
   Users can leave comments when they are signed in. Users can delete their own comments only.
+
+### Database Query
+  To prevent an N+1 query, when a user requests data, the controller includes related tables according to the data like below.
+  ```ruby
+    @recipe = Recipe.includes(comments: [:user]).find_by(id: params[:id])
+
+  ```
+
+### Invalid authority/404 not found
+  When a user makes invalid requests, the backend renders prepared error and frontend takes user to prepared error route.
 
 ### Search feature
   When a user types text in the search bar, the frontend sends an ajax request to fetch auto complete. It only shows 5 results at a time. When a user submits the form, it takes the user to the search result page which shows all results.

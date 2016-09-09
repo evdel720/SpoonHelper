@@ -4,6 +4,10 @@ import * as RecipeUtil from '../util/recipe_api_util.js';
 import { hashHistory } from 'react-router';
 
 const RecipeMiddleware = (store) => (next) => (action) => {
+  const errorPageShow = () => {
+    hashHistory.push('/error');
+  };
+
   const fetchCategorySuccess = (recipes) => {
     store.dispatch(receiveRecipes(recipes));
   };
@@ -33,10 +37,10 @@ const RecipeMiddleware = (store) => (next) => (action) => {
       RecipeUtil.deleteRecipe(action.rId, destroySuccess);
       break;
     case RecipeConstants.REQUEST_CATEGORY_RECIPES:
-      RecipeUtil.fetchCategoryRecipes(action.cId, fetchCategorySuccess);
+      RecipeUtil.fetchCategoryRecipes(action.cId, fetchCategorySuccess, errorPageShow);
       break;
     case RecipeConstants.REQUEST_SINGLIE_RECIPE:
-      RecipeUtil.fetchSingleRecipe(action.rId, fetchSingleSuccess);
+      RecipeUtil.fetchSingleRecipe(action.rId, fetchSingleSuccess, errorPageShow);
       break;
     case RecipeConstants.CREATE_RECIPE:
       RecipeUtil.createRecipe(action.recipe, createUpdateSuccess, errorCallback);

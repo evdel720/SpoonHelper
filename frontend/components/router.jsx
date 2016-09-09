@@ -12,7 +12,7 @@ import RecipeDetailContainer from '../components/recipe/recipe_detail_container.
 import UserLikedContainer from '../components/userpage/user_liked_container.js';
 import UserRecipesContainer from '../components/userpage/user_recipes_container.js';
 import HomeContainer from '../components/home/home_container.js';
-
+import ErrorPage from './error_page.jsx';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -107,6 +107,8 @@ class AppRouter extends React.Component{
           <Route path="my_recipes" component={ UserRecipesContainer }
             onEnter={ this._ensureSignedIn } />
           <Route path="search" component={ RecipeIndexContainer }/>
+          <Route path="error" component={ ErrorPage }/>
+          <Route path=":invalid" component={ ErrorPage }/>
         </Route>
       </Router>
     );

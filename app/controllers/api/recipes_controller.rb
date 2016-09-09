@@ -14,12 +14,18 @@ class Api::RecipesController < ApplicationController
     if params[:search_option]
       @recipes = Recipe.includes(:image, :user, :like).where("#{params[:search_option]} ILIKE ?", "%#{params[:search_value]}%")
       @category = 'Search Result'
-    elsif params[:category_id] != '0'
-      @recipes = Recipe.includes(:image, :user, :like).where(category_id: params[:category_id])
-      @category = Category.find_by(id: params[:category_id]).title
-    else
+    elsif params[:category_id] == '0'
       @recipes = Recipe.includes(:image, :user, :like).all
       @category = 'All'
+    else
+      @category = Category.find_by(id: params[:category_id])
+      if @category
+        @category = @category.title
+        @recipes = Recipe.includes(:image, :user, :like).where(category_id: params[:category_id])
+      else
+        render json: 'Invalid category id', status: 404
+        return
+      end
     end
     render :index
   end
