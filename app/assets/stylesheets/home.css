@@ -33,7 +33,7 @@
 .category-titles {
   list-style: none;
   position: absolute;
-  bottom: 30px;
+  top: 45%;
   right: 50px;
   display: flex;
   flex-direction: column;

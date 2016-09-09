@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import CommentForm from '../comment/comment_form.jsx';
 import Comment from '../comment/comment.jsx';
 import { convertToHour } from '../../util/recipe_helper.js';
-import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
+import { ShareButtons, generateShareIcon } from 'react-share';
 
 class RecipeDetail extends React.Component{
   editHandler() {
