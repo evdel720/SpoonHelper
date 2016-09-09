@@ -159,7 +159,7 @@ class RecipeDetail extends React.Component{
           <FacebookShareButton
             url={ shareUrl }
             title={ title }
-            className="share-btn">
+            className="share-btn hvr-pop">
             <FacebookIcon
               size={32}
               round />
@@ -168,7 +168,7 @@ class RecipeDetail extends React.Component{
           <TwitterShareButton
             url={ shareUrl }
             title={ title }
-            className="share-btn">
+            className="share-btn hvr-pop">
             <TwitterIcon
               size={32}
               round />
@@ -177,7 +177,7 @@ class RecipeDetail extends React.Component{
           <GooglePlusShareButton
             url={shareUrl}
             title={title}
-            className="share-btn">
+            className="share-btn hvr-pop">
             <GooglePlusIcon
               size={32}
               round />
@@ -188,7 +188,7 @@ class RecipeDetail extends React.Component{
             title={title}
             windowWidth={750}
             windowHeight={600}
-            className="share-btn">
+            className="share-btn hvr-pop">
             <LinkedinIcon
               size={32}
               round />
@@ -200,7 +200,7 @@ class RecipeDetail extends React.Component{
             media={`${String(window.location)}/`}
             windowWidth={1000}
             windowHeight={730}
-            className="share-btn">
+            className="share-btn hvr-pop">
             <PinterestIcon size={32} round />
           </PinterestShareButton>
 
@@ -209,7 +209,7 @@ class RecipeDetail extends React.Component{
             url={shareUrl}
             windowWidth={660}
             windowHeight={460}
-            className="share-btn">
+            className="share-btn hvr-pop">
             <VKIcon
               size={32}
               round />
