@@ -5,7 +5,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0
+      index: Math.floor(Math.random() * 6)
     };
     this.changer = window.setInterval(this.changeIndex.bind(this), 7000);
   }
