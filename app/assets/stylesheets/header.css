@@ -90,3 +90,21 @@ ul.user-side-bar {
   position: absolute;
   right: 30px;
 }
+
+.contact-links img {
+  width: 30px;
+  height: 30px;
+  margin: auto 10px;
+  cursor: pointer;
+  display: inline;
+}
+
+.contact-links {
+  margin-left: 45%;
+  margin-bottom: 10px;
+}
+
+.suggestions {
+  height: 85vh;
+  display: block;
+}
