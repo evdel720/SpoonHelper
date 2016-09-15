@@ -11,7 +11,6 @@
   flex-wrap: wrap;
   width: 90%;
   margin: 0 auto;
-  height: 70vh;
 }
 
 .userpage-img {
@@ -24,4 +23,9 @@
   cursor: pointer;
   box-sizing: border-box;
   border: 3px #e3e0d9 solid;
+}
+
+.user-liked-page, .user-created-recipes-page {
+  display: block;
+  min-height: 75vh;
 }
