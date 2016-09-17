@@ -10,13 +10,15 @@ SpoonHelper is a full-stack web application inspired by Instructables. It utiliz
 
   SpoonHelper is a single-page app. All React components are rendered on one static page specified by the React Router.
 
+  <img src="http://res.cloudinary.com/wkdal720/image/upload/v1474136434/Screen_Shot_2016-09-15_at_8.22.52_PM_ezpllo.png" style-"width: 400px;height: auto;"/>
+
 ### Auth
   When user signs in or signs up, the frontend sends an AJAX request to the rails backend and creates an action accordingly. It sets the current user or returns an error with proper structure using jbuilder which makes it possible to show inline errors on every form. The app keeps the errors in the store and clears them when the user leaves the form component. For security, the frontend doesn't allow users to see the new recipe form if they are not logged in, nor edit/delete other users' recipes. But also the backend is prepared for invalid requests. It checks the current user's authority with the object first and if it is not right, it renders a prepared error.
 
 ### Categories
   This app has 6 categories and each can have an image as a polymorphic association. Each recipe can also have a representative image as a polymorphic association. All recipes belong to categories.
   When a user first visits the app, the frontend requests categories from the database and keeps them in the store to make the category dropdown menu. The database will send back categories with recipe suggestions and those become the front page.
-  The suggestions animated by CSS transitions can be clicked to take the user directly to the recipe page. 
+  The suggestions animated by CSS transitions can be clicked to take the user directly to the recipe page.
   The categories store doesn't fetch after the first time until user refreshes the page.
 
 ### Recipes
