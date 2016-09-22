@@ -1,5 +1,6 @@
 
 .category-dropdown {
+  font-family: 'Rubik', sans-serif;
   position: absolute;
   z-index: 100;
   top: 100px;
@@ -52,7 +53,7 @@
 }
 
 .category-item:hover {
-  color: white;
+  color: #fffbf0;
   background-color: #3b3b3b;
 }
 
@@ -60,5 +61,5 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: white 2px solid;
+  border: #fffbf0 2px solid;
 }

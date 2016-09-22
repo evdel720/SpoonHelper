@@ -360,7 +360,7 @@ Recipe.create!(
   title: 'Waldorf\'s Sour Cream Cheesecake',
   description: 'A wonderful and easy cheesecake recipe my mother-in-law made for the holidays and special occasions.',
   ingredients: '7 ounces vanilla wafers, crushed#@! 1/2 cup margarine, melted#@!2 tablespoons white sugar#@!1 pinch ground cinnamon#@!2 (8 ounce) packages cream cheese, softened#@!1 cup white sugar#@!2 tablespoons lemon juice#@!4 eggs#@!1 pint sour cream#@!2 tablespoons white sugar#@!1 teaspoon vanilla extract',
-  user_id: (1..user_count).to_a.sample,
+  user_id: (2..user_count).to_a.sample,
   category_id: 3,
   prep_time: 30,
   cook_time: 40,
@@ -414,7 +414,7 @@ Recipe.create!(
   title: 'Best Big, Fat, Chewy Chocolate Chip Cookie',
   description: 'These cookies are the pinnacle of perfection! If you want a big, fat, chewy cookie like the kind you see at bakeries and specialty shops, then these are the cookies for you!',
   ingredients: '2 cups all-purpose flour#@!1/2 teaspoon baking soda#@!1/2 teaspoon salt#@!3/4 cup unsalted butter, melted#@!1 cup packed brown sugar#@!1/2 cup white sugar#@!1 tablespoon vanilla extract 1 egg#@!1 egg yolk#@!2 cups semisweet chocolate chips',
-  user_id: (1..user_count).to_a.sample,
+  user_id: 1,
   category_id: 3,
   prep_time: 10,
   cook_time: 15,
@@ -437,15 +437,15 @@ Recipe.create!(
   ]
 )
 
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "We thought these were great. It's not the only chocolate chip cookie recipe I'll use, but when you want a \"big, fat, chewy cookie,\" this is awesome.")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "I have tried quite a few chocolate chip cookie recipes, and this is by far the BEST! Don't be alarmed by the reviewers who say theirs turned out flat.")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "Update: Learn from my mistake...Use MARGARINE rather than butter in this recipe if you want a thick cookie. Wow! This cookie is absolutely heavenly!")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "W-O-W!!!! I'm speechless. Just when I was beginning to give up my faith in this website.")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "This was the worst cookie recipe ever...They were so good i ate waaaayyy too many and got sick for 2 days...no joke. :) Great job.")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "After sitting hours upon hours in front of a computer searching for that one chocolate chip cookie recipe that would be 'the one', I finally found it.")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "These cookies are wonderful! They look just like they came from one of the cookie shops at the mall. I am impressed.")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "These cookies are delicious! They really are big and I dropped 1/8 cup of the cookie mix onto the cookie sheet instead of the whole 1/4 cup.")
-Comment.create!(recipe_id: 10, user_id: (1..user_count).to_a.sample, content: "I made this exactly as the recipe is stated and the cookies came out very thin. They had an excellent flavor though. I am going to read the other reviews and try again.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "We thought these were great. It's not the only chocolate chip cookie recipe I'll use, but when you want a \"big, fat, chewy cookie,\" this is awesome.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "I have tried quite a few chocolate chip cookie recipes, and this is by far the BEST! Don't be alarmed by the reviewers who say theirs turned out flat.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "Update: Learn from my mistake...Use MARGARINE rather than butter in this recipe if you want a thick cookie. Wow! This cookie is absolutely heavenly!")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "W-O-W!!!! I'm speechless. Just when I was beginning to give up my faith in this website.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "This was the worst cookie recipe ever...They were so good i ate waaaayyy too many and got sick for 2 days...no joke. :) Great job.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "After sitting hours upon hours in front of a computer searching for that one chocolate chip cookie recipe that would be 'the one', I finally found it.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "These cookies are wonderful! They look just like they came from one of the cookie shops at the mall. I am impressed.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "These cookies are delicious! They really are big and I dropped 1/8 cup of the cookie mix onto the cookie sheet instead of the whole 1/4 cup.")
+Comment.create!(recipe_id: 10, user_id: (2..user_count).to_a.sample, content: "I made this exactly as the recipe is stated and the cookies came out very thin. They had an excellent flavor though. I am going to read the other reviews and try again.")
 
 
 # http://allrecipes.com/recipe/10549/best-brownies/?internalSource=hub%20recipe&referringId=79&referringContentType=recipe%20hub&clickId=cardslot%2018
@@ -576,7 +576,7 @@ Recipe.create!(
   title: 'Quinoa and Black Beans',
   description: 'Very flavorful alternative to black beans and rice. Quinoa is a nutty grain from South America.',
   ingredients: '1 teaspoon vegetable oil#@!1 onion, chopped#@!3 cloves garlic, chopped#@!3/4 cup quinoa#@!1 1/2 cups vegetable broth#@!1 teaspoon ground cumin#@!1/4 teaspoon cayenne pepper#@!salt and ground black pepper to taste#@!1 cup frozen corn kernels#@!2 (15 ounce) cans black beans, rinsed and drained#@!1/2 cup chopped fresh cilantro',
-  user_id: (1..user_count).to_a.sample,
+  user_id: 1,
   category_id: 4,
   prep_time: 15,
   cook_time: 35,
@@ -599,16 +599,16 @@ Recipe.create!(
   ]
 )
 
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "If I could give this six stars, I would. This satisfies ALL my requirements for a \"great\" recipe! Get a load of this, and I am not exaggerating: it's quick and easy, inexpensive, attractive.")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "This recipe was great! I served it as a side dish, but it definitely has potential to be a main course.")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "This one gets five stars. We had never tried quinoa, so we weren't sure what to expect. I followed another reviewer's tip to rinse the quinoa well before cooking, and there was no bitter taste.")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "Really good. I followed the others advise and added to the recipe. I added zucchini and tomato as well as fresh lemon juice.")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "I'd never prepared nor eaten quinoa before (pronounced “keen-wa”; I didn't even know that!). ;) It is supposed to be very healthy & a complete protein, so I wanted to try it. ")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "I used bulgur wheat instead of quinoa (I'm a poor college student and the bulgur was MUCH cheaper!) but the recipe was still fantastic!!! The spices are just right!")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "The proportions and flavors are mostly good, and I changed the directions only slightly. Two cans of black beans seemed too much to me, so I stopped at one.")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "My husband loved this! I decided at the last minute to use only one can of black beans. I put the first one in, and it seemed like another one would be overkill.")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "Simple, healthy, adaptable, yay! This was a little bland for our tastes, so I'll be kicking up the spices a notch but I'll definitely make it again.")
-Comment.create!(recipe_id: 14, user_id: (1..user_count).to_a.sample, content: "This is a great recipe. I have made it a few times already and I love it more and more each time. (I usually only use 1 can of beans.)")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "If I could give this six stars, I would. This satisfies ALL my requirements for a \"great\" recipe! Get a load of this, and I am not exaggerating: it's quick and easy, inexpensive, attractive.")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "This recipe was great! I served it as a side dish, but it definitely has potential to be a main course.")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "This one gets five stars. We had never tried quinoa, so we weren't sure what to expect. I followed another reviewer's tip to rinse the quinoa well before cooking, and there was no bitter taste.")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "Really good. I followed the others advise and added to the recipe. I added zucchini and tomato as well as fresh lemon juice.")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "I'd never prepared nor eaten quinoa before (pronounced “keen-wa”; I didn't even know that!). ;) It is supposed to be very healthy & a complete protein, so I wanted to try it. ")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "I used bulgur wheat instead of quinoa (I'm a poor college student and the bulgur was MUCH cheaper!) but the recipe was still fantastic!!! The spices are just right!")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "The proportions and flavors are mostly good, and I changed the directions only slightly. Two cans of black beans seemed too much to me, so I stopped at one.")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "My husband loved this! I decided at the last minute to use only one can of black beans. I put the first one in, and it seemed like another one would be overkill.")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "Simple, healthy, adaptable, yay! This was a little bland for our tastes, so I'll be kicking up the spices a notch but I'll definitely make it again.")
+Comment.create!(recipe_id: 14, user_id: (2..user_count).to_a.sample, content: "This is a great recipe. I have made it a few times already and I love it more and more each time. (I usually only use 1 can of beans.)")
 
 
 
@@ -747,7 +747,7 @@ Recipe.create!(
   title: 'Italian Chicken Marinade',
   description: 'This is a simple but delicious way of marinating your chicken.',
   ingredients: '1 (16 ounce) bottle Italian-style salad dressing#@!1 teaspoon garlic powder#@!1 teaspoon salt#@!4 skinless, boneless chicken breast halves',
-  user_id: (1..user_count).to_a.sample,
+  user_id: 1,
   category_id: 5,
   prep_time: 15,
   cook_time: 15,
@@ -767,16 +767,16 @@ Recipe.create!(
   ]
 )
 
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "A good easy recipe when you are short on prep time. BUT, I think a whole bottle of dressing is too much. 8 oz or 1/2 would be plenty for 4 chicken breasts.")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "I sometimes will cook my chicken in a non stick skillet using Italian Dressing only as my cooking oil. Usually when the weather isn't good enough outside to cook on the grill.")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "I have been using something like this for years as well. I leave out the salt and add hot sauce (like RedHot).")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "I don't know what magic occurs when these 4 little ingredients come together, but the results are fantastic. ")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "I used this marinade on 3 lbs. of chicken parts instead of the boneless breasts. I marinated the chicken about 8 hrs., then baked it at 400 for almost an hour.")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "Delicious and Super Easy - I agree with the other reviewers - you don't need a whole bottle of dressing!!")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "If possible I would give this an extra 5 stars! I definitely will use this recipe over and over. The chicken was MARVELOUS!")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "5 stars for a quick and easy marinade. I thawed the chicken out first, then poked holes in it so that the marinade would soak in! This was a great summer dinner!! Thanks")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "I marinated my chicken in this sauce the night before a big cookout. The flavor was so good. I recommend it for the grill or the oven. Great!!!")
-Comment.create!(recipe_id: 18, user_id: (1..user_count).to_a.sample, content: "SO simple and good! I used my own Italian dressing with balsamic vinegar and served it to guests. They loved it.")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "A good easy recipe when you are short on prep time. BUT, I think a whole bottle of dressing is too much. 8 oz or 1/2 would be plenty for 4 chicken breasts.")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "I sometimes will cook my chicken in a non stick skillet using Italian Dressing only as my cooking oil. Usually when the weather isn't good enough outside to cook on the grill.")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "I have been using something like this for years as well. I leave out the salt and add hot sauce (like RedHot).")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "I don't know what magic occurs when these 4 little ingredients come together, but the results are fantastic. ")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "I used this marinade on 3 lbs. of chicken parts instead of the boneless breasts. I marinated the chicken about 8 hrs., then baked it at 400 for almost an hour.")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "Delicious and Super Easy - I agree with the other reviewers - you don't need a whole bottle of dressing!!")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "If possible I would give this an extra 5 stars! I definitely will use this recipe over and over. The chicken was MARVELOUS!")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "5 stars for a quick and easy marinade. I thawed the chicken out first, then poked holes in it so that the marinade would soak in! This was a great summer dinner!! Thanks")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "I marinated my chicken in this sauce the night before a big cookout. The flavor was so good. I recommend it for the grill or the oven. Great!!!")
+Comment.create!(recipe_id: 18, user_id: (2..user_count).to_a.sample, content: "SO simple and good! I used my own Italian dressing with balsamic vinegar and served it to guests. They loved it.")
 
 
 

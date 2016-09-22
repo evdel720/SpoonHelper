@@ -9,6 +9,10 @@
   z-index: 30;
 }
 
+#select, #search-input {
+  font-family: 'Rubik', sans-serif;
+}
+
 .autocomplete-item {
   padding: 5px 20px;
   display: flex;
