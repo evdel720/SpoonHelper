@@ -25,20 +25,6 @@ class SignUpForm extends React.Component {
     this.render();
   }
 
-  // handleConfirmation(e) {
-  //   let error = document.getElementById('confirmation');
-  //   const submitButton = document.getElementsByClassName("btn-submit")[0];
-  //   if (this.state.password !== e.target.value) {
-  //     submitButton.disabled = true;
-  //     error.innerHTML = "The password confirmation doesn't match with password.";
-  //     error.style = "color: red;";
-  //   } else {
-  //     submitButton.disabled = false;
-  //     error.style = "color: green;";
-  //     error.innerHTML = "Password confirmation matches.";
-  //   }
-  // }
-
   handleInput(e) {
     this.setState({[e.target.name]: e.target.value});
   }
@@ -58,7 +44,7 @@ class SignUpForm extends React.Component {
     const { errors } = this.props;
     return (
       <div className="session-form">
-        <h1>Sign Up</h1>
+        <img className="session-form-logo" src="http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png" alt="logo"/>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
             name="username"

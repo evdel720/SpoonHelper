@@ -68,6 +68,7 @@
 }
 
 .recipe-form button, #submit-btn {
+  font-family: 'Rubik', sans-serif;
   margin: 20px 10px;
   display: inline;
   font-size: 15px;
@@ -82,12 +83,14 @@
 }
 
 .recipe-form button:hover, .recipe-form button:focus, #submit-btn:hover, #submit-btn:focus {
+  cursor: pointer;
   background: #e69500;
   border: solid 1px #cc8400;
   text-decoration: none;
 }
 
 #submit-btn:disabled, #ingredient-btn:disabled {
+  cursor: default;
   background: grey;
   border-color: transparent;
 }
@@ -135,19 +138,21 @@
 }
 
 #submit-btn {
+  font-family: 'Rubik', sans-serif;
   width: 130px;
   margin: 20px auto;
   margin-bottom: 40px;
 }
 
 .recipe-form button.delete-btn {
-  font-size: 10px;
-  padding: 8px 9px;
+  font-size: 11px;
+  padding: 9px 10px;
   border-radius: 10px;
   margin: 0 5px;
 }
 
 .recipe-form-btns {
+  font-family: 'Rubik', sans-serif;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -160,6 +165,7 @@
 }
 
 .recipe-form select {
+  font-family: 'Rubik', sans-serif;
   width: 60%;
 }
 

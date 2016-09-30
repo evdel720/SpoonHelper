@@ -4,16 +4,10 @@
   display: flex;
   flex-direction: column;
   padding: 40px;
+  padding-top: 10px;
   background: #FAFAFA;
   box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
   border-radius: 10px;
-}
-
-.session-form h1 {
-  font-size: 30px;
-  text-align: center;
-  padding: 20px;
-  color: #3b3b3b;
 }
 
 .session-form input {
@@ -38,6 +32,7 @@
 }
 
 .session-form button {
+  font-family: 'Rubik', sans-serif;
   width: 200px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -65,6 +60,7 @@
 }
 
 .session-form button:hover, .session-form button:focus {
+  cursor: pointer;
   background: #e69500;
   border: solid 1px #cc8400;
   text-decoration: none;
@@ -77,6 +73,7 @@
 }
 
 .session-form button:disabled {
+  cursor: default;
   background: grey;
   border-color: transparent;
 }
@@ -88,4 +85,10 @@
 
 .session-form p {
   margin-top: 10px;
+}
+
+.session-form-logo {
+  width: 250px;
+  height: 130px;
+  margin: 10px auto;
 }

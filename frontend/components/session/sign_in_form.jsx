@@ -45,7 +45,7 @@ class SignInForm extends React.Component {
     const { errors } = this.props;
     return (
       <div className="session-form">
-        <h1>Sign In</h1>
+        <img className="session-form-logo" src="http://res.cloudinary.com/wkdal720/image/upload/v1472659523/imageedit_1_3889917060_vq3dui.png" alt="logo"/>
         <form className="clearfix" onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
             name="username"

@@ -246,7 +246,7 @@ class RecipeForm extends React.Component {
             { this.errorGenerator(errors.category_id) }
           </label>
 
-          <label>Click buttons below to add steps</label>
+          <label>Steps</label>
 
             <p className='error'>
               {this.state.steps.length ? "" : "Every recipe needs at least one step"}
@@ -259,10 +259,10 @@ class RecipeForm extends React.Component {
             <div className='recipe-form-btns'>
               <button
                 onClick={this.addSteps.bind(this)}>
-                Text</button>
+                Add a text step</button>
               <button
                 onClick={this.uploader.bind(this)}>
-                Image</button>
+                Add Images</button>
             </div>
 
           <input type='submit'
