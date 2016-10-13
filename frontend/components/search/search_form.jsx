@@ -20,7 +20,10 @@ class SearchForm extends React.Component {
     if (e.target.value === "") {
       this.props.clearAutocomplete();
     } else {
-      this.props.requestSearchAutocomplete(this.state);
+      this.props.requestSearchAutocomplete({
+        search_option: e.target.previousSibling.value,
+        search_value: e.target.value
+      });
     }
     document.addEventListener('mouseup', this.clearForm );
   }
