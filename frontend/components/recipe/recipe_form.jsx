@@ -8,6 +8,7 @@ class RecipeForm extends React.Component {
     super(props);
     const { title, ingredients, description, prep_time, cook_time, category, steps } = this.props.recipe;
     this.state = {
+      ingredientError: undefined,
       title: title || "",
       ingredients: ingredients ? ingredients.split("#@!") : [],
       description: description || "",
@@ -119,8 +120,14 @@ class RecipeForm extends React.Component {
     e.preventDefault();
     let inputForm = e.target.previousSibling;
     if (inputForm.value !== "") {
-      this.setState({'ingredients': this.state.ingredients.concat(inputForm.value)});
+      this.setState({
+        ingredients: this.state.ingredients.concat(inputForm.value),
+        ingredientError: undefined
+      });
       inputForm.value = "";
+    } else {
+      this.setState({ingredientError:
+        ["Please type ingredient to add ingredient"]});
     }
   }
 
@@ -129,7 +136,7 @@ class RecipeForm extends React.Component {
     let deleteVal = e.target.innerText;
     let newIngredients = this.state.ingredients;
     newIngredients.splice(newIngredients.indexOf(deleteVal), 1);
-    this.setState({'ingredients': newIngredients});
+    this.setState({ingredients: newIngredients});
   }
 
   stepList(steps) {
@@ -235,6 +242,7 @@ class RecipeForm extends React.Component {
                 placeholder="add each ingredient"/>
               <button id="ingredient-btn" onClick={ this.addIngredient.bind(this) }>+</button>
             </div>
+            { this.errorGenerator(this.state.ingredientError) }
             { this.errorGenerator(errors.ingredients) }
           </label>
 

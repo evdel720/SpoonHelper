@@ -17,6 +17,7 @@ export const stateHelper = (state) => {
   delete newStep['prep_min'];
   delete newStep['cook_hour'];
   delete newStep['cook_min'];
+  delete newStep['ingredientError'];
   delete newStep['stepsToBeDeleted'];
   return newStep;
 };
